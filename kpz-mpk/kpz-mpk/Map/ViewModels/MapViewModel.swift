@@ -11,6 +11,7 @@ import MapKit
 
 final class MapViewModel {
   private weak var presenter: MapViewControllerPresenter?
+  let locationManager = CLLocationManager()
   //hardcoded for now
   private var userLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 51.111510, longitude: 17.059737)
 
