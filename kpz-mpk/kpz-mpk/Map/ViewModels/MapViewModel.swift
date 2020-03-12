@@ -30,7 +30,7 @@ final class MapViewModel {
     presenter?.centerMap(coordinateRegion: coordinateRegion)
   }
 
-  func askUserForLocationPermission(){
+  func askUserForLocationPermission() {
     presenter?.askUserForLocationPermission(locationManager: locationManager)
   }
 }

@@ -25,7 +25,7 @@ class MapViewController: UIViewController {
 
     viewModel.centerMap(atLatitude: 51.111510, atLongitude: 17.059737, forRegionRadious: 1000)
   }
-  
+
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     viewModel.askUserForLocationPermission()
@@ -38,7 +38,7 @@ extension MapViewController: MapViewControllerPresenter {
     mapView.setRegion(coordinateRegion, animated: true)
   }
 
-  func askUserForLocationPermission(locationManager: CLLocationManager){
+  func askUserForLocationPermission(locationManager: CLLocationManager) {
     if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
       mapView.showsUserLocation = true
     } else {
