@@ -23,7 +23,7 @@ class MapViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    viewModel.centerMap(atLatitude: 51.111510, atLongitude: 17.059737, forRegionRadious: 1000)
+    viewModel.centerMapOnUser()
   }
 
   override func viewDidAppear(_ animated: Bool) {

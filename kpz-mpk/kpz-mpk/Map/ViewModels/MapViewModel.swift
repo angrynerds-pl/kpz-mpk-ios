@@ -11,21 +11,19 @@ import MapKit
 
 final class MapViewModel {
   private weak var presenter: MapViewControllerPresenter?
-  let locationManager = CLLocationManager()
+  //hardcoded for now
+  private var userLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 51.111510, longitude: 17.059737)
 
   init(presenter: MapViewControllerPresenter?) {
     self.presenter = presenter
   }
 
-  func centerMap(
-    atLatitude lat: Double,
-    atLongitude long: Double,
-    forRegionRadious radious: Double) {
-    let location = CLLocation(latitude: lat, longitude: long)
+  func centerMapOnUser() {
+    let regionRadius: Double = 1000
     let coordinateRegion = MKCoordinateRegion(
-      center: location.coordinate,
-      latitudinalMeters: radious,
-      longitudinalMeters: radious)
+      center: userLocation,
+      latitudinalMeters: regionRadius,
+      longitudinalMeters: regionRadius)
 
     presenter?.centerMap(coordinateRegion: coordinateRegion)
   }
