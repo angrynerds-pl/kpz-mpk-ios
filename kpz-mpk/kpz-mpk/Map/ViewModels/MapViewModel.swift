@@ -11,6 +11,7 @@ import MapKit
 
 final class MapViewModel {
   private weak var presenter: MapViewControllerPresenter?
+  let locationManager = CLLocationManager()
 
   init(presenter: MapViewControllerPresenter?) {
     self.presenter = presenter
@@ -27,5 +28,9 @@ final class MapViewModel {
       longitudinalMeters: radious)
 
     presenter?.centerMap(coordinateRegion: coordinateRegion)
+  }
+
+  func askUserForLocationPermission(){
+    presenter?.askUserForLocationPermission(locationManager: locationManager)
   }
 }
