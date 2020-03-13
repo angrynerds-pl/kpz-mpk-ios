@@ -11,7 +11,6 @@ import MapKit
 
 protocol MapViewControllerPresenter: NSObject {
   func centerMap(coordinateRegion: MKCoordinateRegion)
-  func askUserForLocationPermission(locationManager: CLLocationManager)
 }
 
 class MapViewController: UIViewController {
@@ -26,23 +25,10 @@ class MapViewController: UIViewController {
     viewModel.centerMapOnUser()
   }
 
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    viewModel.askUserForLocationPermission()
-  }
-
 }
 
 extension MapViewController: MapViewControllerPresenter {
   func centerMap(coordinateRegion: MKCoordinateRegion) {
     mapView.setRegion(coordinateRegion, animated: true)
-  }
-
-  func askUserForLocationPermission(locationManager: CLLocationManager) {
-    if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-      mapView.showsUserLocation = true
-    } else {
-      locationManager.requestWhenInUseAuthorization()
-    }
   }
 }
