@@ -9,18 +9,60 @@
 import Foundation
 import MapKit
 
-class LocationService {
-  private let locationManager = CLLocationManager()
-  private(set) var userLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 51.111510, longitude: 17.059737)
+protocol LocationServiceDelegate: class {
+    func locationService(didUpdateInitialLocation location: CLLocation)
+    func locationService(didUpdateLocation location: CLLocation)
+    func locationService(didChangeAuthorization isAuthorized: Bool)
+}
 
-  public init() {
-    askUserForLocationPermission()
-  }
+class LocationService: NSObject {
+    // MARK: - Public Properties
+    weak var delegate: LocationServiceDelegate?
+    
+    // MARK: - Private Properties
+    private let locationManager = CLLocationManager()
+    private(set) var userLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 51.111510,
+                                                                                   longitude: 17.059737)
+    private var didUpdateInitialLocation = false
 
-  func askUserForLocationPermission() {
-    if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-    } else {
-      locationManager.requestWhenInUseAuthorization()
+    // MARK: - Initializers
+    public override init() {
+        super.init()
+        
+        locationManager.delegate = self
+        askUserForLocationPermission()
     }
-  }
+
+    // MARK: - Private Methods
+    private func askUserForLocationPermission() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+            return
+        default:
+          locationManager.requestWhenInUseAuthorization()
+        }
+    }
+}
+
+extension LocationService: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { return }
+        delegate?.locationService(didUpdateLocation: location)
+        
+        if !didUpdateInitialLocation {
+            didUpdateInitialLocation = true
+            delegate?.locationService(didUpdateInitialLocation: location)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedWhenInUse, .authorizedAlways:
+            delegate?.locationService(didChangeAuthorization: true)
+        case .denied:
+            delegate?.locationService(didChangeAuthorization: false)
+        default:
+          return
+        }
+    }
 }
