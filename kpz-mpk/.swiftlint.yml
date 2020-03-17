@@ -1,0 +1,18 @@
+disabled_rules:
+   - trailing_whitespace
+   - void_return
+   - multiple_closures_with_trailing_closure
+   - type_name
+   - trailing_comma
+line_length:
+  warning: 150
+  ignores_function_declarations: true
+  ignores_comments: true
+  ignores_interpolated_strings: true
+  ignores_urls: true
+identifier_name:
+  excluded: # excluded via string array
+    - id
+    - URL
+    - x
+    - y
