@@ -26,11 +26,11 @@ class LocationService: NSObject {
 
     // MARK: - Initializers
     public override init() {
-        super.init()
+      super.init()
 
       locationManager.delegate = self
       locationManager.startUpdatingLocation()
-        askUserForLocationPermission()
+      askUserForLocationPermission()
     }
 
     // MARK: - Private Methods
@@ -48,7 +48,7 @@ class LocationService: NSObject {
 extension LocationService: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
-      userLocation = location.coordinate
+        userLocation = location.coordinate
         delegate?.locationService(didUpdateLocation: location)
 
         if !didUpdateInitialLocation {

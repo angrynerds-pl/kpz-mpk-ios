@@ -22,10 +22,34 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfB-Ne-JWv">
+                                <rect key="frame" x="343" y="804" width="36" height="36"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQE-vO-mWQ">
+                                        <rect key="frame" x="7.6666666666666856" y="7" width="21" height="22"/>
+                                        <state key="normal" image="location" catalog="system"/>
+                                        <connections>
+                                            <action selector="centerMapButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OeX-Tf-D2v"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="xQE-vO-mWQ" firstAttribute="centerY" secondItem="hfB-Ne-JWv" secondAttribute="centerY" id="2BO-II-jcs"/>
+                                    <constraint firstAttribute="height" constant="36" id="9br-uT-Mv4"/>
+                                    <constraint firstItem="xQE-vO-mWQ" firstAttribute="centerX" secondItem="hfB-Ne-JWv" secondAttribute="centerX" id="NCA-k0-bFl"/>
+                                    <constraint firstAttribute="width" constant="36" id="rD5-KQ-pF6"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="FAY-ew-xb2" firstAttribute="top" secondItem="hfB-Ne-JWv" secondAttribute="bottom" constant="22" id="8Tl-0D-Jhg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hfB-Ne-JWv" secondAttribute="trailing" constant="15" id="LTn-7V-jWz"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="centerMapButtonView" destination="hfB-Ne-JWv" id="2pV-pw-CJa"/>
                         <outlet property="mapView" destination="sLv-TG-Bt6" id="dh8-ZE-2tE"/>
                     </connections>
                 </viewController>
@@ -34,4 +58,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="location" catalog="system" width="64" height="56"/>
+    </resources>
 </document>
