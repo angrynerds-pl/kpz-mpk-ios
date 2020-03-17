@@ -11,20 +11,35 @@ import MapKit
 
 final class MapViewModel {
   private weak var presenter: MapViewControllerPresenter?
-  //hardcoded for now
-  private var userLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 51.111510, longitude: 17.059737)
+  let locationService = LocationService()
 
   init(presenter: MapViewControllerPresenter?) {
     self.presenter = presenter
+    locationService.delegate = self
   }
 
   func centerMapOnUser() {
     let regionRadius: Double = 1000
     let coordinateRegion = MKCoordinateRegion(
-      center: userLocation,
+      center: locationService.userLocation ??
+        CLLocationCoordinate2D(
+          latitude: 51.06280,
+          longitude: 17.02193),
       latitudinalMeters: regionRadius,
       longitudinalMeters: regionRadius)
 
     presenter?.centerMap(coordinateRegion: coordinateRegion)
+  }
+}
+
+extension MapViewModel: LocationServiceDelegate {
+  func locationService(didUpdateInitialLocation location: CLLocation) {
+    centerMapOnUser()
+  }
+
+  func locationService(didUpdateLocation location: CLLocation) {
+  }
+
+  func locationService(didChangeAuthorization isAuthorized: Bool) {
   }
 }
