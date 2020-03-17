@@ -28,7 +28,7 @@ class LocationService: NSObject {
     public override init() {
         super.init()
 
-        locationManager.delegate = self
+      locationManager.delegate = self
       locationManager.startUpdatingLocation()
         askUserForLocationPermission()
     }
@@ -42,6 +42,7 @@ class LocationService: NSObject {
           locationManager.requestWhenInUseAuthorization()
         }
     }
+    
 }
 
 extension LocationService: CLLocationManagerDelegate {
