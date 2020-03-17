@@ -21,7 +21,10 @@ final class MapViewModel {
   func centerMapOnUser() {
     let regionRadius: Double = 1000
     let coordinateRegion = MKCoordinateRegion(
-      center: locationService.userLocation,
+      center: locationService.userLocation ??
+        CLLocationCoordinate2D(
+          latitude: 51.06280,
+          longitude: 17.02193),
       latitudinalMeters: regionRadius,
       longitudinalMeters: regionRadius)
 
@@ -31,14 +34,12 @@ final class MapViewModel {
 
 extension MapViewModel: LocationServiceDelegate {
   func locationService(didUpdateInitialLocation location: CLLocation) {
-    print("Location Init")
+    centerMapOnUser()
   }
 
   func locationService(didUpdateLocation location: CLLocation) {
-    print("Location Update")
   }
 
   func locationService(didChangeAuthorization isAuthorized: Bool) {
-    print(isAuthorized)
   }
 }

@@ -21,8 +21,7 @@ class LocationService: NSObject {
 
     // MARK: - Private Properties
     private let locationManager = CLLocationManager()
-    private(set) var userLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 51.111510,
-                                                                                   longitude: 17.059737)
+    private(set) var userLocation: CLLocationCoordinate2D?
     private var didUpdateInitialLocation = false
 
     // MARK: - Initializers
@@ -48,6 +47,7 @@ class LocationService: NSObject {
 extension LocationService: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
+      userLocation = location.coordinate
         delegate?.locationService(didUpdateLocation: location)
 
         if !didUpdateInitialLocation {

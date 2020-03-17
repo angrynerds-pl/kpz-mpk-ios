@@ -22,9 +22,8 @@ class MapViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    viewModel.centerMapOnUser()
+   viewModel.centerMapOnUser()
   }
-
 }
 
 extension MapViewController: MapViewControllerPresenter {
