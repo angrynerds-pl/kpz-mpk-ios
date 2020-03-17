@@ -15,6 +15,7 @@ final class MapViewModel {
 
   init(presenter: MapViewControllerPresenter?) {
     self.presenter = presenter
+    locationService.delegate = self
   }
 
   func centerMapOnUser() {
@@ -25,5 +26,19 @@ final class MapViewModel {
       longitudinalMeters: regionRadius)
 
     presenter?.centerMap(coordinateRegion: coordinateRegion)
+  }
+}
+
+extension MapViewModel: LocationServiceDelegate {
+  func locationService(didUpdateInitialLocation location: CLLocation) {
+    print("Location Init")
+  }
+
+  func locationService(didUpdateLocation location: CLLocation) {
+    print("Location Update")
+  }
+
+  func locationService(didChangeAuthorization isAuthorized: Bool) {
+    print(isAuthorized)
   }
 }

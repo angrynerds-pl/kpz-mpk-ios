@@ -18,7 +18,7 @@ protocol LocationServiceDelegate: class {
 class LocationService: NSObject {
     // MARK: - Public Properties
     weak var delegate: LocationServiceDelegate?
-    
+
     // MARK: - Private Properties
     private let locationManager = CLLocationManager()
     private(set) var userLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 51.111510,
@@ -28,8 +28,9 @@ class LocationService: NSObject {
     // MARK: - Initializers
     public override init() {
         super.init()
-        
+
         locationManager.delegate = self
+      locationManager.startUpdatingLocation()
         askUserForLocationPermission()
     }
 
@@ -48,13 +49,13 @@ extension LocationService: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         delegate?.locationService(didUpdateLocation: location)
-        
+
         if !didUpdateInitialLocation {
             didUpdateInitialLocation = true
             delegate?.locationService(didUpdateInitialLocation: location)
         }
     }
-    
+
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .authorizedWhenInUse, .authorizedAlways:
