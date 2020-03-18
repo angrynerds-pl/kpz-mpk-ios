@@ -16,6 +16,7 @@ protocol MapViewControllerPresenter: NSObject {
 
 class MapViewController: UIViewController {
 
+  @IBOutlet weak var centerMapButton: UIButton!
   @IBOutlet private weak var centerMapButtonView: UIView!
   @IBOutlet private weak var mapView: MKMapView!
 
@@ -38,8 +39,13 @@ extension MapViewController: MapViewControllerPresenter {
   func centerMap(coordinateRegion: MKCoordinateRegion) {
     mapView.setRegion(coordinateRegion, animated: true)
   }
-  
+
   func setUpUI() {
-    centerMapButtonView.layer.cornerRadius = 10
+    centerMapButtonView.layer.cornerRadius = 32
+    centerMapButtonView.layer.shadowColor = UIColor.gray.cgColor
+    centerMapButtonView.layer.shadowOpacity = 1
+    centerMapButtonView.layer.shadowOffset = .zero
+    centerMapButtonView.layer.shadowRadius = 10
+    centerMapButton.setImage(UIImage(systemName: "location.fill"), for: .normal)
   }
 }
