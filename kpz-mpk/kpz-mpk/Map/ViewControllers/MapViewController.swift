@@ -16,9 +16,13 @@ protocol MapViewControllerPresenter: NSObject {
 
 class MapViewController: UIViewController {
 
-  @IBOutlet weak var centerMapButton: UIButton!
+  @IBOutlet private weak var centerMapButton: UIButton!
   @IBOutlet private weak var centerMapButtonView: UIView!
   @IBOutlet private weak var mapView: MKMapView!
+  
+  @IBAction private func centerMapButtonPressed(_ sender: UIButton) {
+    viewModel.centerMapOnUser()
+  }
 
   lazy var viewModel = MapViewModel(presenter: self)
 
@@ -27,11 +31,6 @@ class MapViewController: UIViewController {
 
     viewModel.centerMapOnUser()
     setUpUI()
-
-  }
-  
-  @IBAction func centerMapButtonPressed(_ sender: UIButton) {
-    viewModel.centerMapOnUser()
   }
 }
 
@@ -41,7 +40,7 @@ extension MapViewController: MapViewControllerPresenter {
   }
 
   func setUpUI() {
-    centerMapButtonView.layer.cornerRadius = 32
+    centerMapButtonView.layer.cornerRadius = centerMapButtonView.bounds.width / 2
     centerMapButtonView.layer.shadowColor = UIColor.gray.cgColor
     centerMapButtonView.layer.shadowOpacity = 1
     centerMapButtonView.layer.shadowOffset = .zero
