@@ -11,6 +11,7 @@ import MapKit
 
 protocol MapViewControllerPresenter: NSObject {
   func centerMap(coordinateRegion: MKCoordinateRegion)
+  func displayCenterLocation(latitudeText: String, longitude: String)
   func setUpUI()
 }
 
@@ -20,6 +21,9 @@ class MapViewController: UIViewController {
   @IBOutlet private weak var centerMapButton: UIButton!
   @IBOutlet private weak var centerMapButtonView: UIView!
   @IBOutlet private weak var mapView: MKMapView!
+  @IBOutlet private weak var pickLocationUpLabel: UILabel!
+  @IBOutlet private weak var pickLocationDownLabel: UILabel!
+  @IBOutlet private weak var locationPickingView: UIView!
   
   @IBAction private func centerMapButtonPressed(_ sender: UIButton) {
     viewModel.centerMapOnUser()
@@ -40,6 +44,11 @@ extension MapViewController: MapViewControllerPresenter {
   func centerMap(coordinateRegion: MKCoordinateRegion) {
     mapView.setRegion(coordinateRegion, animated: true)
   }
+  
+  func displayCenterLocation(latitudeText: String, longitude: String) {
+    pickLocationUpLabel.text = "Center lat -> \(latitudeText)"
+    pickLocationDownLabel.text = "Center long -> \(longitude)"
+  }
 
   func setUpUI() {
     //Center Map Button
@@ -51,13 +60,12 @@ extension MapViewController: MapViewControllerPresenter {
     centerMapButton.setImage(UIImage(systemName: "location.fill"), for: .normal)
     
     //Location Pick Icon
-    locationPickIcon.isHidden = true //We will toogle it when user would like to report incident
+    locationPickingView.isHidden = true //We will toogle it when user would like to report incident
   }
 }
 
 extension MapViewController: MKMapViewDelegate {
   func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
-    print("Center lat -> \(mapView.centerCoordinate.latitude)")
-    print("Center long -> \(mapView.centerCoordinate.longitude)")
+    viewModel.displayCenterLocation(for: mapView.centerCoordinate)
   }
 }

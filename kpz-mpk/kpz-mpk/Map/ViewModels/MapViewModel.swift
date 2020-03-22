@@ -31,6 +31,14 @@ final class MapViewModel {
 
     presenter?.centerMap(coordinateRegion: coordinateRegion)
   }
+  
+  func displayCenterLocation(for centerLocation: CLLocationCoordinate2D) {
+    // Later we will display location address
+    let lat: String = String(format: "%.4f", centerLocation.latitude)
+    let long: String = String(format: "%.4f", centerLocation.longitude)
+    
+    presenter?.displayCenterLocation(latitudeText: lat, longitude: long)
+  }
 }
 
 extension MapViewModel: LocationServiceDelegate {
