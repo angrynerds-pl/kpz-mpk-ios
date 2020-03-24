@@ -43,17 +43,74 @@
                                     <constraint firstAttribute="width" constant="64" id="rD5-KQ-pF6"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lQW-d6-XEV">
+                                <rect key="frame" x="92" y="350" width="230" height="196"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LocationPickIcon" translatesAutoresizingMaskIntoConstraints="NO" id="RLQ-GV-yLv">
+                                        <rect key="frame" x="52.666666666666657" y="32.666666666666686" width="125" height="131"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pmK-0m-bFH" userLabel="TextView">
+                                        <rect key="frame" x="61" y="49" width="108" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lat iles tam ale dlugitext dsad dsadas" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.050000000000000003" translatesAutoresizingMaskIntoConstraints="NO" id="lxL-s9-twD">
+                                                <rect key="frame" x="5" y="5" width="90" height="10"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="10" id="0q4-Uh-dXl"/>
+                                                    <constraint firstAttribute="width" constant="90" id="xIZ-RZ-Sg6"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lat iles tam ale dlugitext dsad dsadas" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.05000000074505806" translatesAutoresizingMaskIntoConstraints="NO" id="S8u-oU-PFF">
+                                                <rect key="frame" x="5" y="15" width="90" height="10"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="90" id="Znw-tf-dgQ"/>
+                                                    <constraint firstAttribute="height" constant="10" id="hiw-jw-pHN"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lxL-s9-twD" secondAttribute="trailing" constant="12.666666666666671" id="0ST-gj-aAG"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="S8u-oU-PFF" secondAttribute="trailing" constant="13" id="AZz-o4-hCn"/>
+                                            <constraint firstItem="lxL-s9-twD" firstAttribute="leading" secondItem="pmK-0m-bFH" secondAttribute="leading" constant="5" id="IN8-Nl-H9P"/>
+                                            <constraint firstAttribute="bottom" secondItem="S8u-oU-PFF" secondAttribute="bottom" constant="5" id="mde-D9-1S1"/>
+                                            <constraint firstItem="lxL-s9-twD" firstAttribute="top" secondItem="pmK-0m-bFH" secondAttribute="top" constant="5" id="rwt-az-hA5"/>
+                                            <constraint firstItem="S8u-oU-PFF" firstAttribute="leading" secondItem="pmK-0m-bFH" secondAttribute="leading" constant="5" id="vmc-JH-SOa"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="pmK-0m-bFH" secondAttribute="bottom" constant="117" id="BGg-bB-ONQ"/>
+                                    <constraint firstItem="pmK-0m-bFH" firstAttribute="top" secondItem="lQW-d6-XEV" secondAttribute="top" constant="49" id="Pmn-7i-W18"/>
+                                    <constraint firstItem="pmK-0m-bFH" firstAttribute="leading" secondItem="lQW-d6-XEV" secondAttribute="leading" constant="61" id="Ppc-yz-hfd"/>
+                                    <constraint firstItem="pmK-0m-bFH" firstAttribute="centerX" secondItem="RLQ-GV-yLv" secondAttribute="centerX" id="sUv-YX-JNj"/>
+                                    <constraint firstItem="RLQ-GV-yLv" firstAttribute="centerY" secondItem="lQW-d6-XEV" secondAttribute="centerY" id="vT8-LM-XuN"/>
+                                    <constraint firstItem="RLQ-GV-yLv" firstAttribute="centerX" secondItem="lQW-d6-XEV" secondAttribute="centerX" id="wxq-eh-6AX"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="lQW-d6-XEV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="72" id="2Ze-Sc-Mij"/>
                             <constraint firstItem="FAY-ew-xb2" firstAttribute="top" secondItem="hfB-Ne-JWv" secondAttribute="bottom" constant="22" id="8Tl-0D-Jhg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hfB-Ne-JWv" secondAttribute="trailing" constant="15" id="LTn-7V-jWz"/>
+                            <constraint firstItem="lQW-d6-XEV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Nbf-si-PO0"/>
+                            <constraint firstItem="lQW-d6-XEV" firstAttribute="top" secondItem="XMo-xT-HoI" secondAttribute="bottom" constant="306" id="cMe-nd-7JX"/>
+                            <constraint firstItem="lQW-d6-XEV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i1g-sH-SnD"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="centerMapButton" destination="xQE-vO-mWQ" id="mhG-Ml-WGJ"/>
                         <outlet property="centerMapButtonView" destination="hfB-Ne-JWv" id="2pV-pw-CJa"/>
+                        <outlet property="locationPickIcon" destination="RLQ-GV-yLv" id="sN8-bx-lHO"/>
+                        <outlet property="locationPickingView" destination="lQW-d6-XEV" id="LSs-ta-scm"/>
                         <outlet property="mapView" destination="sLv-TG-Bt6" id="dh8-ZE-2tE"/>
+                        <outlet property="pickLocationDownLabel" destination="S8u-oU-PFF" id="fLQ-NL-bjw"/>
+                        <outlet property="pickLocationUpLabel" destination="lxL-s9-twD" id="3ds-jK-z4n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -62,6 +119,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="LocationPickIcon" width="125" height="131"/>
         <image name="location.fill" catalog="system" width="64" height="56"/>
     </resources>
 </document>

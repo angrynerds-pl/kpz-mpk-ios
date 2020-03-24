@@ -12,6 +12,7 @@ import MapKit
 final class MapViewModel {
   private weak var presenter: MapViewControllerPresenter?
   let locationService = LocationService()
+  let apiService = ApiService()
 
   init(presenter: MapViewControllerPresenter?) {
     self.presenter = presenter
@@ -29,6 +30,14 @@ final class MapViewModel {
       longitudinalMeters: regionRadius)
 
     presenter?.centerMap(coordinateRegion: coordinateRegion)
+  }
+  
+  func displayCenterLocation(for centerLocation: CLLocationCoordinate2D) {
+    // Later we will display location address
+    let lat: String = String(format: "%.4f", centerLocation.latitude)
+    let long: String = String(format: "%.4f", centerLocation.longitude)
+    
+    presenter?.displayCenterLocation(latitudeText: lat, longitude: long)
   }
 }
 
