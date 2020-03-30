@@ -12,7 +12,7 @@ import MapKit
 final class MapViewModel {
   private weak var presenter: MapViewControllerPresenter?
   let locationService = LocationService()
-  let apiService = ApiService()
+  let incidentApiService = IncidentApiService()
 
   init(presenter: MapViewControllerPresenter?) {
     self.presenter = presenter

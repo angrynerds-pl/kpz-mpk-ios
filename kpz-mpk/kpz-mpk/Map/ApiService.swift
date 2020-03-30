@@ -7,11 +7,11 @@
 //
 
 import Foundation
+import Alamofire
 
-class ApiService: NSObject {
+class ApiService {
 
-  public override init() {
-    super.init()
+  public init() {
 
   }
 }
