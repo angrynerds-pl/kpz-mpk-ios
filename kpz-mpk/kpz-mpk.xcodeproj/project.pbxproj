@@ -131,11 +131,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1630C178240D365C00203440 /* Build configuration list for PBXNativeTarget "kpz-mpk" */;
 			buildPhases = (
-				16DCB63A240D3F1C005FA746 /* ShellScript */,
 				39355F5F16DF2694305A3357 /* [CP] Check Pods Manifest.lock */,
+				16DCB63A240D3F1C005FA746 /* ShellScript */,
 				1630C160240D365800203440 /* Sources */,
 				1630C161240D365800203440 /* Frameworks */,
 				1630C162240D365800203440 /* Resources */,
+				1E999FF9C2575C4510334BF2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -209,6 +210,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		1E999FF9C2575C4510334BF2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kpz-mpk/Pods-kpz-mpk-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kpz-mpk/Pods-kpz-mpk-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kpz-mpk/Pods-kpz-mpk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		39355F5F16DF2694305A3357 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

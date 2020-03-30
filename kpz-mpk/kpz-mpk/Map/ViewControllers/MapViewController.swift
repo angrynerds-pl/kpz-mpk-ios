@@ -24,7 +24,7 @@ class MapViewController: UIViewController {
   @IBOutlet private weak var pickLocationUpLabel: UILabel!
   @IBOutlet private weak var pickLocationDownLabel: UILabel!
   @IBOutlet private weak var locationPickingView: UIView!
-  
+
   @IBAction private func centerMapButtonPressed(_ sender: UIButton) {
     viewModel.centerMapOnUser()
   }
@@ -44,7 +44,7 @@ extension MapViewController: MapViewControllerPresenter {
   func centerMap(coordinateRegion: MKCoordinateRegion) {
     mapView.setRegion(coordinateRegion, animated: true)
   }
-  
+
   func displayCenterLocation(latitudeText: String, longitude: String) {
     pickLocationUpLabel.text = "Center lat -> \(latitudeText)"
     pickLocationDownLabel.text = "Center long -> \(longitude)"
@@ -58,7 +58,7 @@ extension MapViewController: MapViewControllerPresenter {
     centerMapButtonView.layer.shadowOffset = .zero
     centerMapButtonView.layer.shadowRadius = 10
     centerMapButton.setImage(UIImage(systemName: "location.fill"), for: .normal)
-    
+
     //Location Pick Icon
     locationPickingView.isHidden = true //We will toogle it when user would like to report incident
   }
