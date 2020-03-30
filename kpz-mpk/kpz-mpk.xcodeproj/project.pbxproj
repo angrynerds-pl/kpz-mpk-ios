@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -132,10 +132,10 @@
 			buildConfigurationList = 1630C178240D365C00203440 /* Build configuration list for PBXNativeTarget "kpz-mpk" */;
 			buildPhases = (
 				39355F5F16DF2694305A3357 /* [CP] Check Pods Manifest.lock */,
-				16DCB63A240D3F1C005FA746 /* ShellScript */,
 				1630C160240D365800203440 /* Sources */,
 				1630C161240D365800203440 /* Frameworks */,
 				1630C162240D365800203440 /* Resources */,
+				16DCB63A240D3F1C005FA746 /* ShellScript */,
 				1E999FF9C2575C4510334BF2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -209,7 +209,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		1E999FF9C2575C4510334BF2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
