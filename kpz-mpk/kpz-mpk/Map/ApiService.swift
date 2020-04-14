@@ -9,9 +9,32 @@
 import Foundation
 import Alamofire
 
-class ApiService {
-
-  public init() {
-
+protocol ApiServiceProtocol {
+  func request<T: Decodable>(endpoint: ApiEndpoint, success: ((T) -> ())?)
+}
+//swiftlint:disable force_try
+class ApiService: ApiServiceProtocol {
+  
+  // MARK: - Private Properties
+  private lazy var session: Session = {
+    return Session()
+  }()
+  
+  func request<T: Decodable>(endpoint: ApiEndpoint, success: ((T) -> ())?) {
+    let urlConvertible: URLRequestConvertible = try! endpoint.asURLRequest()
+    let dataRequest: DataRequest = session.request(urlConvertible)
+    
+    dataRequest
+      .validate()
+      .responseDecodable() { (response: DataResponse<T, AFError>) in
+        switch response.result
+        {
+        case let .success(data):
+          success?(data)
+        case let .failure(error):
+          print(error)
+        }
+    }
   }
+  
 }

@@ -16,6 +16,9 @@
 		16680163241A8E820051C0DD /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16680162241A8E820051C0DD /* LocationService.swift */; };
 		169F6B28241A3D4800B600DC /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169F6B27241A3D4800B600DC /* MapViewModel.swift */; };
 		16D897C724277C5600EE6BF3 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D897C624277C5600EE6BF3 /* ApiService.swift */; };
+		16DDF03424422A4300E2633E /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDF03324422A4300E2633E /* ApiEndpoint.swift */; };
+		16DDF0362442334700E2633E /* IncidentEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDF0352442334700E2633E /* IncidentEndpoint.swift */; };
+		16DDF038244235A500E2633E /* Incident.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDF037244235A500E2633E /* Incident.swift */; };
 		16E73F5724325E6100AD17AF /* IncidentApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E73F5624325E6100AD17AF /* IncidentApiService.swift */; };
 		C8B32937055AB4EF96F74A42 /* Pods_kpz_mpk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA19E5D9E328BC0FABB62F4 /* Pods_kpz_mpk.framework */; };
 /* End PBXBuildFile section */
@@ -33,6 +36,9 @@
 		16680162241A8E820051C0DD /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		169F6B27241A3D4800B600DC /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		16D897C624277C5600EE6BF3 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		16DDF03324422A4300E2633E /* ApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoint.swift; sourceTree = "<group>"; };
+		16DDF0352442334700E2633E /* IncidentEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentEndpoint.swift; sourceTree = "<group>"; };
+		16DDF037244235A500E2633E /* Incident.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Incident.swift; sourceTree = "<group>"; };
 		16E73F5624325E6100AD17AF /* IncidentApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentApiService.swift; sourceTree = "<group>"; };
 		81F756A9BC36FF56D54EB50A /* Pods-kpz-mpk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kpz-mpk.debug.xcconfig"; path = "Target Support Files/Pods-kpz-mpk/Pods-kpz-mpk.debug.xcconfig"; sourceTree = "<group>"; };
 		BBA19E5D9E328BC0FABB62F4 /* Pods_kpz_mpk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kpz_mpk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,7 +95,10 @@
 				169F6B25241A3ACE00B600DC /* ViewControllers */,
 				16680162241A8E820051C0DD /* LocationService.swift */,
 				16D897C624277C5600EE6BF3 /* ApiService.swift */,
+				16DDF0352442334700E2633E /* IncidentEndpoint.swift */,
+				16DDF03324422A4300E2633E /* ApiEndpoint.swift */,
 				16E73F5624325E6100AD17AF /* IncidentApiService.swift */,
+				16DDF037244235A500E2633E /* Incident.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -265,9 +274,12 @@
 				1630C16C240D365800203440 /* MapViewController.swift in Sources */,
 				1630C168240D365800203440 /* AppDelegate.swift in Sources */,
 				16D897C724277C5600EE6BF3 /* ApiService.swift in Sources */,
+				16DDF0362442334700E2633E /* IncidentEndpoint.swift in Sources */,
 				16680163241A8E820051C0DD /* LocationService.swift in Sources */,
 				1630C16A240D365800203440 /* SceneDelegate.swift in Sources */,
 				169F6B28241A3D4800B600DC /* MapViewModel.swift in Sources */,
+				16DDF03424422A4300E2633E /* ApiEndpoint.swift in Sources */,
+				16DDF038244235A500E2633E /* Incident.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

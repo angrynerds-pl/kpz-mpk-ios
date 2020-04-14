@@ -8,10 +8,23 @@
 
 import Foundation
 
-class IncidentApiService {
-  let apiService = ApiService()
+protocol IncidentApiServiceProtocole {
+  func getIncidents(success: (([Incident]) -> ())?)
+  func getIncident(id: String, success: ((Incident) -> ())?)
+}
+
+class IncidentApiService: IncidentApiServiceProtocole {
+  let apiService: ApiServiceProtocol = ApiService()
   
-  public init() {
-    
+  func getIncidents(success: (([Incident]) -> ())?) {
+    apiService.request(endpoint: IncidentEndpoint.getIncidents) { (response) in
+      success?(response)
+    }
+  }
+  
+  func getIncident(id: String, success: ((Incident) -> ())?) {
+    apiService.request(endpoint: IncidentEndpoint.getIncident(id: id)) { (response) in
+      success?(response)
+    }
   }
 }

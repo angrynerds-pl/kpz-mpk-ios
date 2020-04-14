@@ -12,11 +12,19 @@ import MapKit
 final class MapViewModel {
   private weak var presenter: MapViewControllerPresenter?
   let locationService = LocationService()
-  let incidentApiService = IncidentApiService()
+  let incidentApiService: IncidentApiServiceProtocole = IncidentApiService()
 
   init(presenter: MapViewControllerPresenter?) {
     self.presenter = presenter
     locationService.delegate = self
+    
+    incidentApiService.getIncidents { (incident) in
+      print(incident)
+    }
+    
+    incidentApiService.getIncident(id: "1") { (incident) in
+      print(incident)
+    }
   }
 
   func centerMapOnUser() {
