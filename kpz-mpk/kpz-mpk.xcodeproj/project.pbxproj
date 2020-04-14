@@ -77,6 +77,7 @@
 		1630C166240D365800203440 /* kpz-mpk */ = {
 			isa = PBXGroup;
 			children = (
+				16C783B82445A55C00375B88 /* API */,
 				169F6B24241A3ABA00B600DC /* Map */,
 				1630C167240D365800203440 /* AppDelegate.swift */,
 				1630C169240D365800203440 /* SceneDelegate.swift */,
@@ -94,11 +95,6 @@
 				169F6B26241A3AE200B600DC /* ViewModels */,
 				169F6B25241A3ACE00B600DC /* ViewControllers */,
 				16680162241A8E820051C0DD /* LocationService.swift */,
-				16D897C624277C5600EE6BF3 /* ApiService.swift */,
-				16DDF0352442334700E2633E /* IncidentEndpoint.swift */,
-				16DDF03324422A4300E2633E /* ApiEndpoint.swift */,
-				16E73F5624325E6100AD17AF /* IncidentApiService.swift */,
-				16DDF037244235A500E2633E /* Incident.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -117,6 +113,35 @@
 				169F6B27241A3D4800B600DC /* MapViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		16C783B82445A55C00375B88 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				16DDF037244235A500E2633E /* Incident.swift */,
+				16C783BB2445A5CA00375B88 /* APIServices */,
+				16C783BA2445A5B900375B88 /* Endpoints */,
+			);
+			name = API;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		16C783BA2445A5B900375B88 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				16DDF0352442334700E2633E /* IncidentEndpoint.swift */,
+				16DDF03324422A4300E2633E /* ApiEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		16C783BB2445A5CA00375B88 /* APIServices */ = {
+			isa = PBXGroup;
+			children = (
+				16D897C624277C5600EE6BF3 /* ApiService.swift */,
+				16E73F5624325E6100AD17AF /* IncidentApiService.swift */,
+			);
+			path = APIServices;
 			sourceTree = "<group>";
 		};
 		52889224BB2DC147E4560CEF /* Frameworks */ = {

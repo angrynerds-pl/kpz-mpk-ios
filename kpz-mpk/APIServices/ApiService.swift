@@ -26,9 +26,8 @@ class ApiService: ApiServiceProtocol {
     
     dataRequest
       .validate()
-      .responseDecodable() { (response: DataResponse<T, AFError>) in
-        switch response.result
-        {
+      .responseDecodable { (response: DataResponse<T, AFError>) in
+        switch response.result {
         case let .success(data):
           success?(data)
         case let .failure(error):
