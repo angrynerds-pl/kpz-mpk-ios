@@ -17,8 +17,14 @@ enum IncidenType: String, Codable {
   case noPassage = "no_passage"
 }
 
+struct IncidentLocation: Codable {
+  let latitude: Double
+  let longitude: Double
+}
+
 struct Incident: Codable {
   let id: String // Change to Int when API will be changed
   let description: String
   let type: IncidenType
+  let location: IncidentLocation
 }
