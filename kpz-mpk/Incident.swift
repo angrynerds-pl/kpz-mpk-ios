@@ -8,6 +8,17 @@
 
 import Foundation
 
+enum IncidenType: String, Codable {
+  case other = "other"
+  case derailment = "derailment"
+  case collision = "collision"
+  case noElectricity = "no_electricity"
+  case trackDamage = "track_damage"
+  case noPassage = "no_passage"
+}
+
 struct Incident: Codable {
+  let id: String // Change to Int when API will be changed
   let description: String
+  let type: IncidenType
 }
