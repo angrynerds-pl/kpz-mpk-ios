@@ -22,7 +22,7 @@ final class MapViewModel {
   
   func displayAnnotations() {
     incidentApiService.getIncidents { (incidents) in
-      let annotations = incidents.map{ IncidentAnnotation(forIncident: $0)}
+      let annotations = incidents.map { IncidentAnnotation(forIncident: $0)}
       self.presenter?.displayAnnotations(annotations: annotations)
     }
   }
