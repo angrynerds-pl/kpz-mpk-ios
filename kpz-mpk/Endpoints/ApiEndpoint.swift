@@ -34,22 +34,8 @@ extension ApiEndpoint {
   var bodyParameters: Encodable? {
     return nil
   }
-  
-  func asURLRequest() -> URLRequest {
-    let url = ApiConstants.baseURL
-    var request: URLRequest = URLRequest(url: url.appendingPathComponent(path))
-    
-    request.httpMethod = method.rawValue
-    
-    if let encodedRequest = try? encoding.encode(request, with: queryItems) {
-      request = encodedRequest
-    }
-    
-    request.httpBody = bodyParameters?.toJSONData()
-    return request
-  }
 }
 
-private extension Encodable {
+extension Encodable {
   func toJSONData() -> Data? { try? JSONEncoder().encode(self) }
 }

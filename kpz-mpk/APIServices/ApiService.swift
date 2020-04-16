@@ -21,7 +21,19 @@ class ApiService: ApiServiceProtocol {
   }()
   
   func request<T: Decodable>(endpoint: ApiEndpoint, success: ((T) -> ())?) {
-    let urlConvertible: URLRequestConvertible = endpoint.asURLRequest()
+    
+    let url = ApiConstants.baseURL
+    var request: URLRequest = URLRequest(url: url.appendingPathComponent(endpoint.path))
+    
+    request.httpMethod = endpoint.method.rawValue
+    
+    if let encodedRequest = try? endpoint.encoding.encode(request, with: endpoint.queryItems) {
+      request = encodedRequest
+    }
+    
+    request.httpBody = endpoint.bodyParameters?.toJSONData()
+    
+    let urlConvertible: URLRequestConvertible = request
     let dataRequest: DataRequest = session.request(urlConvertible)
     
     dataRequest
@@ -35,5 +47,5 @@ class ApiService: ApiServiceProtocol {
         }
     }
   }
-  
+
 }
