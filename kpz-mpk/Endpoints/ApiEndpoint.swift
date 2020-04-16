@@ -35,13 +35,16 @@ extension ApiEndpoint {
     return nil
   }
   
-  func asURLRequest() throws -> URLRequest {
-    let url = try "https://kpz-mpk-api.herokuapp.com/".asURL()
+  func asURLRequest() -> URLRequest {
+    let url = ApiConstants.baseURL
     var request: URLRequest = URLRequest(url: url.appendingPathComponent(path))
     
     request.httpMethod = method.rawValue
     
-    request = try encoding.encode(request, with: queryItems)
+    if let encodedRequest = try? encoding.encode(request, with: queryItems) {
+      request = encodedRequest
+    }
+    
     request.httpBody = bodyParameters?.toJSONData()
     return request
   }

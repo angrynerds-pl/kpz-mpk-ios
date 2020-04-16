@@ -13,6 +13,7 @@
 		1630C16F240D365800203440 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1630C16D240D365800203440 /* Main.storyboard */; };
 		1630C171240D365C00203440 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1630C170240D365C00203440 /* Assets.xcassets */; };
 		1630C174240D365C00203440 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1630C172240D365C00203440 /* LaunchScreen.storyboard */; };
+		16392D1E24485C1D00E227B6 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16392D1D24485C1D00E227B6 /* ApiConstants.swift */; };
 		16680163241A8E820051C0DD /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16680162241A8E820051C0DD /* LocationService.swift */; };
 		169F6B28241A3D4800B600DC /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169F6B27241A3D4800B600DC /* MapViewModel.swift */; };
 		16C783BE24479AEB00375B88 /* IncidentAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C783BD24479AEB00375B88 /* IncidentAnnotation.swift */; };
@@ -34,6 +35,7 @@
 		1630C170240D365C00203440 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1630C173240D365C00203440 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1630C175240D365C00203440 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16392D1D24485C1D00E227B6 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
 		16680162241A8E820051C0DD /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		169F6B27241A3D4800B600DC /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		16C783BD24479AEB00375B88 /* IncidentAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentAnnotation.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		16C783B82445A55C00375B88 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				16392D1D24485C1D00E227B6 /* ApiConstants.swift */,
 				16DDF037244235A500E2633E /* Incident.swift */,
 				16C783BB2445A5CA00375B88 /* APIServices */,
 				16C783BA2445A5B900375B88 /* Endpoints */,
@@ -306,6 +309,7 @@
 				16680163241A8E820051C0DD /* LocationService.swift in Sources */,
 				1630C16A240D365800203440 /* SceneDelegate.swift in Sources */,
 				169F6B28241A3D4800B600DC /* MapViewModel.swift in Sources */,
+				16392D1E24485C1D00E227B6 /* ApiConstants.swift in Sources */,
 				16DDF03424422A4300E2633E /* ApiEndpoint.swift in Sources */,
 				16DDF038244235A500E2633E /* Incident.swift in Sources */,
 				16C783BE24479AEB00375B88 /* IncidentAnnotation.swift in Sources */,

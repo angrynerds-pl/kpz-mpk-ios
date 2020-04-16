@@ -12,7 +12,7 @@ import Alamofire
 protocol ApiServiceProtocol {
   func request<T: Decodable>(endpoint: ApiEndpoint, success: ((T) -> ())?)
 }
-//swiftlint:disable force_try
+
 class ApiService: ApiServiceProtocol {
   
   // MARK: - Private Properties
@@ -21,7 +21,7 @@ class ApiService: ApiServiceProtocol {
   }()
   
   func request<T: Decodable>(endpoint: ApiEndpoint, success: ((T) -> ())?) {
-    let urlConvertible: URLRequestConvertible = try! endpoint.asURLRequest()
+    let urlConvertible: URLRequestConvertible = endpoint.asURLRequest()
     let dataRequest: DataRequest = session.request(urlConvertible)
     
     dataRequest
