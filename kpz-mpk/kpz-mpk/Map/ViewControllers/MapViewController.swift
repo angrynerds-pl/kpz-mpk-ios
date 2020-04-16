@@ -43,7 +43,7 @@ class MapViewController: UIViewController {
   }
   
   private func registerMapAnnotationViews() {
-    mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(IncidentAnnotation.self))
+    mapView.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(IncidentAnnotation.self))
   }
 }
 
@@ -99,6 +99,7 @@ extension MapViewController: MKMapViewDelegate {
     let flagAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier, for: annotation)
     
     flagAnnotationView.image = UIImage(named: "flag")
+    print("Wyswietlam flage")
     
     return flagAnnotationView
   }
