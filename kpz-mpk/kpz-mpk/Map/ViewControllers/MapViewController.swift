@@ -13,6 +13,7 @@ protocol MapViewControllerPresenter: NSObject {
   func centerMap(coordinateRegion: MKCoordinateRegion)
   func displayCenterLocation(latitudeText: String, longitude: String)
   func setUpUI()
+  func displayAnnotations(annotations: [MKAnnotation])
 }
 
 class MapViewController: UIViewController {
@@ -37,6 +38,7 @@ class MapViewController: UIViewController {
     mapView.delegate = self
     viewModel.centerMapOnUser()
     setUpUI()
+    viewModel.displayAnnotations()
   }
 }
 
@@ -61,6 +63,10 @@ extension MapViewController: MapViewControllerPresenter {
 
     //Location Pick Icon
     locationPickingView.isHidden = true //We will toogle it when user would like to report incident
+  }
+  
+  func displayAnnotations(annotations: [MKAnnotation]) {
+    mapView.addAnnotations(annotations)
   }
 }
 
