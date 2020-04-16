@@ -17,7 +17,7 @@ protocol MapViewControllerPresenter: NSObject {
 }
 
 class MapViewController: UIViewController {
-
+  
   @IBOutlet private weak var locationPickIcon: UIImageView!
   @IBOutlet private weak var centerMapButton: UIButton!
   @IBOutlet private weak var centerMapButtonView: UIView!
@@ -25,20 +25,25 @@ class MapViewController: UIViewController {
   @IBOutlet private weak var pickLocationUpLabel: UILabel!
   @IBOutlet private weak var pickLocationDownLabel: UILabel!
   @IBOutlet private weak var locationPickingView: UIView!
-
+  
   @IBAction private func centerMapButtonPressed(_ sender: UIButton) {
     viewModel.centerMapOnUser()
   }
-
+  
   lazy var viewModel = MapViewModel(presenter: self)
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    
+    registerMapAnnotationViews()
     mapView.delegate = self
     viewModel.centerMapOnUser()
     setUpUI()
     viewModel.displayAnnotations()
+  }
+  
+  private func registerMapAnnotationViews() {
+    mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(IncidentAnnotation.self))
   }
 }
 
@@ -46,12 +51,12 @@ extension MapViewController: MapViewControllerPresenter {
   func centerMap(coordinateRegion: MKCoordinateRegion) {
     mapView.setRegion(coordinateRegion, animated: true)
   }
-
+  
   func displayCenterLocation(latitudeText: String, longitude: String) {
     pickLocationUpLabel.text = "Center lat -> \(latitudeText)"
     pickLocationDownLabel.text = "Center long -> \(longitude)"
   }
-
+  
   func setUpUI() {
     //Center Map Button
     centerMapButtonView.layer.cornerRadius = centerMapButtonView.bounds.width / 2
@@ -60,7 +65,7 @@ extension MapViewController: MapViewControllerPresenter {
     centerMapButtonView.layer.shadowOffset = .zero
     centerMapButtonView.layer.shadowRadius = 10
     centerMapButton.setImage(UIImage(systemName: "location.fill"), for: .normal)
-
+    
     //Location Pick Icon
     locationPickingView.isHidden = true //We will toogle it when user would like to report incident
   }
@@ -74,4 +79,28 @@ extension MapViewController: MKMapViewDelegate {
   func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
     viewModel.displayCenterLocation(for: mapView.centerCoordinate)
   }
+  
+  func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    guard !annotation.isKind(of: MKUserLocation.self) else {
+      return nil
+    }
+    
+    var annotationView: MKAnnotationView?
+    
+    if let annotation = annotation as? IncidentAnnotation {
+      annotationView = setupIncidentAnnotationView(for: annotation, on: mapView)
+    }
+    
+    return annotationView
+  }
+  
+  private func setupIncidentAnnotationView(for annotation: IncidentAnnotation, on mapView: MKMapView) -> MKAnnotationView {
+    let reuseIdentifier = NSStringFromClass(IncidentAnnotation.self)
+    let flagAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier, for: annotation)
+    
+    flagAnnotationView.image = UIImage(named: "flag")
+    
+    return flagAnnotationView
+  }
+  
 }
