@@ -1,6 +1,0 @@
-framework module Pods_kpz_mpk {
-  umbrella header "Pods-kpz-mpk-umbrella.h"
-
-  export *
-  module * { export * }
-}

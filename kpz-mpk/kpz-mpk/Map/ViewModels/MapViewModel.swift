@@ -12,13 +12,21 @@ import MapKit
 final class MapViewModel {
   private weak var presenter: MapViewControllerPresenter?
   let locationService = LocationService()
-  let apiService = ApiService()
-
+  let incidentApiService: IncidentApiServiceProtocole = IncidentApiService()
+  
   init(presenter: MapViewControllerPresenter?) {
     self.presenter = presenter
+    
     locationService.delegate = self
   }
-
+  
+  func displayAnnotations() {
+    incidentApiService.getIncidents { (incidents) in
+      let annotations = incidents.map { IncidentAnnotation(forIncident: $0)}
+      self.presenter?.displayAnnotations(annotations: annotations)
+    }
+  }
+  
   func centerMapOnUser() {
     let regionRadius: Double = 1000
     let coordinateRegion = MKCoordinateRegion(
@@ -28,7 +36,7 @@ final class MapViewModel {
           longitude: 17.02193),
       latitudinalMeters: regionRadius,
       longitudinalMeters: regionRadius)
-
+    
     presenter?.centerMap(coordinateRegion: coordinateRegion)
   }
   
@@ -45,10 +53,10 @@ extension MapViewModel: LocationServiceDelegate {
   func locationService(didUpdateInitialLocation location: CLLocation) {
     centerMapOnUser()
   }
-
+  
   func locationService(didUpdateLocation location: CLLocation) {
   }
-
+  
   func locationService(didChangeAuthorization isAuthorized: Bool) {
   }
 }

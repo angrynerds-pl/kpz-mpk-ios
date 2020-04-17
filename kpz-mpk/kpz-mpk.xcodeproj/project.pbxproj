@@ -3,24 +3,34 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		160B79AD2449E76A00720DCE /* IncidentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79AC2449E76A00720DCE /* IncidentType.swift */; };
+		160B79AF2449E79200720DCE /* IncidentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79AE2449E79200720DCE /* IncidentLocation.swift */; };
 		1630C168240D365800203440 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630C167240D365800203440 /* AppDelegate.swift */; };
 		1630C16A240D365800203440 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630C169240D365800203440 /* SceneDelegate.swift */; };
 		1630C16C240D365800203440 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630C16B240D365800203440 /* MapViewController.swift */; };
 		1630C16F240D365800203440 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1630C16D240D365800203440 /* Main.storyboard */; };
 		1630C171240D365C00203440 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1630C170240D365C00203440 /* Assets.xcassets */; };
 		1630C174240D365C00203440 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1630C172240D365C00203440 /* LaunchScreen.storyboard */; };
+		16392D1E24485C1D00E227B6 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16392D1D24485C1D00E227B6 /* ApiConstants.swift */; };
 		16680163241A8E820051C0DD /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16680162241A8E820051C0DD /* LocationService.swift */; };
 		169F6B28241A3D4800B600DC /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169F6B27241A3D4800B600DC /* MapViewModel.swift */; };
+		16C783BE24479AEB00375B88 /* IncidentAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C783BD24479AEB00375B88 /* IncidentAnnotation.swift */; };
 		16D897C724277C5600EE6BF3 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D897C624277C5600EE6BF3 /* ApiService.swift */; };
+		16DDF03424422A4300E2633E /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDF03324422A4300E2633E /* ApiEndpoint.swift */; };
+		16DDF0362442334700E2633E /* IncidentEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDF0352442334700E2633E /* IncidentEndpoint.swift */; };
+		16DDF038244235A500E2633E /* Incident.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDF037244235A500E2633E /* Incident.swift */; };
+		16E73F5724325E6100AD17AF /* IncidentApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E73F5624325E6100AD17AF /* IncidentApiService.swift */; };
 		C8B32937055AB4EF96F74A42 /* Pods_kpz_mpk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA19E5D9E328BC0FABB62F4 /* Pods_kpz_mpk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		008484BDEDE3B5826E80B1BA /* Pods-kpz-mpk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kpz-mpk.release.xcconfig"; path = "Target Support Files/Pods-kpz-mpk/Pods-kpz-mpk.release.xcconfig"; sourceTree = "<group>"; };
+		160B79AC2449E76A00720DCE /* IncidentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentType.swift; sourceTree = "<group>"; };
+		160B79AE2449E79200720DCE /* IncidentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentLocation.swift; sourceTree = "<group>"; };
 		1630C164240D365800203440 /* kpz-mpk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kpz-mpk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1630C167240D365800203440 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1630C169240D365800203440 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,9 +39,15 @@
 		1630C170240D365C00203440 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1630C173240D365C00203440 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1630C175240D365C00203440 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16392D1D24485C1D00E227B6 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
 		16680162241A8E820051C0DD /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		169F6B27241A3D4800B600DC /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		16C783BD24479AEB00375B88 /* IncidentAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentAnnotation.swift; sourceTree = "<group>"; };
 		16D897C624277C5600EE6BF3 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		16DDF03324422A4300E2633E /* ApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoint.swift; sourceTree = "<group>"; };
+		16DDF0352442334700E2633E /* IncidentEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentEndpoint.swift; sourceTree = "<group>"; };
+		16DDF037244235A500E2633E /* Incident.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Incident.swift; sourceTree = "<group>"; };
+		16E73F5624325E6100AD17AF /* IncidentApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentApiService.swift; sourceTree = "<group>"; };
 		81F756A9BC36FF56D54EB50A /* Pods-kpz-mpk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kpz-mpk.debug.xcconfig"; path = "Target Support Files/Pods-kpz-mpk/Pods-kpz-mpk.debug.xcconfig"; sourceTree = "<group>"; };
 		BBA19E5D9E328BC0FABB62F4 /* Pods_kpz_mpk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kpz_mpk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -48,6 +64,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		160B79AB2449E6AA00720DCE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				16DDF037244235A500E2633E /* Incident.swift */,
+				160B79AC2449E76A00720DCE /* IncidentType.swift */,
+				160B79AE2449E79200720DCE /* IncidentLocation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1630C15B240D365800203440 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +95,7 @@
 		1630C166240D365800203440 /* kpz-mpk */ = {
 			isa = PBXGroup;
 			children = (
+				16C783B82445A55C00375B88 /* API */,
 				169F6B24241A3ABA00B600DC /* Map */,
 				1630C167240D365800203440 /* AppDelegate.swift */,
 				1630C169240D365800203440 /* SceneDelegate.swift */,
@@ -86,7 +113,7 @@
 				169F6B26241A3AE200B600DC /* ViewModels */,
 				169F6B25241A3ACE00B600DC /* ViewControllers */,
 				16680162241A8E820051C0DD /* LocationService.swift */,
-				16D897C624277C5600EE6BF3 /* ApiService.swift */,
+				16C783BD24479AEB00375B88 /* IncidentAnnotation.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -105,6 +132,36 @@
 				169F6B27241A3D4800B600DC /* MapViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		16C783B82445A55C00375B88 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				160B79AB2449E6AA00720DCE /* Models */,
+				16392D1D24485C1D00E227B6 /* ApiConstants.swift */,
+				16C783BB2445A5CA00375B88 /* APIServices */,
+				16C783BA2445A5B900375B88 /* Endpoints */,
+			);
+			name = API;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		16C783BA2445A5B900375B88 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				16DDF0352442334700E2633E /* IncidentEndpoint.swift */,
+				16DDF03324422A4300E2633E /* ApiEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		16C783BB2445A5CA00375B88 /* APIServices */ = {
+			isa = PBXGroup;
+			children = (
+				16D897C624277C5600EE6BF3 /* ApiService.swift */,
+				16E73F5624325E6100AD17AF /* IncidentApiService.swift */,
+			);
+			path = APIServices;
 			sourceTree = "<group>";
 		};
 		52889224BB2DC147E4560CEF /* Frameworks */ = {
@@ -131,11 +188,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1630C178240D365C00203440 /* Build configuration list for PBXNativeTarget "kpz-mpk" */;
 			buildPhases = (
-				16DCB63A240D3F1C005FA746 /* ShellScript */,
 				39355F5F16DF2694305A3357 /* [CP] Check Pods Manifest.lock */,
 				1630C160240D365800203440 /* Sources */,
 				1630C161240D365800203440 /* Frameworks */,
 				1630C162240D365800203440 /* Resources */,
+				16DCB63A240D3F1C005FA746 /* Swiftlint */,
+				1E999FF9C2575C4510334BF2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,7 +251,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		16DCB63A240D3F1C005FA746 /* ShellScript */ = {
+		16DCB63A240D3F1C005FA746 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -202,6 +260,7 @@
 			);
 			inputPaths = (
 			);
+			name = Swiftlint;
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -209,6 +268,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		1E999FF9C2575C4510334BF2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kpz-mpk/Pods-kpz-mpk-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kpz-mpk/Pods-kpz-mpk-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kpz-mpk/Pods-kpz-mpk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		39355F5F16DF2694305A3357 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -239,12 +315,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16E73F5724325E6100AD17AF /* IncidentApiService.swift in Sources */,
 				1630C16C240D365800203440 /* MapViewController.swift in Sources */,
 				1630C168240D365800203440 /* AppDelegate.swift in Sources */,
 				16D897C724277C5600EE6BF3 /* ApiService.swift in Sources */,
+				160B79AF2449E79200720DCE /* IncidentLocation.swift in Sources */,
+				16DDF0362442334700E2633E /* IncidentEndpoint.swift in Sources */,
 				16680163241A8E820051C0DD /* LocationService.swift in Sources */,
+				160B79AD2449E76A00720DCE /* IncidentType.swift in Sources */,
 				1630C16A240D365800203440 /* SceneDelegate.swift in Sources */,
 				169F6B28241A3D4800B600DC /* MapViewModel.swift in Sources */,
+				16392D1E24485C1D00E227B6 /* ApiConstants.swift in Sources */,
+				16DDF03424422A4300E2633E /* ApiEndpoint.swift in Sources */,
+				16DDF038244235A500E2633E /* Incident.swift in Sources */,
+				16C783BE24479AEB00375B88 /* IncidentAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

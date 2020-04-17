@@ -1,7 +1,8 @@
-platform :ios, '9.0'
+inhibit_all_warnings!
+platform :ios, '13.0'
 
 target 'kpz-mpk' do
   use_frameworks!
-  pod 'SwiftLint'
-  
+  pod 'SwiftLint', '~> 0.39.1'
+  pod 'Alamofire', '~> 5.0'
 end

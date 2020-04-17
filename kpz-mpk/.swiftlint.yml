@@ -16,3 +16,5 @@ identifier_name:
     - URL
     - x
     - y
+excluded:
+  - /Pods
