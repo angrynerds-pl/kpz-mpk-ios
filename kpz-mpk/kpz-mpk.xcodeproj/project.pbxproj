@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		160B79AD2449E76A00720DCE /* IncidentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79AC2449E76A00720DCE /* IncidentType.swift */; };
+		160B79AF2449E79200720DCE /* IncidentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79AE2449E79200720DCE /* IncidentLocation.swift */; };
 		1630C168240D365800203440 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630C167240D365800203440 /* AppDelegate.swift */; };
 		1630C16A240D365800203440 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630C169240D365800203440 /* SceneDelegate.swift */; };
 		1630C16C240D365800203440 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630C16B240D365800203440 /* MapViewController.swift */; };
@@ -27,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		008484BDEDE3B5826E80B1BA /* Pods-kpz-mpk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kpz-mpk.release.xcconfig"; path = "Target Support Files/Pods-kpz-mpk/Pods-kpz-mpk.release.xcconfig"; sourceTree = "<group>"; };
+		160B79AC2449E76A00720DCE /* IncidentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentType.swift; sourceTree = "<group>"; };
+		160B79AE2449E79200720DCE /* IncidentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentLocation.swift; sourceTree = "<group>"; };
 		1630C164240D365800203440 /* kpz-mpk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kpz-mpk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1630C167240D365800203440 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1630C169240D365800203440 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +64,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		160B79AB2449E6AA00720DCE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				16DDF037244235A500E2633E /* Incident.swift */,
+				160B79AC2449E76A00720DCE /* IncidentType.swift */,
+				160B79AE2449E79200720DCE /* IncidentLocation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1630C15B240D365800203440 = {
 			isa = PBXGroup;
 			children = (
@@ -123,8 +137,8 @@
 		16C783B82445A55C00375B88 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				160B79AB2449E6AA00720DCE /* Models */,
 				16392D1D24485C1D00E227B6 /* ApiConstants.swift */,
-				16DDF037244235A500E2633E /* Incident.swift */,
 				16C783BB2445A5CA00375B88 /* APIServices */,
 				16C783BA2445A5B900375B88 /* Endpoints */,
 			);
@@ -305,8 +319,10 @@
 				1630C16C240D365800203440 /* MapViewController.swift in Sources */,
 				1630C168240D365800203440 /* AppDelegate.swift in Sources */,
 				16D897C724277C5600EE6BF3 /* ApiService.swift in Sources */,
+				160B79AF2449E79200720DCE /* IncidentLocation.swift in Sources */,
 				16DDF0362442334700E2633E /* IncidentEndpoint.swift in Sources */,
 				16680163241A8E820051C0DD /* LocationService.swift in Sources */,
+				160B79AD2449E76A00720DCE /* IncidentType.swift in Sources */,
 				1630C16A240D365800203440 /* SceneDelegate.swift in Sources */,
 				169F6B28241A3D4800B600DC /* MapViewModel.swift in Sources */,
 				16392D1E24485C1D00E227B6 /* ApiConstants.swift in Sources */,
