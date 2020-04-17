@@ -96,12 +96,26 @@ extension MapViewController: MKMapViewDelegate {
   
   private func setupIncidentAnnotationView(for annotation: IncidentAnnotation, on mapView: MKMapView) -> MKAnnotationView {
     let reuseIdentifier = NSStringFromClass(IncidentAnnotation.self)
-    let flagAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier, for: annotation)
+    let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier, for: annotation)
     
-    flagAnnotationView.image = UIImage(named: "flag")
-    print("Wyswietlam flage")
+    annotationView.image = UIImage(named: "otherIncident")
     
-    return flagAnnotationView
+    switch annotation.incident.type {
+    case .collision:
+      annotationView.image = UIImage(named: "collision")
+    case .derailment:
+      annotationView.image = UIImage(named: "derailment")
+    case .noElectricity:
+      annotationView.image = UIImage(named: "noElectricity")
+    case .noPassage:
+      annotationView.image = UIImage(named: "otherIncident")
+    case .trackDamage:
+      annotationView.image = UIImage(named: "trackDamage")
+    case .other:
+      annotationView.image = UIImage(named: "otherIncident")
+    }
+    
+    return annotationView
   }
   
 }
