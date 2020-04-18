@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfB-Ne-JWv">
-                                <rect key="frame" x="315" y="776" width="64" height="64"/>
+                                <rect key="frame" x="315" y="708" width="64" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQE-vO-mWQ">
                                         <rect key="frame" x="18.333333333333314" y="19" width="27.666666666666671" height="26"/>
@@ -92,7 +92,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKy-ID-ExK">
-                                <rect key="frame" x="107" y="787" width="200" height="42"/>
+                                <rect key="frame" x="107" y="798" width="200" height="41"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Report">
@@ -103,19 +103,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="lQW-d6-XEV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="72" id="2Ze-Sc-Mij"/>
-                            <constraint firstItem="FAY-ew-xb2" firstAttribute="top" secondItem="hfB-Ne-JWv" secondAttribute="bottom" constant="22" id="8Tl-0D-Jhg"/>
+                            <constraint firstItem="FAY-ew-xb2" firstAttribute="top" secondItem="hfB-Ne-JWv" secondAttribute="bottom" constant="90" id="8Tl-0D-Jhg"/>
+                            <constraint firstItem="JKy-ID-ExK" firstAttribute="centerX" secondItem="lQW-d6-XEV" secondAttribute="centerX" id="9rO-ya-M52"/>
                             <constraint firstItem="sLv-TG-Bt6" firstAttribute="centerY" secondItem="lQW-d6-XEV" secondAttribute="centerY" id="JTO-SA-MQM"/>
-                            <constraint firstItem="FAY-ew-xb2" firstAttribute="top" secondItem="JKy-ID-ExK" secondAttribute="bottom" constant="33" id="LDn-6R-deZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hfB-Ne-JWv" secondAttribute="trailing" constant="15" id="LTn-7V-jWz"/>
                             <constraint firstItem="lQW-d6-XEV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Nbf-si-PO0"/>
-                            <constraint firstItem="JKy-ID-ExK" firstAttribute="centerY" secondItem="hfB-Ne-JWv" secondAttribute="centerY" id="QvK-t4-cbo"/>
+                            <constraint firstItem="FAY-ew-xb2" firstAttribute="top" secondItem="JKy-ID-ExK" secondAttribute="bottom" constant="23" id="PqM-ay-otl"/>
                             <constraint firstItem="sLv-TG-Bt6" firstAttribute="centerX" secondItem="lQW-d6-XEV" secondAttribute="centerX" id="Udm-VB-oo2"/>
                             <constraint firstItem="lQW-d6-XEV" firstAttribute="top" secondItem="XMo-xT-HoI" secondAttribute="bottom" constant="306" id="cMe-nd-7JX"/>
                             <constraint firstItem="lQW-d6-XEV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i1g-sH-SnD"/>
-                            <constraint firstItem="sLv-TG-Bt6" firstAttribute="centerX" secondItem="JKy-ID-ExK" secondAttribute="centerX" id="iR4-Zt-IVz"/>
                             <constraint firstItem="sLv-TG-Bt6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="j0a-qa-uvD"/>
                             <constraint firstItem="sLv-TG-Bt6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-44" id="jIy-eb-FOy"/>
-                            <constraint firstItem="hfB-Ne-JWv" firstAttribute="leading" secondItem="JKy-ID-ExK" secondAttribute="trailing" constant="8" id="mPD-1u-viM"/>
+                            <constraint firstItem="JKy-ID-ExK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="87" id="wHc-NC-ble"/>
                         </constraints>
                     </view>
                     <connections>

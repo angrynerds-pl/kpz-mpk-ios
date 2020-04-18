@@ -67,12 +67,15 @@ extension MapViewController: MapViewControllerPresenter {
     centerMapButtonView.layer.shadowRadius = 10
     centerMapButton.setImage(UIImage(systemName: "location.fill"), for: .normal)
     
+    //Report Button
     reportButton.contentEdgeInsets = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
     reportButton.layer.cornerRadius = reportButton.bounds.height / 2
     reportButton.layer.shadowColor = UIColor.gray.cgColor
     reportButton.layer.shadowOpacity = 1
     reportButton.layer.shadowOffset = .zero
     reportButton.layer.shadowRadius = 10
+    
+    //Cancel Button
     
     //Location Pick Icon
     locationPickingView.isHidden = true //We will toogle it when user would like to report incident
