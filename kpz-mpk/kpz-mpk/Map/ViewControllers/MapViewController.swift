@@ -13,11 +13,13 @@ protocol MapViewControllerPresenter: NSObject {
   func centerMap(coordinateRegion: MKCoordinateRegion)
   func displayCenterLocation(latitudeText: String, longitude: String)
   func setUpUI()
+  func setUpButton(button: UIButton)
   func displayAnnotations(annotations: [MKAnnotation])
 }
 
 class MapViewController: UIViewController {
   
+  @IBOutlet weak var confirmButton: UIButton!
   @IBOutlet private weak var reportButton: UIButton!
   @IBOutlet private weak var locationPickIcon: UIImageView!
   @IBOutlet private weak var centerMapButton: UIButton!
@@ -41,6 +43,20 @@ class MapViewController: UIViewController {
     viewModel.centerMapOnUser()
     setUpUI()
     viewModel.displayAnnotations()
+  }
+  
+  @IBAction func reportButtonPressed(_ sender: UIButton) {
+    reportButton.isHidden = true
+    confirmButton.isHidden = false
+    locationPickingView.isHidden = false
+    print("Report")
+  }
+  
+  @IBAction func confirmButtonPressed(_ sender: UIButton) {
+    confirmButton.isHidden = true
+    reportButton.isHidden = false
+    locationPickingView.isHidden = true
+    print("Confirm")
   }
   
   private func registerMapAnnotationViews() {
@@ -68,17 +84,23 @@ extension MapViewController: MapViewControllerPresenter {
     centerMapButton.setImage(UIImage(systemName: "location.fill"), for: .normal)
     
     //Report Button
-    reportButton.contentEdgeInsets = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
-    reportButton.layer.cornerRadius = reportButton.bounds.height / 2
-    reportButton.layer.shadowColor = UIColor.gray.cgColor
-    reportButton.layer.shadowOpacity = 1
-    reportButton.layer.shadowOffset = .zero
-    reportButton.layer.shadowRadius = 10
+    setUpButton(button: reportButton)
     
-    //Cancel Button
+    //Confirm Button
+    setUpButton(button: confirmButton)
+    confirmButton.isHidden = true
     
     //Location Pick Icon
     locationPickingView.isHidden = true //We will toogle it when user would like to report incident
+  }
+  
+  func setUpButton(button: UIButton) {
+    button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
+    button.layer.cornerRadius = reportButton.bounds.height / 2
+    button.layer.shadowColor = UIColor.gray.cgColor
+    button.layer.shadowOpacity = 1
+    button.layer.shadowOffset = .zero
+    button.layer.shadowRadius = 10
   }
   
   func displayAnnotations(annotations: [MKAnnotation]) {

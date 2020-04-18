@@ -91,35 +91,60 @@
                                     <constraint firstItem="RLQ-GV-yLv" firstAttribute="centerX" secondItem="lQW-d6-XEV" secondAttribute="centerX" id="wxq-eh-6AX"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKy-ID-ExK">
-                                <rect key="frame" x="107" y="798" width="200" height="41"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKy-ID-ExK">
+                                <rect key="frame" x="107" y="797" width="200" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="8Mr-Sc-3NO"/>
+                                    <constraint firstAttribute="height" constant="42" id="t4k-8h-v6n"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Report">
                                     <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="reportButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BSq-OG-iet"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQj-gW-8bo" userLabel="Confirm Button">
+                                <rect key="frame" x="107" y="797" width="200" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="GID-pq-GEh"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="y3j-0R-Mg7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Confirm">
+                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="confirmButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mzG-T8-lzM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="lQW-d6-XEV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="72" id="2Ze-Sc-Mij"/>
                             <constraint firstItem="FAY-ew-xb2" firstAttribute="top" secondItem="hfB-Ne-JWv" secondAttribute="bottom" constant="90" id="8Tl-0D-Jhg"/>
-                            <constraint firstItem="JKy-ID-ExK" firstAttribute="centerX" secondItem="lQW-d6-XEV" secondAttribute="centerX" id="9rO-ya-M52"/>
+                            <constraint firstItem="hQj-gW-8bo" firstAttribute="baseline" secondItem="JKy-ID-ExK" secondAttribute="baseline" id="CSI-Jf-HOc"/>
                             <constraint firstItem="sLv-TG-Bt6" firstAttribute="centerY" secondItem="lQW-d6-XEV" secondAttribute="centerY" id="JTO-SA-MQM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hfB-Ne-JWv" secondAttribute="trailing" constant="15" id="LTn-7V-jWz"/>
                             <constraint firstItem="lQW-d6-XEV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Nbf-si-PO0"/>
-                            <constraint firstItem="FAY-ew-xb2" firstAttribute="top" secondItem="JKy-ID-ExK" secondAttribute="bottom" constant="23" id="PqM-ay-otl"/>
                             <constraint firstItem="sLv-TG-Bt6" firstAttribute="centerX" secondItem="lQW-d6-XEV" secondAttribute="centerX" id="Udm-VB-oo2"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hQj-gW-8bo" secondAttribute="trailing" constant="20" symbolic="YES" id="Xff-ze-pIl"/>
                             <constraint firstItem="lQW-d6-XEV" firstAttribute="top" secondItem="XMo-xT-HoI" secondAttribute="bottom" constant="306" id="cMe-nd-7JX"/>
                             <constraint firstItem="lQW-d6-XEV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i1g-sH-SnD"/>
                             <constraint firstItem="sLv-TG-Bt6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="j0a-qa-uvD"/>
                             <constraint firstItem="sLv-TG-Bt6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-44" id="jIy-eb-FOy"/>
-                            <constraint firstItem="JKy-ID-ExK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="87" id="wHc-NC-ble"/>
+                            <constraint firstItem="FAY-ew-xb2" firstAttribute="top" secondItem="JKy-ID-ExK" secondAttribute="bottom" constant="23" id="utT-Pf-iWC"/>
+                            <constraint firstItem="JKy-ID-ExK" firstAttribute="centerX" secondItem="lQW-d6-XEV" secondAttribute="centerX" id="yCL-Me-Xd2"/>
+                            <constraint firstItem="hQj-gW-8bo" firstAttribute="leading" secondItem="JKy-ID-ExK" secondAttribute="leading" id="zcT-Zr-3tC"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="centerMapButton" destination="xQE-vO-mWQ" id="mhG-Ml-WGJ"/>
                         <outlet property="centerMapButtonView" destination="hfB-Ne-JWv" id="2pV-pw-CJa"/>
+                        <outlet property="confirmButton" destination="hQj-gW-8bo" id="o3J-t8-xrG"/>
                         <outlet property="locationPickIcon" destination="RLQ-GV-yLv" id="sN8-bx-lHO"/>
                         <outlet property="locationPickingView" destination="lQW-d6-XEV" id="LSs-ta-scm"/>
                         <outlet property="mapView" destination="sLv-TG-Bt6" id="dh8-ZE-2tE"/>
