@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" rotateEnabled="NO" showsUserLocation="YES" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLv-TG-Bt6">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" showsUserLocation="YES" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLv-TG-Bt6">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfB-Ne-JWv">
                                 <rect key="frame" x="315" y="776" width="64" height="64"/>
@@ -92,15 +91,31 @@
                                     <constraint firstItem="RLQ-GV-yLv" firstAttribute="centerX" secondItem="lQW-d6-XEV" secondAttribute="centerX" id="wxq-eh-6AX"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKy-ID-ExK">
+                                <rect key="frame" x="107" y="787" width="200" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Report">
+                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="lQW-d6-XEV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="72" id="2Ze-Sc-Mij"/>
                             <constraint firstItem="FAY-ew-xb2" firstAttribute="top" secondItem="hfB-Ne-JWv" secondAttribute="bottom" constant="22" id="8Tl-0D-Jhg"/>
+                            <constraint firstItem="sLv-TG-Bt6" firstAttribute="centerY" secondItem="lQW-d6-XEV" secondAttribute="centerY" id="JTO-SA-MQM"/>
+                            <constraint firstItem="FAY-ew-xb2" firstAttribute="top" secondItem="JKy-ID-ExK" secondAttribute="bottom" constant="33" id="LDn-6R-deZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hfB-Ne-JWv" secondAttribute="trailing" constant="15" id="LTn-7V-jWz"/>
                             <constraint firstItem="lQW-d6-XEV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Nbf-si-PO0"/>
+                            <constraint firstItem="JKy-ID-ExK" firstAttribute="centerY" secondItem="hfB-Ne-JWv" secondAttribute="centerY" id="QvK-t4-cbo"/>
+                            <constraint firstItem="sLv-TG-Bt6" firstAttribute="centerX" secondItem="lQW-d6-XEV" secondAttribute="centerX" id="Udm-VB-oo2"/>
                             <constraint firstItem="lQW-d6-XEV" firstAttribute="top" secondItem="XMo-xT-HoI" secondAttribute="bottom" constant="306" id="cMe-nd-7JX"/>
                             <constraint firstItem="lQW-d6-XEV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i1g-sH-SnD"/>
+                            <constraint firstItem="sLv-TG-Bt6" firstAttribute="centerX" secondItem="JKy-ID-ExK" secondAttribute="centerX" id="iR4-Zt-IVz"/>
+                            <constraint firstItem="sLv-TG-Bt6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="j0a-qa-uvD"/>
+                            <constraint firstItem="sLv-TG-Bt6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-44" id="jIy-eb-FOy"/>
+                            <constraint firstItem="hfB-Ne-JWv" firstAttribute="leading" secondItem="JKy-ID-ExK" secondAttribute="trailing" constant="8" id="mPD-1u-viM"/>
                         </constraints>
                     </view>
                     <connections>
@@ -111,6 +126,7 @@
                         <outlet property="mapView" destination="sLv-TG-Bt6" id="dh8-ZE-2tE"/>
                         <outlet property="pickLocationDownLabel" destination="S8u-oU-PFF" id="fLQ-NL-bjw"/>
                         <outlet property="pickLocationUpLabel" destination="lxL-s9-twD" id="3ds-jK-z4n"/>
+                        <outlet property="reportButton" destination="JKy-ID-ExK" id="naa-Cy-tXf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -120,6 +136,6 @@
     </scenes>
     <resources>
         <image name="LocationPickIcon" width="125" height="131"/>
-        <image name="location.fill" catalog="system" width="64" height="56"/>
+        <image name="location.fill" catalog="system" width="128" height="115"/>
     </resources>
 </document>

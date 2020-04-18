@@ -18,6 +18,7 @@ protocol MapViewControllerPresenter: NSObject {
 
 class MapViewController: UIViewController {
   
+  @IBOutlet private weak var reportButton: UIButton!
   @IBOutlet private weak var locationPickIcon: UIImageView!
   @IBOutlet private weak var centerMapButton: UIButton!
   @IBOutlet private weak var centerMapButtonView: UIView!
@@ -65,6 +66,13 @@ extension MapViewController: MapViewControllerPresenter {
     centerMapButtonView.layer.shadowOffset = .zero
     centerMapButtonView.layer.shadowRadius = 10
     centerMapButton.setImage(UIImage(systemName: "location.fill"), for: .normal)
+    
+    reportButton.contentEdgeInsets = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
+    reportButton.layer.cornerRadius = reportButton.bounds.height / 2
+    reportButton.layer.shadowColor = UIColor.gray.cgColor
+    reportButton.layer.shadowOpacity = 1
+    reportButton.layer.shadowOffset = .zero
+    reportButton.layer.shadowRadius = 10
     
     //Location Pick Icon
     locationPickingView.isHidden = true //We will toogle it when user would like to report incident
