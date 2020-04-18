@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		160B79AD2449E76A00720DCE /* IncidentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79AC2449E76A00720DCE /* IncidentType.swift */; };
 		160B79AF2449E79200720DCE /* IncidentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79AE2449E79200720DCE /* IncidentLocation.swift */; };
+		160B79B4244B862700720DCE /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79B3244B862700720DCE /* RoundedButton.swift */; };
 		1630C168240D365800203440 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630C167240D365800203440 /* AppDelegate.swift */; };
 		1630C16A240D365800203440 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630C169240D365800203440 /* SceneDelegate.swift */; };
 		1630C16C240D365800203440 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630C16B240D365800203440 /* MapViewController.swift */; };
@@ -31,6 +32,7 @@
 		008484BDEDE3B5826E80B1BA /* Pods-kpz-mpk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kpz-mpk.release.xcconfig"; path = "Target Support Files/Pods-kpz-mpk/Pods-kpz-mpk.release.xcconfig"; sourceTree = "<group>"; };
 		160B79AC2449E76A00720DCE /* IncidentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentType.swift; sourceTree = "<group>"; };
 		160B79AE2449E79200720DCE /* IncidentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentLocation.swift; sourceTree = "<group>"; };
+		160B79B3244B862700720DCE /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		1630C164240D365800203440 /* kpz-mpk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kpz-mpk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1630C167240D365800203440 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1630C169240D365800203440 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		160B79B0244B847200720DCE /* Componnents */ = {
+			isa = PBXGroup;
+			children = (
+				160B79B3244B862700720DCE /* RoundedButton.swift */,
+			);
+			path = Componnents;
+			sourceTree = "<group>";
+		};
 		1630C15B240D365800203440 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +119,7 @@
 		169F6B24241A3ABA00B600DC /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				160B79B0244B847200720DCE /* Componnents */,
 				1630C16D240D365800203440 /* Main.storyboard */,
 				169F6B26241A3AE200B600DC /* ViewModels */,
 				169F6B25241A3ACE00B600DC /* ViewControllers */,
@@ -316,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16E73F5724325E6100AD17AF /* IncidentApiService.swift in Sources */,
+				160B79B4244B862700720DCE /* RoundedButton.swift in Sources */,
 				1630C16C240D365800203440 /* MapViewController.swift in Sources */,
 				1630C168240D365800203440 /* AppDelegate.swift in Sources */,
 				16D897C724277C5600EE6BF3 /* ApiService.swift in Sources */,

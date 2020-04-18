@@ -91,7 +91,7 @@
                                     <constraint firstItem="RLQ-GV-yLv" firstAttribute="centerX" secondItem="lQW-d6-XEV" secondAttribute="centerX" id="wxq-eh-6AX"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKy-ID-ExK">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKy-ID-ExK" customClass="RoundedButton" customModule="kpz_mpk" customModuleProvider="target">
                                 <rect key="frame" x="107" y="797" width="200" height="42"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -106,9 +106,9 @@
                                     <action selector="reportButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BSq-OG-iet"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9H-NQ-wQF" userLabel="Cancel Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9H-NQ-wQF" userLabel="Cancel Button" customClass="RoundedButton" customModule="kpz_mpk" customModuleProvider="target">
                                 <rect key="frame" x="107" y="797" width="100" height="42"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="sop-rZ-zcV"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="zqq-fQ-CBf"/>
@@ -118,7 +118,7 @@
                                     <action selector="cancelButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dT0-vE-7vx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQj-gW-8bo" userLabel="Confirm Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQj-gW-8bo" userLabel="Confirm Button" customClass="RoundedButton" customModule="kpz_mpk" customModuleProvider="target">
                                 <rect key="frame" x="207" y="797" width="100" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -138,21 +138,20 @@
                         <constraints>
                             <constraint firstItem="lQW-d6-XEV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="72" id="2Ze-Sc-Mij"/>
                             <constraint firstItem="FAY-ew-xb2" firstAttribute="top" secondItem="hfB-Ne-JWv" secondAttribute="bottom" constant="90" id="8Tl-0D-Jhg"/>
-                            <constraint firstItem="hQj-gW-8bo" firstAttribute="baseline" secondItem="JKy-ID-ExK" secondAttribute="baseline" constant="-3.3333333333333712" id="CSI-Jf-HOc"/>
-                            <constraint firstItem="b9H-NQ-wQF" firstAttribute="leading" secondItem="JKy-ID-ExK" secondAttribute="leading" id="HXX-7C-rNW"/>
                             <constraint firstItem="sLv-TG-Bt6" firstAttribute="centerY" secondItem="lQW-d6-XEV" secondAttribute="centerY" id="JTO-SA-MQM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hfB-Ne-JWv" secondAttribute="trailing" constant="15" id="LTn-7V-jWz"/>
                             <constraint firstItem="lQW-d6-XEV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Nbf-si-PO0"/>
                             <constraint firstItem="b9H-NQ-wQF" firstAttribute="top" secondItem="JKy-ID-ExK" secondAttribute="top" id="PCR-df-dnK"/>
                             <constraint firstItem="sLv-TG-Bt6" firstAttribute="centerX" secondItem="lQW-d6-XEV" secondAttribute="centerX" id="Udm-VB-oo2"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hQj-gW-8bo" secondAttribute="trailing" constant="20" symbolic="YES" id="Xff-ze-pIl"/>
+                            <constraint firstItem="hQj-gW-8bo" firstAttribute="leading" secondItem="b9H-NQ-wQF" secondAttribute="trailing" id="Vcz-oa-ZQe"/>
+                            <constraint firstItem="hQj-gW-8bo" firstAttribute="trailing" secondItem="JKy-ID-ExK" secondAttribute="trailing" id="YwC-LI-tlI"/>
                             <constraint firstItem="lQW-d6-XEV" firstAttribute="top" secondItem="XMo-xT-HoI" secondAttribute="bottom" constant="306" id="cMe-nd-7JX"/>
                             <constraint firstItem="lQW-d6-XEV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i1g-sH-SnD"/>
                             <constraint firstItem="sLv-TG-Bt6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="j0a-qa-uvD"/>
                             <constraint firstItem="sLv-TG-Bt6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-44" id="jIy-eb-FOy"/>
+                            <constraint firstItem="hQj-gW-8bo" firstAttribute="baseline" secondItem="b9H-NQ-wQF" secondAttribute="baseline" id="u6p-Es-lSo"/>
                             <constraint firstItem="FAY-ew-xb2" firstAttribute="top" secondItem="JKy-ID-ExK" secondAttribute="bottom" constant="23" id="utT-Pf-iWC"/>
                             <constraint firstItem="JKy-ID-ExK" firstAttribute="centerX" secondItem="lQW-d6-XEV" secondAttribute="centerX" id="yCL-Me-Xd2"/>
-                            <constraint firstItem="hQj-gW-8bo" firstAttribute="leading" secondItem="JKy-ID-ExK" secondAttribute="leading" constant="100" id="zcT-Zr-3tC"/>
                         </constraints>
                     </view>
                     <connections>

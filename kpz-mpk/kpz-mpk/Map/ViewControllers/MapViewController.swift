@@ -13,15 +13,14 @@ protocol MapViewControllerPresenter: NSObject {
   func centerMap(coordinateRegion: MKCoordinateRegion)
   func displayCenterLocation(latitudeText: String, longitude: String)
   func setUpUI()
-  func setUpButton(button: UIButton)
   func displayAnnotations(annotations: [MKAnnotation])
 }
 
 class MapViewController: UIViewController {
   
-  @IBOutlet private weak var cancelButton: UIButton!
-  @IBOutlet private weak var confirmButton: UIButton!
-  @IBOutlet private weak var reportButton: UIButton!
+  @IBOutlet private weak var cancelButton: RoundedButton!
+  @IBOutlet private weak var confirmButton: RoundedButton!
+  @IBOutlet private weak var reportButton: RoundedButton!
   @IBOutlet private weak var centerMapButton: UIButton!
   @IBOutlet private weak var centerMapButtonView: UIView!
   @IBOutlet private weak var locationPickingView: UIView!
@@ -38,9 +37,6 @@ class MapViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    confirmButton.roundRight()
-    cancelButton.roundLeft()
     
     registerMapAnnotationViews()
     mapView.delegate = self
@@ -94,25 +90,18 @@ extension MapViewController: MapViewControllerPresenter {
     centerMapButton.setImage(UIImage(systemName: "location.fill"), for: .normal)
     
     //Report Button
-    setUpButton(button: reportButton)
+    reportButton.roundAll()
     
     //Confirm Button
     confirmButton.isHidden = true
+    confirmButton.roundRight()
     
     //Cancel Button
     cancelButton.isHidden = true
+    cancelButton.roundLeft()
     
     //Location Pick Icon
     locationPickingView.isHidden = true //We will toogle it when user would like to report incident
-  }
-  
-  func setUpButton(button: UIButton) {
-    button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
-    button.layer.cornerRadius = reportButton.bounds.height / 2
-    button.layer.shadowColor = UIColor.gray.cgColor
-    button.layer.shadowOpacity = 1
-    button.layer.shadowOffset = .zero
-    button.layer.shadowRadius = 10
   }
   
   func displayAnnotations(annotations: [MKAnnotation]) {
@@ -161,27 +150,5 @@ extension MapViewController: MKMapViewDelegate {
     }
     
     return annotationView
-  }
-}
-
-extension UIButton {
-  func roundLeft() {
-    let maskPath1 = UIBezierPath(roundedRect: bounds,
-                                 byRoundingCorners: [.topLeft, .bottomLeft],
-                                 cornerRadii: CGSize(width: self.bounds.height/2, height: self.bounds.height/2))
-    let maskLayer1 = CAShapeLayer()
-    maskLayer1.frame = bounds
-    maskLayer1.path = maskPath1.cgPath
-    layer.mask = maskLayer1
-  }
-  
-  func roundRight() {
-    let maskPath1 = UIBezierPath(roundedRect: bounds,
-                                 byRoundingCorners: [.topRight, .bottomRight],
-                                 cornerRadii: CGSize(width: self.bounds.height/2, height: self.bounds.height/2))
-    let maskLayer1 = CAShapeLayer()
-    maskLayer1.frame = bounds
-    maskLayer1.path = maskPath1.cgPath
-    layer.mask = maskLayer1
   }
 }
