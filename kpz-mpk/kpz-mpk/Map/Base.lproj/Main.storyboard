@@ -93,7 +93,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKy-ID-ExK">
                                 <rect key="frame" x="107" y="797" width="200" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="8Mr-Sc-3NO"/>
                                     <constraint firstAttribute="height" constant="42" id="t4k-8h-v6n"/>
@@ -106,15 +106,27 @@
                                     <action selector="reportButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BSq-OG-iet"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9H-NQ-wQF" userLabel="Cancel Button">
+                                <rect key="frame" x="107" y="797" width="100" height="42"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="sop-rZ-zcV"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="zqq-fQ-CBf"/>
+                                </constraints>
+                                <state key="normal" image="x.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dT0-vE-7vx"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQj-gW-8bo" userLabel="Confirm Button">
-                                <rect key="frame" x="107" y="797" width="200" height="42"/>
+                                <rect key="frame" x="207" y="797" width="100" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="GID-pq-GEh"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="y3j-0R-Mg7"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="y3j-0R-Mg7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Confirm">
+                                <state key="normal" image="checkmark.circle" catalog="system">
                                     <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -126,10 +138,12 @@
                         <constraints>
                             <constraint firstItem="lQW-d6-XEV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="72" id="2Ze-Sc-Mij"/>
                             <constraint firstItem="FAY-ew-xb2" firstAttribute="top" secondItem="hfB-Ne-JWv" secondAttribute="bottom" constant="90" id="8Tl-0D-Jhg"/>
-                            <constraint firstItem="hQj-gW-8bo" firstAttribute="baseline" secondItem="JKy-ID-ExK" secondAttribute="baseline" id="CSI-Jf-HOc"/>
+                            <constraint firstItem="hQj-gW-8bo" firstAttribute="baseline" secondItem="JKy-ID-ExK" secondAttribute="baseline" constant="-3.3333333333333712" id="CSI-Jf-HOc"/>
+                            <constraint firstItem="b9H-NQ-wQF" firstAttribute="leading" secondItem="JKy-ID-ExK" secondAttribute="leading" id="HXX-7C-rNW"/>
                             <constraint firstItem="sLv-TG-Bt6" firstAttribute="centerY" secondItem="lQW-d6-XEV" secondAttribute="centerY" id="JTO-SA-MQM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hfB-Ne-JWv" secondAttribute="trailing" constant="15" id="LTn-7V-jWz"/>
                             <constraint firstItem="lQW-d6-XEV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Nbf-si-PO0"/>
+                            <constraint firstItem="b9H-NQ-wQF" firstAttribute="top" secondItem="JKy-ID-ExK" secondAttribute="top" id="PCR-df-dnK"/>
                             <constraint firstItem="sLv-TG-Bt6" firstAttribute="centerX" secondItem="lQW-d6-XEV" secondAttribute="centerX" id="Udm-VB-oo2"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hQj-gW-8bo" secondAttribute="trailing" constant="20" symbolic="YES" id="Xff-ze-pIl"/>
                             <constraint firstItem="lQW-d6-XEV" firstAttribute="top" secondItem="XMo-xT-HoI" secondAttribute="bottom" constant="306" id="cMe-nd-7JX"/>
@@ -138,10 +152,11 @@
                             <constraint firstItem="sLv-TG-Bt6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-44" id="jIy-eb-FOy"/>
                             <constraint firstItem="FAY-ew-xb2" firstAttribute="top" secondItem="JKy-ID-ExK" secondAttribute="bottom" constant="23" id="utT-Pf-iWC"/>
                             <constraint firstItem="JKy-ID-ExK" firstAttribute="centerX" secondItem="lQW-d6-XEV" secondAttribute="centerX" id="yCL-Me-Xd2"/>
-                            <constraint firstItem="hQj-gW-8bo" firstAttribute="leading" secondItem="JKy-ID-ExK" secondAttribute="leading" id="zcT-Zr-3tC"/>
+                            <constraint firstItem="hQj-gW-8bo" firstAttribute="leading" secondItem="JKy-ID-ExK" secondAttribute="leading" constant="100" id="zcT-Zr-3tC"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="b9H-NQ-wQF" id="6n8-qA-tcN"/>
                         <outlet property="centerMapButton" destination="xQE-vO-mWQ" id="mhG-Ml-WGJ"/>
                         <outlet property="centerMapButtonView" destination="hfB-Ne-JWv" id="2pV-pw-CJa"/>
                         <outlet property="confirmButton" destination="hQj-gW-8bo" id="o3J-t8-xrG"/>
@@ -160,6 +175,8 @@
     </scenes>
     <resources>
         <image name="LocationPickIcon" width="125" height="131"/>
+        <image name="checkmark.circle" catalog="system" width="128" height="121"/>
         <image name="location.fill" catalog="system" width="128" height="115"/>
+        <image name="x.circle" catalog="system" width="128" height="121"/>
     </resources>
 </document>

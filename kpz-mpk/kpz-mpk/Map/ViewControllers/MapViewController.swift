@@ -19,6 +19,7 @@ protocol MapViewControllerPresenter: NSObject {
 
 class MapViewController: UIViewController {
   
+  @IBOutlet weak var cancelButton: UIButton!
   @IBOutlet weak var confirmButton: UIButton!
   @IBOutlet private weak var reportButton: UIButton!
   @IBOutlet private weak var locationPickIcon: UIImageView!
@@ -38,6 +39,9 @@ class MapViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    confirmButton.roundRight()
+    cancelButton.roundLeft()
+    
     registerMapAnnotationViews()
     mapView.delegate = self
     viewModel.centerMapOnUser()
@@ -48,15 +52,21 @@ class MapViewController: UIViewController {
   @IBAction func reportButtonPressed(_ sender: UIButton) {
     reportButton.isHidden = true
     confirmButton.isHidden = false
+    cancelButton.isHidden = false
     locationPickingView.isHidden = false
     print("Report")
   }
   
   @IBAction func confirmButtonPressed(_ sender: UIButton) {
+    print("Confirm")
+  }
+  
+  @IBAction func cancelButtonPressed(_ sender: UIButton) {
     confirmButton.isHidden = true
+    cancelButton.isHidden = true
     reportButton.isHidden = false
     locationPickingView.isHidden = true
-    print("Confirm")
+    print("Cancel")
   }
   
   private func registerMapAnnotationViews() {
@@ -87,8 +97,10 @@ extension MapViewController: MapViewControllerPresenter {
     setUpButton(button: reportButton)
     
     //Confirm Button
-    setUpButton(button: confirmButton)
     confirmButton.isHidden = true
+    
+    //Cancel Button
+    cancelButton.isHidden = true
     
     //Location Pick Icon
     locationPickingView.isHidden = true //We will toogle it when user would like to report incident
@@ -149,5 +161,27 @@ extension MapViewController: MKMapViewDelegate {
     }
     
     return annotationView
+  }
+}
+
+extension UIButton{
+  func roundLeft(){
+    let maskPath1 = UIBezierPath(roundedRect: bounds,
+                                 byRoundingCorners: [.topLeft , .bottomLeft],
+                                 cornerRadii: CGSize(width: self.bounds.height/2, height: self.bounds.height/2))
+    let maskLayer1 = CAShapeLayer()
+    maskLayer1.frame = bounds
+    maskLayer1.path = maskPath1.cgPath
+    layer.mask = maskLayer1
+  }
+  
+  func roundRight(){
+    let maskPath1 = UIBezierPath(roundedRect: bounds,
+                                 byRoundingCorners: [.topRight , .bottomRight],
+                                 cornerRadii: CGSize(width: self.bounds.height/2, height: self.bounds.height/2))
+    let maskLayer1 = CAShapeLayer()
+    maskLayer1.frame = bounds
+    maskLayer1.path = maskPath1.cgPath
+    layer.mask = maskLayer1
   }
 }
