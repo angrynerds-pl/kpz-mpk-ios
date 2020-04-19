@@ -18,6 +18,7 @@ protocol MapViewControllerPresenter: NSObject {
 
 class MapViewController: UIViewController {
   
+  // MARK: - IBOutlets
   @IBOutlet private weak var cancelButton: RoundedButton!
   @IBOutlet private weak var confirmButton: RoundedButton!
   @IBOutlet private weak var reportButton: RoundedButton!
@@ -29,20 +30,22 @@ class MapViewController: UIViewController {
   @IBOutlet private weak var pickLocationUpLabel: UILabel!
   @IBOutlet private weak var pickLocationDownLabel: UILabel!
   
-  @IBAction private func centerMapButtonPressed(_ sender: UIButton) {
-    viewModel.centerMapOnUser()
-  }
-  
   lazy var viewModel = MapViewModel(presenter: self)
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    registerMapAnnotationViews()
     mapView.delegate = self
-    viewModel.centerMapOnUser()
+    
     setUpUI()
+    viewModel.centerMapOnUser()
+    registerMapAnnotationViews()
     viewModel.displayAnnotations()
+  }
+  
+  // MARK: - Buttons actions
+  
+  @IBAction private func centerMapButtonPressed(_ sender: UIButton) {
+    viewModel.centerMapOnUser()
   }
   
   @IBAction private func reportButtonPressed(_ sender: UIButton) {
@@ -69,6 +72,8 @@ class MapViewController: UIViewController {
     mapView.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(IncidentAnnotation.self))
   }
 }
+
+// MARK: - MapViewControllerPresenter protocole
 
 extension MapViewController: MapViewControllerPresenter {
   func centerMap(coordinateRegion: MKCoordinateRegion) {
@@ -101,13 +106,15 @@ extension MapViewController: MapViewControllerPresenter {
     cancelButton.roundLeft()
     
     //Location Pick Icon
-    locationPickingView.isHidden = true //We will toogle it when user would like to report incident
+    locationPickingView.isHidden = true
   }
   
   func displayAnnotations(annotations: [MKAnnotation]) {
     mapView.addAnnotations(annotations)
   }
 }
+
+// MARK: - MKMapViewDelegate protocole
 
 extension MapViewController: MKMapViewDelegate {
   func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
