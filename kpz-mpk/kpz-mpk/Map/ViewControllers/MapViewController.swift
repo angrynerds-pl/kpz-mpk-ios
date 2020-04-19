@@ -23,7 +23,7 @@ class MapViewController: UIViewController {
   @IBOutlet private weak var confirmButton: RoundedButton!
   @IBOutlet private weak var reportButton: RoundedButton!
   @IBOutlet private weak var centerMapButton: UIButton!
-  @IBOutlet private weak var centerMapButtonView: UIView!
+  @IBOutlet private weak var centerMapButtonView: RoundedView!
   @IBOutlet private weak var locationPickingView: UIView!
   @IBOutlet private weak var locationPickIcon: UIImageView!
   @IBOutlet private weak var mapView: MKMapView!
@@ -87,11 +87,6 @@ extension MapViewController: MapViewControllerPresenter {
   
   func setUpUI() {
     //Center Map Button
-    centerMapButtonView.layer.cornerRadius = centerMapButtonView.bounds.width / 2
-    centerMapButtonView.layer.shadowColor = UIColor.gray.cgColor
-    centerMapButtonView.layer.shadowOpacity = 1
-    centerMapButtonView.layer.shadowOffset = .zero
-    centerMapButtonView.layer.shadowRadius = 10
     centerMapButton.setImage(UIImage(systemName: "location.fill"), for: .normal)
     
     //Report Button
