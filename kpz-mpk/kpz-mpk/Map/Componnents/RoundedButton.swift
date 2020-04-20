@@ -8,40 +8,14 @@
 
 import UIKit
 
-class RoundedButton: UIButton {
+class RoundedButton: ShadowButton {
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
+    super.layoutSubviews()
     
-    self.backgroundColor = .white
-    addShadow()
-  }
-}
-
-extension RoundedButton {
-  
-  func roundLeft() {
-    self.layer.cornerRadius = self.bounds.height / 2
-    self.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
-    
-    self.tintColor = .systemRed
   }
   
-  func roundRight() {
-    self.layer.cornerRadius = self.bounds.height / 2
-    self.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
-    
-    self.tintColor = .systemGreen
-  }
-  
-  func roundAll() {
+  override func layoutSubviews() {
     self.layer.cornerRadius = self.bounds.height / 2
   }
-  
-  func addShadow() {
-    layer.shadowColor = UIColor.gray.cgColor
-    layer.shadowOpacity = 1
-    layer.shadowOffset = .zero
-    layer.shadowRadius = 10
-  }
-
 }
