@@ -106,19 +106,20 @@
                                     <action selector="reportButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BSq-OG-iet"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9H-NQ-wQF" userLabel="Cancel Button" customClass="RoundedButton" customModule="kpz_mpk" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9H-NQ-wQF" userLabel="Cancel Button" customClass="RoundedLeftButton" customModule="kpz_mpk" customModuleProvider="target">
                                 <rect key="frame" x="107" y="797" width="100" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="sop-rZ-zcV"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="zqq-fQ-CBf"/>
                                 </constraints>
+                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="x.circle" catalog="system"/>
                                 <connections>
                                     <action selector="cancelButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dT0-vE-7vx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQj-gW-8bo" userLabel="Confirm Button" customClass="RoundedButton" customModule="kpz_mpk" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQj-gW-8bo" userLabel="Confirm Button" customClass="RoundedRightButton" customModule="kpz_mpk" customModuleProvider="target">
                                 <rect key="frame" x="207" y="797" width="100" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -126,6 +127,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="y3j-0R-Mg7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="checkmark.circle" catalog="system">
                                     <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>

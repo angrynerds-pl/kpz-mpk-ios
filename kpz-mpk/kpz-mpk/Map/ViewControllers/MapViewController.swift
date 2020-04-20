@@ -21,8 +21,8 @@ protocol MapViewControllerPresenter: NSObject {
 class MapViewController: UIViewController {
   
   // MARK: - IBOutlets
-  @IBOutlet private weak var cancelButton: RoundedButton!
-  @IBOutlet private weak var confirmButton: RoundedButton!
+  @IBOutlet private weak var cancelButton: RoundedLeftButton!
+  @IBOutlet private weak var confirmButton: RoundedRightButton!
   @IBOutlet private weak var reportButton: RoundedButton!
   @IBOutlet private weak var centerMapButton: UIButton!
   @IBOutlet private weak var centerMapButtonView: RoundedView!
@@ -97,15 +97,6 @@ extension MapViewController: MapViewControllerPresenter {
     
     //Center Map Button
     centerMapButton.setImage(UIImage(systemName: "location.fill"), for: .normal)
-    
-    //Report Button
-    reportButton.roundAll()
-    
-    //Confirm Button
-    confirmButton.roundRight()
-    
-    //Cancel Button
-    cancelButton.roundLeft()
   }
   
   func displayAnnotations(annotations: [MKAnnotation]) {
