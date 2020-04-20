@@ -53,11 +53,9 @@ class MapViewController: UIViewController {
     confirmButton.isHidden = false
     cancelButton.isHidden = false
     locationPickingView.isHidden = false
-    print("Report")
   }
   
   @IBAction private func confirmButtonPressed(_ sender: UIButton) {
-    print("Confirm")
   }
   
   @IBAction func cancelButtonPressed(_ sender: UIButton) {
@@ -65,7 +63,6 @@ class MapViewController: UIViewController {
     cancelButton.isHidden = true
     reportButton.isHidden = false
     locationPickingView.isHidden = true
-    print("Cancel")
   }
   
   private func registerMapAnnotationViews() {
