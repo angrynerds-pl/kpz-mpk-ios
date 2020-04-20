@@ -20,6 +20,15 @@ final class MapViewModel {
     locationService.delegate = self
   }
   
+  func presentState(stateToPresent state: MapState) {
+    switch state {
+    case .mapBrowsing:
+      presenter?.showMapBrowsingState()
+    case .reportIncident:
+      presenter?.showReportingState()
+    }
+  }
+  
   func displayAnnotations() {
     incidentApiService.getIncidents { (incidents) in
       let annotations = incidents.map { IncidentAnnotation(forIncident: $0)}

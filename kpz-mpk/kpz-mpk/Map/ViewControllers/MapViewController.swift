@@ -14,6 +14,8 @@ protocol MapViewControllerPresenter: NSObject {
   func displayCenterLocation(latitudeText: String, longitude: String)
   func setUpUI()
   func displayAnnotations(annotations: [MKAnnotation])
+  func showMapBrowsingState()
+  func showReportingState()
 }
 
 class MapViewController: UIViewController {
@@ -49,20 +51,14 @@ class MapViewController: UIViewController {
   }
   
   @IBAction private func reportButtonPressed(_ sender: UIButton) {
-    reportButton.isHidden = true
-    confirmButton.isHidden = false
-    cancelButton.isHidden = false
-    locationPickingView.isHidden = false
+    viewModel.presentState(stateToPresent: .reportIncident)
   }
   
   @IBAction private func confirmButtonPressed(_ sender: UIButton) {
   }
   
   @IBAction func cancelButtonPressed(_ sender: UIButton) {
-    confirmButton.isHidden = true
-    cancelButton.isHidden = true
-    reportButton.isHidden = false
-    locationPickingView.isHidden = true
+    viewModel.presentState(stateToPresent: .mapBrowsing)
   }
   
   private func registerMapAnnotationViews() {
@@ -73,6 +69,20 @@ class MapViewController: UIViewController {
 // MARK: - MapViewControllerPresenter protocole
 
 extension MapViewController: MapViewControllerPresenter {
+  func showMapBrowsingState() {
+    confirmButton.isHidden = true
+    cancelButton.isHidden = true
+    reportButton.isHidden = false
+    locationPickingView.isHidden = true
+  }
+  
+  func showReportingState() {
+    reportButton.isHidden = true
+    confirmButton.isHidden = false
+    cancelButton.isHidden = false
+    locationPickingView.isHidden = false
+  }
+  
   func centerMap(coordinateRegion: MKCoordinateRegion) {
     mapView.setRegion(coordinateRegion, animated: true)
   }
@@ -83,6 +93,8 @@ extension MapViewController: MapViewControllerPresenter {
   }
   
   func setUpUI() {
+    viewModel.presentState(stateToPresent: .mapBrowsing)
+    
     //Center Map Button
     centerMapButton.setImage(UIImage(systemName: "location.fill"), for: .normal)
     
@@ -90,15 +102,10 @@ extension MapViewController: MapViewControllerPresenter {
     reportButton.roundAll()
     
     //Confirm Button
-    confirmButton.isHidden = true
     confirmButton.roundRight()
     
     //Cancel Button
-    cancelButton.isHidden = true
     cancelButton.roundLeft()
-    
-    //Location Pick Icon
-    locationPickingView.isHidden = true
   }
   
   func displayAnnotations(annotations: [MKAnnotation]) {
