@@ -98,22 +98,7 @@ extension MapViewController: MKMapViewDelegate {
     let reuseIdentifier = NSStringFromClass(IncidentAnnotation.self)
     let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier, for: annotation)
     
-    annotationView.image = UIImage(named: "otherIncident")
-    
-    switch annotation.incident.type {
-    case .collision:
-      annotationView.image = UIImage(named: "collision")
-    case .derailment:
-      annotationView.image = UIImage(named: "derailment")
-    case .noElectricity:
-      annotationView.image = UIImage(named: "noElectricity")
-    case .noPassage:
-      annotationView.image = UIImage(named: "otherIncident")
-    case .trackDamage:
-      annotationView.image = UIImage(named: "trackDamage")
-    case .other:
-      annotationView.image = UIImage(named: "otherIncident")
-    }
+    annotationView.image = annotation.incident.type.image
     
     return annotationView
   }
