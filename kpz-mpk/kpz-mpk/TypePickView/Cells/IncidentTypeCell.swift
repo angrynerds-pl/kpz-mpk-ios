@@ -12,8 +12,8 @@ class IncidentTypeCell: UITableViewCell {
   @IBOutlet private weak var incidenTypeName: UILabel!
   @IBOutlet private weak var incidenTypeImageView: UIImageView!
   
-  func setCell(incidentTypeItem item: IncidentTypeItem) {
-    incidenTypeName.text = item.typeName.rawValue
+  func setCell(incidentTypeItem item: IncidenType) {
+    incidenTypeName.text = item.rawValue
     incidenTypeImageView.image = item.image
   }
   

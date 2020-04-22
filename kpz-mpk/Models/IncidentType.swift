@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum IncidenType: String, Codable {
+enum IncidenType: String, Codable, CaseIterable {
   case other
   case derailment
   case collision
