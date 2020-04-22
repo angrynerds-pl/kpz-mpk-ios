@@ -14,32 +14,51 @@ protocol MapViewControllerPresenter: NSObject {
   func displayCenterLocation(latitudeText: String, longitude: String)
   func setUpUI()
   func displayAnnotations(annotations: [MKAnnotation])
+  func showMapBrowsingState()
+  func showReportingState()
 }
 
 class MapViewController: UIViewController {
   
-  @IBOutlet private weak var locationPickIcon: UIImageView!
+  // MARK: - IBOutlets
+  @IBOutlet private weak var cancelButton: RoundedLeftButton!
+  @IBOutlet private weak var confirmButton: RoundedRightButton!
+  @IBOutlet private weak var reportButton: RoundedButton!
   @IBOutlet private weak var centerMapButton: UIButton!
-  @IBOutlet private weak var centerMapButtonView: UIView!
+  @IBOutlet private weak var centerMapButtonView: RoundedView!
+  @IBOutlet private weak var locationPickingView: UIView!
+  @IBOutlet private weak var locationPickIcon: UIImageView!
   @IBOutlet private weak var mapView: MKMapView!
   @IBOutlet private weak var pickLocationUpLabel: UILabel!
   @IBOutlet private weak var pickLocationDownLabel: UILabel!
-  @IBOutlet private weak var locationPickingView: UIView!
-  
-  @IBAction private func centerMapButtonPressed(_ sender: UIButton) {
-    viewModel.centerMapOnUser()
-  }
   
   lazy var viewModel = MapViewModel(presenter: self)
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    registerMapAnnotationViews()
     mapView.delegate = self
-    viewModel.centerMapOnUser()
+    
     setUpUI()
+    viewModel.centerMapOnUser()
+    registerMapAnnotationViews()
     viewModel.displayAnnotations()
+  }
+  
+  // MARK: - Buttons actions
+  
+  @IBAction private func centerMapButtonPressed(_ sender: UIButton) {
+    viewModel.centerMapOnUser()
+  }
+  
+  @IBAction private func reportButtonPressed(_ sender: UIButton) {
+    viewModel.presentState(stateToPresent: .reportIncident)
+  }
+  
+  @IBAction private func confirmButtonPressed(_ sender: UIButton) {
+  }
+  
+  @IBAction func cancelButtonPressed(_ sender: UIButton) {
+    viewModel.presentState(stateToPresent: .mapBrowsing)
   }
   
   private func registerMapAnnotationViews() {
@@ -47,7 +66,23 @@ class MapViewController: UIViewController {
   }
 }
 
+// MARK: - MapViewControllerPresenter protocole
+
 extension MapViewController: MapViewControllerPresenter {
+  func showMapBrowsingState() {
+    confirmButton.isHidden = true
+    cancelButton.isHidden = true
+    reportButton.isHidden = false
+    locationPickingView.isHidden = true
+  }
+  
+  func showReportingState() {
+    reportButton.isHidden = true
+    confirmButton.isHidden = false
+    cancelButton.isHidden = false
+    locationPickingView.isHidden = false
+  }
+  
   func centerMap(coordinateRegion: MKCoordinateRegion) {
     mapView.setRegion(coordinateRegion, animated: true)
   }
@@ -58,22 +93,18 @@ extension MapViewController: MapViewControllerPresenter {
   }
   
   func setUpUI() {
-    //Center Map Button
-    centerMapButtonView.layer.cornerRadius = centerMapButtonView.bounds.width / 2
-    centerMapButtonView.layer.shadowColor = UIColor.gray.cgColor
-    centerMapButtonView.layer.shadowOpacity = 1
-    centerMapButtonView.layer.shadowOffset = .zero
-    centerMapButtonView.layer.shadowRadius = 10
-    centerMapButton.setImage(UIImage(systemName: "location.fill"), for: .normal)
+    viewModel.presentState(stateToPresent: .mapBrowsing)
     
-    //Location Pick Icon
-    locationPickingView.isHidden = true //We will toogle it when user would like to report incident
+    //Center Map Button
+    centerMapButton.setImage(UIImage(systemName: "location.fill"), for: .normal)
   }
   
   func displayAnnotations(annotations: [MKAnnotation]) {
     mapView.addAnnotations(annotations)
   }
 }
+
+// MARK: - MKMapViewDelegate protocole
 
 extension MapViewController: MKMapViewDelegate {
   func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {

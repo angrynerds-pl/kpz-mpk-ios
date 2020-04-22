@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		160B79AD2449E76A00720DCE /* IncidentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79AC2449E76A00720DCE /* IncidentType.swift */; };
 		160B79AF2449E79200720DCE /* IncidentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79AE2449E79200720DCE /* IncidentLocation.swift */; };
+		160B79B4244B862700720DCE /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79B3244B862700720DCE /* RoundedButton.swift */; };
+		160B79BA244C725100720DCE /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79B9244C725100720DCE /* RoundedView.swift */; };
 		1630C168240D365800203440 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630C167240D365800203440 /* AppDelegate.swift */; };
 		1630C16A240D365800203440 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630C169240D365800203440 /* SceneDelegate.swift */; };
 		1630C16C240D365800203440 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630C16B240D365800203440 /* MapViewController.swift */; };
@@ -16,6 +18,10 @@
 		1630C171240D365C00203440 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1630C170240D365C00203440 /* Assets.xcassets */; };
 		1630C174240D365C00203440 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1630C172240D365C00203440 /* LaunchScreen.storyboard */; };
 		16392D1E24485C1D00E227B6 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16392D1D24485C1D00E227B6 /* ApiConstants.swift */; };
+		16544AA6244DEE4D00319CB2 /* MapState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16544AA5244DEE4D00319CB2 /* MapState.swift */; };
+		16544AAE244E07FD00319CB2 /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16544AAD244E07FC00319CB2 /* ShadowButton.swift */; };
+		16544AB0244E087700319CB2 /* RoundedLeftButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16544AAF244E087700319CB2 /* RoundedLeftButton.swift */; };
+		16544AB2244E08CF00319CB2 /* RoundedRightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16544AB1244E08CF00319CB2 /* RoundedRightButton.swift */; };
 		16680163241A8E820051C0DD /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16680162241A8E820051C0DD /* LocationService.swift */; };
 		169F6B28241A3D4800B600DC /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169F6B27241A3D4800B600DC /* MapViewModel.swift */; };
 		16C783BE24479AEB00375B88 /* IncidentAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C783BD24479AEB00375B88 /* IncidentAnnotation.swift */; };
@@ -31,6 +37,8 @@
 		008484BDEDE3B5826E80B1BA /* Pods-kpz-mpk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kpz-mpk.release.xcconfig"; path = "Target Support Files/Pods-kpz-mpk/Pods-kpz-mpk.release.xcconfig"; sourceTree = "<group>"; };
 		160B79AC2449E76A00720DCE /* IncidentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentType.swift; sourceTree = "<group>"; };
 		160B79AE2449E79200720DCE /* IncidentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentLocation.swift; sourceTree = "<group>"; };
+		160B79B3244B862700720DCE /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		160B79B9244C725100720DCE /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		1630C164240D365800203440 /* kpz-mpk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kpz-mpk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1630C167240D365800203440 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1630C169240D365800203440 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +48,10 @@
 		1630C173240D365C00203440 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1630C175240D365C00203440 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16392D1D24485C1D00E227B6 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
+		16544AA5244DEE4D00319CB2 /* MapState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapState.swift; sourceTree = "<group>"; };
+		16544AAD244E07FC00319CB2 /* ShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
+		16544AAF244E087700319CB2 /* RoundedLeftButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedLeftButton.swift; sourceTree = "<group>"; };
+		16544AB1244E08CF00319CB2 /* RoundedRightButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRightButton.swift; sourceTree = "<group>"; };
 		16680162241A8E820051C0DD /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		169F6B27241A3D4800B600DC /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		16C783BD24479AEB00375B88 /* IncidentAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentAnnotation.swift; sourceTree = "<group>"; };
@@ -72,6 +84,18 @@
 				160B79AE2449E79200720DCE /* IncidentLocation.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		160B79B0244B847200720DCE /* Componnents */ = {
+			isa = PBXGroup;
+			children = (
+				160B79B3244B862700720DCE /* RoundedButton.swift */,
+				160B79B9244C725100720DCE /* RoundedView.swift */,
+				16544AAD244E07FC00319CB2 /* ShadowButton.swift */,
+				16544AAF244E087700319CB2 /* RoundedLeftButton.swift */,
+				16544AB1244E08CF00319CB2 /* RoundedRightButton.swift */,
+			);
+			path = Componnents;
 			sourceTree = "<group>";
 		};
 		1630C15B240D365800203440 = {
@@ -109,11 +133,13 @@
 		169F6B24241A3ABA00B600DC /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				160B79B0244B847200720DCE /* Componnents */,
 				1630C16D240D365800203440 /* Main.storyboard */,
 				169F6B26241A3AE200B600DC /* ViewModels */,
 				169F6B25241A3ACE00B600DC /* ViewControllers */,
 				16680162241A8E820051C0DD /* LocationService.swift */,
 				16C783BD24479AEB00375B88 /* IncidentAnnotation.swift */,
+				16544AA5244DEE4D00319CB2 /* MapState.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -316,14 +342,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				16E73F5724325E6100AD17AF /* IncidentApiService.swift in Sources */,
+				16544AAE244E07FD00319CB2 /* ShadowButton.swift in Sources */,
+				160B79B4244B862700720DCE /* RoundedButton.swift in Sources */,
 				1630C16C240D365800203440 /* MapViewController.swift in Sources */,
+				16544AA6244DEE4D00319CB2 /* MapState.swift in Sources */,
 				1630C168240D365800203440 /* AppDelegate.swift in Sources */,
+				16544AB0244E087700319CB2 /* RoundedLeftButton.swift in Sources */,
 				16D897C724277C5600EE6BF3 /* ApiService.swift in Sources */,
 				160B79AF2449E79200720DCE /* IncidentLocation.swift in Sources */,
 				16DDF0362442334700E2633E /* IncidentEndpoint.swift in Sources */,
 				16680163241A8E820051C0DD /* LocationService.swift in Sources */,
+				160B79BA244C725100720DCE /* RoundedView.swift in Sources */,
 				160B79AD2449E76A00720DCE /* IncidentType.swift in Sources */,
 				1630C16A240D365800203440 /* SceneDelegate.swift in Sources */,
+				16544AB2244E08CF00319CB2 /* RoundedRightButton.swift in Sources */,
 				169F6B28241A3D4800B600DC /* MapViewModel.swift in Sources */,
 				16392D1E24485C1D00E227B6 /* ApiConstants.swift in Sources */,
 				16DDF03424422A4300E2633E /* ApiEndpoint.swift in Sources */,
