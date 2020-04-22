@@ -13,7 +13,7 @@ class IncidentTypeCell: UITableViewCell {
   @IBOutlet private weak var incidenTypeImageView: UIImageView!
   
   func setCell(incidentTypeItem item: IncidenType) {
-    incidenTypeName.text = item.rawValue
+    incidenTypeName.text = item.prettyName
     incidenTypeImageView.image = item.image
   }
   

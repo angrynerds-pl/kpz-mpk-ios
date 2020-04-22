@@ -32,4 +32,21 @@ enum IncidenType: String, Codable, CaseIterable {
       return UIImage(named: "otherIncident")
     }
   }
+  
+  var prettyName: String {
+    switch self {
+    case .collision:
+      return "Colision"
+    case .derailment:
+      return "Derailment"
+    case .noElectricity:
+      return "No electricity"
+    case .noPassage:
+      return "No passage"
+    case .trackDamage:
+      return "Track damage"
+    case .other:
+      return "Other incident"
+    }
+  }
 }

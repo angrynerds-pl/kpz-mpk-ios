@@ -14,7 +14,6 @@ class TableViewController: UITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -24,7 +23,12 @@ class TableViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     // swiftlint:disable force_cast
     let incidenTypeItem = IncidenType.allCases[indexPath.row]
+    
+    // TODO: Usunac as!
     let cell = tableView.dequeueReusableCell(withIdentifier: "IncidentTypeCell") as! IncidentTypeCell
+    
+    //Moze uzyc tego ale wtedy nie mozemy .setCell
+    //let cell = tableView.dequeueReusableCell(withIdentifier: "IncidentTypeCell", for: indexPath)
     
     cell.setCell(incidentTypeItem: incidenTypeItem)
     return cell
