@@ -11,6 +11,7 @@ import UIKit
 class TableViewController: UITableViewController {
   
   override func viewDidLoad() {
+    tableView.delegate = self
     super.viewDidLoad()
   }
   
@@ -19,7 +20,7 @@ class TableViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+    
     guard let incidenTypeItem = IncidenType.allCases[safe: indexPath.row] else {
       return UITableViewCell()
     }
@@ -30,5 +31,21 @@ class TableViewController: UITableViewController {
     
     cell.setCell(incidentTypeItem: incidenTypeItem)
     return cell
+  }
+  
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    self.performSegue(withIdentifier: "segueLine", sender: self)
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "segueLine" {
+      let nextSceene = segue.destination as? LinePickViewController
+      let indexPath = self.tableView.indexPathForSelectedRow
+      
+      // Pozbyc sie tego force unwrapa
+      let selectedRow = IncidenType.allCases[safe: indexPath!.row]
+      
+      nextSceene?.reportedIncidentType = selectedRow
+    }
   }
 }
