@@ -25,6 +25,7 @@
 		16544AB5244E294F00319CB2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16544AB4244E294F00319CB2 /* TableViewController.swift */; };
 		16544AB7244E2DB800319CB2 /* IncidentTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16544AB6244E2DB800319CB2 /* IncidentTypeCell.swift */; };
 		16680163241A8E820051C0DD /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16680162241A8E820051C0DD /* LocationService.swift */; };
+		168991292454705E00B56408 /* CollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168991282454705E00B56408 /* CollectionExtensions.swift */; };
 		169F6B28241A3D4800B600DC /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169F6B27241A3D4800B600DC /* MapViewModel.swift */; };
 		16C783BE24479AEB00375B88 /* IncidentAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C783BD24479AEB00375B88 /* IncidentAnnotation.swift */; };
 		16D897C724277C5600EE6BF3 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D897C624277C5600EE6BF3 /* ApiService.swift */; };
@@ -57,6 +58,7 @@
 		16544AB4244E294F00319CB2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		16544AB6244E2DB800319CB2 /* IncidentTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentTypeCell.swift; sourceTree = "<group>"; };
 		16680162241A8E820051C0DD /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		168991282454705E00B56408 /* CollectionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtensions.swift; sourceTree = "<group>"; };
 		169F6B27241A3D4800B600DC /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		16C783BD24479AEB00375B88 /* IncidentAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentAnnotation.swift; sourceTree = "<group>"; };
 		16D897C624277C5600EE6BF3 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			children = (
 				16544ABA244E3E9500319CB2 /* ViewControllers */,
 				16544ABC244E3EF800319CB2 /* Cells */,
+				168991282454705E00B56408 /* CollectionExtensions.swift */,
 			);
 			path = TypePickView;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				160B79AF2449E79200720DCE /* IncidentLocation.swift in Sources */,
 				16DDF0362442334700E2633E /* IncidentEndpoint.swift in Sources */,
 				16680163241A8E820051C0DD /* LocationService.swift in Sources */,
+				168991292454705E00B56408 /* CollectionExtensions.swift in Sources */,
 				160B79BA244C725100720DCE /* RoundedView.swift in Sources */,
 				160B79AD2449E76A00720DCE /* IncidentType.swift in Sources */,
 				1630C16A240D365800203440 /* SceneDelegate.swift in Sources */,
