@@ -11,10 +11,12 @@ import UIKit
 class ShadowButton: UIButton {
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-    super.layoutSubviews()
+    addShadow()
   }
-  
-  override func layoutSubviews() {
+}
+
+extension ShadowButton {
+  func addShadow() {
     backgroundColor = .white
     layer.shadowColor = UIColor.gray.cgColor
     layer.shadowOpacity = 1

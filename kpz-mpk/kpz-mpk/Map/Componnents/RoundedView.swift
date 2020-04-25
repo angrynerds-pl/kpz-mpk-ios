@@ -11,10 +11,11 @@ import UIKit
 class RoundedView: UIView {
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-    super.layoutSubviews()
+    addShadow()
   }
-  
-  override func layoutSubviews() {
+}
+extension RoundedView {
+  func addShadow() {
     self.backgroundColor = .white
     layer.shadowColor = UIColor.gray.cgColor
     layer.shadowOpacity = 1

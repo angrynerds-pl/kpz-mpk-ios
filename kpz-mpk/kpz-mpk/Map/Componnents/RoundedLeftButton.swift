@@ -11,10 +11,10 @@ import UIKit
 class RoundedLeftButton: ShadowButton {
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-    super.layoutSubviews()
   }
   
   override func layoutSubviews() {
+    super.layoutSubviews()
     self.layer.cornerRadius = self.bounds.height / 2
     self.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
   }
