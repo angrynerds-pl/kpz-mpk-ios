@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum IncidenType: String, Codable {
+enum IncidenType: String, Codable, CaseIterable {
   case other
   case derailment
   case collision
@@ -30,6 +30,23 @@ enum IncidenType: String, Codable {
       return UIImage(named: "trackDamage")
     case .other:
       return UIImage(named: "otherIncident")
+    }
+  }
+  
+  var prettyName: String {
+    switch self {
+    case .collision:
+      return "Colision"
+    case .derailment:
+      return "Derailment"
+    case .noElectricity:
+      return "No electricity"
+    case .noPassage:
+      return "No passage"
+    case .trackDamage:
+      return "Track damage"
+    case .other:
+      return "Other incident"
     }
   }
 }
