@@ -14,6 +14,7 @@ import CoreLocation
 final class LinePickViewModel {
   var reportedLocation: CLLocationCoordinate2D
   var reportedType: IncidenType
+  let routeApiService: RouteApiServiceProtocole = RouteApiService()
   
   init(
     reportedLocation location: CLLocationCoordinate2D,
@@ -21,5 +22,9 @@ final class LinePickViewModel {
   ) {
     reportedLocation = location
     reportedType = type
+    
+    routeApiService.getNearbyRoutes(location: reportedLocation) { (routes) in
+      print(routes)
+    }
   }
 }

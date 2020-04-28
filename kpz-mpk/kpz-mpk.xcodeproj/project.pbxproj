@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		160602752458312F004FAD39 /* TypePickViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160602742458312F004FAD39 /* TypePickViewModel.swift */; };
 		16060278245837D5004FAD39 /* LinePickViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16060277245837D5004FAD39 /* LinePickViewModel.swift */; };
+		1606027A245852D9004FAD39 /* TimetableEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16060279245852D9004FAD39 /* TimetableEndpoint.swift */; };
+		1606027C245862B3004FAD39 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1606027B245862B3004FAD39 /* Route.swift */; };
+		1606027E2458AB72004FAD39 /* RouteApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1606027D2458AB72004FAD39 /* RouteApiService.swift */; };
 		160B79AD2449E76A00720DCE /* IncidentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79AC2449E76A00720DCE /* IncidentType.swift */; };
 		160B79AF2449E79200720DCE /* IncidentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79AE2449E79200720DCE /* IncidentLocation.swift */; };
 		160B79B4244B862700720DCE /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79B3244B862700720DCE /* RoundedButton.swift */; };
@@ -43,6 +46,9 @@
 		008484BDEDE3B5826E80B1BA /* Pods-kpz-mpk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kpz-mpk.release.xcconfig"; path = "Target Support Files/Pods-kpz-mpk/Pods-kpz-mpk.release.xcconfig"; sourceTree = "<group>"; };
 		160602742458312F004FAD39 /* TypePickViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypePickViewModel.swift; sourceTree = "<group>"; };
 		16060277245837D5004FAD39 /* LinePickViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinePickViewModel.swift; sourceTree = "<group>"; };
+		16060279245852D9004FAD39 /* TimetableEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableEndpoint.swift; sourceTree = "<group>"; };
+		1606027B245862B3004FAD39 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		1606027D2458AB72004FAD39 /* RouteApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteApiService.swift; sourceTree = "<group>"; };
 		160B79AC2449E76A00720DCE /* IncidentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentType.swift; sourceTree = "<group>"; };
 		160B79AE2449E79200720DCE /* IncidentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentLocation.swift; sourceTree = "<group>"; };
 		160B79B3244B862700720DCE /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -110,6 +116,7 @@
 				16DDF037244235A500E2633E /* Incident.swift */,
 				160B79AC2449E76A00720DCE /* IncidentType.swift */,
 				160B79AE2449E79200720DCE /* IncidentLocation.swift */,
+				1606027B245862B3004FAD39 /* Route.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -251,6 +258,7 @@
 			children = (
 				16DDF0352442334700E2633E /* IncidentEndpoint.swift */,
 				16DDF03324422A4300E2633E /* ApiEndpoint.swift */,
+				16060279245852D9004FAD39 /* TimetableEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -260,6 +268,7 @@
 			children = (
 				16D897C624277C5600EE6BF3 /* ApiService.swift */,
 				16E73F5624325E6100AD17AF /* IncidentApiService.swift */,
+				1606027D2458AB72004FAD39 /* RouteApiService.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -420,6 +429,7 @@
 				16544AAE244E07FD00319CB2 /* ShadowButton.swift in Sources */,
 				160B79B4244B862700720DCE /* RoundedButton.swift in Sources */,
 				1630C16C240D365800203440 /* MapViewController.swift in Sources */,
+				1606027C245862B3004FAD39 /* Route.swift in Sources */,
 				16544AA6244DEE4D00319CB2 /* MapState.swift in Sources */,
 				1630C168240D365800203440 /* AppDelegate.swift in Sources */,
 				16544AB0244E087700319CB2 /* RoundedLeftButton.swift in Sources */,
@@ -431,11 +441,13 @@
 				1689912C2454985E00B56408 /* LinePickViewController.swift in Sources */,
 				160B79BA244C725100720DCE /* RoundedView.swift in Sources */,
 				160B79AD2449E76A00720DCE /* IncidentType.swift in Sources */,
+				1606027E2458AB72004FAD39 /* RouteApiService.swift in Sources */,
 				1630C16A240D365800203440 /* SceneDelegate.swift in Sources */,
 				16544AB2244E08CF00319CB2 /* RoundedRightButton.swift in Sources */,
 				169F6B28241A3D4800B600DC /* MapViewModel.swift in Sources */,
 				16392D1E24485C1D00E227B6 /* ApiConstants.swift in Sources */,
 				16DDF03424422A4300E2633E /* ApiEndpoint.swift in Sources */,
+				1606027A245852D9004FAD39 /* TimetableEndpoint.swift in Sources */,
 				16060278245837D5004FAD39 /* LinePickViewModel.swift in Sources */,
 				16544AB7244E2DB800319CB2 /* IncidentTypeCell.swift in Sources */,
 				160602752458312F004FAD39 /* TypePickViewModel.swift in Sources */,
