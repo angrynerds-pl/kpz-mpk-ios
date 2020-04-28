@@ -15,9 +15,6 @@ class TypePickViewController: UITableViewController {
   override func viewDidLoad() {
     tableView.delegate = self
     super.viewDidLoad()
-    
-    print("Center: ")
-    print(viewModel.reportedLocation)
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,7 +47,8 @@ class TypePickViewController: UITableViewController {
       // Pozbyc sie tego force unwrapa
       let selectedRow = IncidenType.allCases[safe: indexPath!.row]
       
-      nextSceene?.reportedIncidentType = selectedRow
+      nextSceene?.viewModel = LinePickViewModel(
+        reportedLocation: viewModel.reportedLocation, reportedType: selectedRow!)
     }
   }
 }

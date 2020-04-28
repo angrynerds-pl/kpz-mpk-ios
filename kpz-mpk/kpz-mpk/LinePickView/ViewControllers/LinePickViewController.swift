@@ -10,7 +10,7 @@ import UIKit
 
 class LinePickViewController: UITableViewController {
   
-  var reportedIncidentType: IncidenType?
+  var viewModel: LinePickViewModel!
   
   override func viewDidLoad() {
     super.viewDidLoad()
