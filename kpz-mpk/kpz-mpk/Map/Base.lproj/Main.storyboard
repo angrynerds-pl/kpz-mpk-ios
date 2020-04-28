@@ -25,7 +25,7 @@
                                 <rect key="frame" x="315" y="708" width="64" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQE-vO-mWQ">
-                                        <rect key="frame" x="18.333333333333314" y="19" width="27.666666666666671" height="26"/>
+                                        <rect key="frame" x="18" y="19" width="28" height="26"/>
                                         <state key="normal" image="location.fill" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="black"/>
                                         </state>
@@ -133,7 +133,7 @@
                                 </state>
                                 <connections>
                                     <action selector="confirmButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mzG-T8-lzM"/>
-                                    <segue destination="GlO-LA-RoF" kind="show" id="Z7g-8D-LO3"/>
+                                    <segue destination="GlO-LA-RoF" kind="show" identifier="segueType" id="Z7g-8D-LO3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -174,10 +174,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Type Pick View Controller-->
         <scene sceneID="7Nz-8h-3l9">
             <objects>
-                <tableViewController id="GlO-LA-RoF" customClass="TableViewController" customModule="kpz_mpk" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="GlO-LA-RoF" customClass="TypePickViewController" customModule="kpz_mpk" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1Jh-Sv-3Az">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		160602752458312F004FAD39 /* TypePickViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160602742458312F004FAD39 /* TypePickViewModel.swift */; };
 		160B79AD2449E76A00720DCE /* IncidentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79AC2449E76A00720DCE /* IncidentType.swift */; };
 		160B79AF2449E79200720DCE /* IncidentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79AE2449E79200720DCE /* IncidentLocation.swift */; };
 		160B79B4244B862700720DCE /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79B3244B862700720DCE /* RoundedButton.swift */; };
@@ -22,7 +23,7 @@
 		16544AAE244E07FD00319CB2 /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16544AAD244E07FC00319CB2 /* ShadowButton.swift */; };
 		16544AB0244E087700319CB2 /* RoundedLeftButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16544AAF244E087700319CB2 /* RoundedLeftButton.swift */; };
 		16544AB2244E08CF00319CB2 /* RoundedRightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16544AB1244E08CF00319CB2 /* RoundedRightButton.swift */; };
-		16544AB5244E294F00319CB2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16544AB4244E294F00319CB2 /* TableViewController.swift */; };
+		16544AB5244E294F00319CB2 /* TypePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16544AB4244E294F00319CB2 /* TypePickViewController.swift */; };
 		16544AB7244E2DB800319CB2 /* IncidentTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16544AB6244E2DB800319CB2 /* IncidentTypeCell.swift */; };
 		16680163241A8E820051C0DD /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16680162241A8E820051C0DD /* LocationService.swift */; };
 		168991292454705E00B56408 /* CollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168991282454705E00B56408 /* CollectionExtensions.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		008484BDEDE3B5826E80B1BA /* Pods-kpz-mpk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kpz-mpk.release.xcconfig"; path = "Target Support Files/Pods-kpz-mpk/Pods-kpz-mpk.release.xcconfig"; sourceTree = "<group>"; };
+		160602742458312F004FAD39 /* TypePickViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypePickViewModel.swift; sourceTree = "<group>"; };
 		160B79AC2449E76A00720DCE /* IncidentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentType.swift; sourceTree = "<group>"; };
 		160B79AE2449E79200720DCE /* IncidentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentLocation.swift; sourceTree = "<group>"; };
 		160B79B3244B862700720DCE /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -56,7 +58,7 @@
 		16544AAD244E07FC00319CB2 /* ShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
 		16544AAF244E087700319CB2 /* RoundedLeftButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedLeftButton.swift; sourceTree = "<group>"; };
 		16544AB1244E08CF00319CB2 /* RoundedRightButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRightButton.swift; sourceTree = "<group>"; };
-		16544AB4244E294F00319CB2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		16544AB4244E294F00319CB2 /* TypePickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypePickViewController.swift; sourceTree = "<group>"; };
 		16544AB6244E2DB800319CB2 /* IncidentTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentTypeCell.swift; sourceTree = "<group>"; };
 		16680162241A8E820051C0DD /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		168991282454705E00B56408 /* CollectionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtensions.swift; sourceTree = "<group>"; };
@@ -84,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1606027324583113004FAD39 /* TypePickViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				160602742458312F004FAD39 /* TypePickViewModel.swift */,
+			);
+			path = TypePickViewModels;
+			sourceTree = "<group>";
+		};
 		160B79AB2449E6AA00720DCE /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +153,7 @@
 		16544AB3244E291900319CB2 /* TypePickView */ = {
 			isa = PBXGroup;
 			children = (
+				1606027324583113004FAD39 /* TypePickViewModels */,
 				16544ABA244E3E9500319CB2 /* ViewControllers */,
 				16544ABC244E3EF800319CB2 /* Cells */,
 				168991282454705E00B56408 /* CollectionExtensions.swift */,
@@ -153,7 +164,7 @@
 		16544ABA244E3E9500319CB2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				16544AB4244E294F00319CB2 /* TableViewController.swift */,
+				16544AB4244E294F00319CB2 /* TypePickViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -394,7 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16E73F5724325E6100AD17AF /* IncidentApiService.swift in Sources */,
-				16544AB5244E294F00319CB2 /* TableViewController.swift in Sources */,
+				16544AB5244E294F00319CB2 /* TypePickViewController.swift in Sources */,
 				16544AAE244E07FD00319CB2 /* ShadowButton.swift in Sources */,
 				160B79B4244B862700720DCE /* RoundedButton.swift in Sources */,
 				1630C16C240D365800203440 /* MapViewController.swift in Sources */,
@@ -415,6 +426,7 @@
 				16392D1E24485C1D00E227B6 /* ApiConstants.swift in Sources */,
 				16DDF03424422A4300E2633E /* ApiEndpoint.swift in Sources */,
 				16544AB7244E2DB800319CB2 /* IncidentTypeCell.swift in Sources */,
+				160602752458312F004FAD39 /* TypePickViewModel.swift in Sources */,
 				16DDF038244235A500E2633E /* Incident.swift in Sources */,
 				16C783BE24479AEB00375B88 /* IncidentAnnotation.swift in Sources */,
 			);

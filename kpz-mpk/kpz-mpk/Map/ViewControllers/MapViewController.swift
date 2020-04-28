@@ -64,6 +64,13 @@ class MapViewController: UIViewController {
   private func registerMapAnnotationViews() {
     mapView.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(IncidentAnnotation.self))
   }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "segueType" {
+      let nextSceene = segue.destination as? TypePickViewController
+      nextSceene?.viewModel = TypePickViewModel(reportedLocation: mapView.centerCoordinate)
+    }
+  }
 }
 
 // MARK: - MapViewControllerPresenter protocole

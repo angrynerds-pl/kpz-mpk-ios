@@ -1,5 +1,5 @@
 //
-//  TableViewController.swift
+//  TypePickViewController.swift
 //  kpz-mpk
 //
 //  Created by Wojciech Konury on 20/04/2020.
@@ -8,11 +8,16 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class TypePickViewController: UITableViewController {
+  
+  var viewModel: TypePickViewModel!
   
   override func viewDidLoad() {
     tableView.delegate = self
     super.viewDidLoad()
+    
+    print("Center: ")
+    print(viewModel.reportedLocation)
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
