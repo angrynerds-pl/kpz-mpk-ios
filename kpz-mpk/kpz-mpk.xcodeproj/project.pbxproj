@@ -124,20 +124,12 @@
 			path = RouteModels;
 			sourceTree = "<group>";
 		};
-		160602842458BBF8004FAD39 /* IncidentModels */ = {
+		160B79AB2449E6AA00720DCE /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				16DDF037244235A500E2633E /* Incident.swift */,
 				160B79AC2449E76A00720DCE /* IncidentType.swift */,
 				160B79AE2449E79200720DCE /* IncidentLocation.swift */,
-			);
-			path = IncidentModels;
-			sourceTree = "<group>";
-		};
-		160B79AB2449E6AA00720DCE /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				160602842458BBF8004FAD39 /* IncidentModels */,
 				160602832458BBE0004FAD39 /* RouteModels */,
 			);
 			path = Models;

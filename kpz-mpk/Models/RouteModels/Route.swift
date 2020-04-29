@@ -11,6 +11,6 @@ import Foundation
 struct Route: Codable {
   let routeId: String
   let distance: Double
-  let trips: Trip
+  let trips: [Trip]
   let routeGtfsType: TimetableRouteType
 }
