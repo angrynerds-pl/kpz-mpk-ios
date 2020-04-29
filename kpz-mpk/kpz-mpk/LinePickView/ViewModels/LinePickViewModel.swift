@@ -16,17 +16,13 @@ final class LinePickViewModel {
   var reportedType: IncidenType
   let routeApiService: RouteApiServiceProtocole = RouteApiService()
   
+  var routesAPI: [Route] = [Route(routeId: "test", distance: 12.2, trips: [], routeGtfsType: TimetableRouteType(rawValue: 3)!)]
+  
   init(
     reportedLocation location: CLLocationCoordinate2D,
     reportedType type: IncidenType
   ) {
     reportedLocation = location
     reportedType = type
-    
-    print("Inicjuje sie")
-    
-    routeApiService.getNearbyRoutes(location: reportedLocation) { (routes) in
-      print(routes)
-    }
   }
 }

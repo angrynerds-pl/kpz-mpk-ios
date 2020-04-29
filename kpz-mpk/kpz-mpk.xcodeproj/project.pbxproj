@@ -14,6 +14,7 @@
 		1606027E2458AB72004FAD39 /* RouteApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1606027D2458AB72004FAD39 /* RouteApiService.swift */; };
 		160602802458BBB4004FAD39 /* RouteTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1606027F2458BBB4004FAD39 /* RouteTrip.swift */; };
 		160602822458BBC9004FAD39 /* TimetableRouteType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160602812458BBC9004FAD39 /* TimetableRouteType.swift */; };
+		1606028A2459BC30004FAD39 /* RouteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160602892459BC30004FAD39 /* RouteCell.swift */; };
 		160B79AD2449E76A00720DCE /* IncidentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79AC2449E76A00720DCE /* IncidentType.swift */; };
 		160B79AF2449E79200720DCE /* IncidentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79AE2449E79200720DCE /* IncidentLocation.swift */; };
 		160B79B4244B862700720DCE /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79B3244B862700720DCE /* RoundedButton.swift */; };
@@ -53,6 +54,7 @@
 		1606027D2458AB72004FAD39 /* RouteApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteApiService.swift; sourceTree = "<group>"; };
 		1606027F2458BBB4004FAD39 /* RouteTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTrip.swift; sourceTree = "<group>"; };
 		160602812458BBC9004FAD39 /* TimetableRouteType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableRouteType.swift; sourceTree = "<group>"; };
+		160602892459BC30004FAD39 /* RouteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCell.swift; sourceTree = "<group>"; };
 		160B79AC2449E76A00720DCE /* IncidentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentType.swift; sourceTree = "<group>"; };
 		160B79AE2449E79200720DCE /* IncidentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentLocation.swift; sourceTree = "<group>"; };
 		160B79B3244B862700720DCE /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -122,6 +124,14 @@
 				1606027F2458BBB4004FAD39 /* RouteTrip.swift */,
 			);
 			path = RouteModels;
+			sourceTree = "<group>";
+		};
+		160602882459BC20004FAD39 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				160602892459BC30004FAD39 /* RouteCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		160B79AB2449E6AA00720DCE /* Models */ = {
@@ -211,6 +221,7 @@
 		1689912A245497E100B56408 /* LinePickView */ = {
 			isa = PBXGroup;
 			children = (
+				160602882459BC20004FAD39 /* Cells */,
 				16060276245837C1004FAD39 /* ViewModels */,
 				1689912D2454988200B56408 /* ViewControllers */,
 			);
@@ -463,6 +474,7 @@
 				16392D1E24485C1D00E227B6 /* ApiConstants.swift in Sources */,
 				16DDF03424422A4300E2633E /* ApiEndpoint.swift in Sources */,
 				1606027A245852D9004FAD39 /* TimetableEndpoint.swift in Sources */,
+				1606028A2459BC30004FAD39 /* RouteCell.swift in Sources */,
 				160602802458BBB4004FAD39 /* RouteTrip.swift in Sources */,
 				16060278245837D5004FAD39 /* LinePickViewModel.swift in Sources */,
 				16544AB7244E2DB800319CB2 /* IncidentTypeCell.swift in Sources */,
