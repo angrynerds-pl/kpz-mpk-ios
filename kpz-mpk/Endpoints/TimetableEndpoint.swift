@@ -22,8 +22,16 @@ enum TimetableEndpoint: ApiEndpoint {
   
   var path: String {
     switch self {
+    case .getNearbyLines:
+      return "timetable/nearby"
+    }
+  }
+  
+  var queryItems: Parameters? {
+    switch self {
     case .getNearbyLines(let location):
-      return "/timetable/nearby?longitude=\(location.longitude)&latitude=\(location.latitude)"
+      return ["longitude": location.longitude,
+              "latitude": location.latitude]
     }
   }
   

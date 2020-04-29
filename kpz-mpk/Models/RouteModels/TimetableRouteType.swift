@@ -1,5 +1,5 @@
 //
-//  Route.swift
+//  TimetableRouteType.swift
 //  kpz-mpk
 //
 //  Created by Wojciech Konury on 28/04/2020.
@@ -7,18 +7,6 @@
 //
 
 import Foundation
-
-struct Route: Codable {
-  let routeId: String
-  let distance: Double
-  let routeGtfsType: TimetableRouteType
-  let trips: Trip
-}
-
-struct Trip: Codable {
-  let tripHeadsign: String
-  let distance: String
-}
 
 enum TimetableRouteType: Int, Codable {
   case tram = 0
@@ -32,3 +20,5 @@ enum TimetableRouteType: Int, Codable {
   case trolleybus = 11
   case monorail = 12
 }
+
+// Add tram, other, bus images

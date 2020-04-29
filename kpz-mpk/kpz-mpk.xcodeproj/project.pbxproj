@@ -12,6 +12,8 @@
 		1606027A245852D9004FAD39 /* TimetableEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16060279245852D9004FAD39 /* TimetableEndpoint.swift */; };
 		1606027C245862B3004FAD39 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1606027B245862B3004FAD39 /* Route.swift */; };
 		1606027E2458AB72004FAD39 /* RouteApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1606027D2458AB72004FAD39 /* RouteApiService.swift */; };
+		160602802458BBB4004FAD39 /* RouteTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1606027F2458BBB4004FAD39 /* RouteTrip.swift */; };
+		160602822458BBC9004FAD39 /* TimetableRouteType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160602812458BBC9004FAD39 /* TimetableRouteType.swift */; };
 		160B79AD2449E76A00720DCE /* IncidentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79AC2449E76A00720DCE /* IncidentType.swift */; };
 		160B79AF2449E79200720DCE /* IncidentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79AE2449E79200720DCE /* IncidentLocation.swift */; };
 		160B79B4244B862700720DCE /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79B3244B862700720DCE /* RoundedButton.swift */; };
@@ -49,6 +51,8 @@
 		16060279245852D9004FAD39 /* TimetableEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableEndpoint.swift; sourceTree = "<group>"; };
 		1606027B245862B3004FAD39 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		1606027D2458AB72004FAD39 /* RouteApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteApiService.swift; sourceTree = "<group>"; };
+		1606027F2458BBB4004FAD39 /* RouteTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTrip.swift; sourceTree = "<group>"; };
+		160602812458BBC9004FAD39 /* TimetableRouteType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableRouteType.swift; sourceTree = "<group>"; };
 		160B79AC2449E76A00720DCE /* IncidentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentType.swift; sourceTree = "<group>"; };
 		160B79AE2449E79200720DCE /* IncidentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentLocation.swift; sourceTree = "<group>"; };
 		160B79B3244B862700720DCE /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -110,13 +114,31 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		160B79AB2449E6AA00720DCE /* Models */ = {
+		160602832458BBE0004FAD39 /* RouteModels */ = {
+			isa = PBXGroup;
+			children = (
+				1606027B245862B3004FAD39 /* Route.swift */,
+				160602812458BBC9004FAD39 /* TimetableRouteType.swift */,
+				1606027F2458BBB4004FAD39 /* RouteTrip.swift */,
+			);
+			path = RouteModels;
+			sourceTree = "<group>";
+		};
+		160602842458BBF8004FAD39 /* IncidentModels */ = {
 			isa = PBXGroup;
 			children = (
 				16DDF037244235A500E2633E /* Incident.swift */,
 				160B79AC2449E76A00720DCE /* IncidentType.swift */,
 				160B79AE2449E79200720DCE /* IncidentLocation.swift */,
-				1606027B245862B3004FAD39 /* Route.swift */,
+			);
+			path = IncidentModels;
+			sourceTree = "<group>";
+		};
+		160B79AB2449E6AA00720DCE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				160602842458BBF8004FAD39 /* IncidentModels */,
+				160602832458BBE0004FAD39 /* RouteModels */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -430,6 +452,7 @@
 				160B79B4244B862700720DCE /* RoundedButton.swift in Sources */,
 				1630C16C240D365800203440 /* MapViewController.swift in Sources */,
 				1606027C245862B3004FAD39 /* Route.swift in Sources */,
+				160602822458BBC9004FAD39 /* TimetableRouteType.swift in Sources */,
 				16544AA6244DEE4D00319CB2 /* MapState.swift in Sources */,
 				1630C168240D365800203440 /* AppDelegate.swift in Sources */,
 				16544AB0244E087700319CB2 /* RoundedLeftButton.swift in Sources */,
@@ -448,6 +471,7 @@
 				16392D1E24485C1D00E227B6 /* ApiConstants.swift in Sources */,
 				16DDF03424422A4300E2633E /* ApiEndpoint.swift in Sources */,
 				1606027A245852D9004FAD39 /* TimetableEndpoint.swift in Sources */,
+				160602802458BBB4004FAD39 /* RouteTrip.swift in Sources */,
 				16060278245837D5004FAD39 /* LinePickViewModel.swift in Sources */,
 				16544AB7244E2DB800319CB2 /* IncidentTypeCell.swift in Sources */,
 				160602752458312F004FAD39 /* TypePickViewModel.swift in Sources */,

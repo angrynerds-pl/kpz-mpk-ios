@@ -23,8 +23,9 @@ final class LinePickViewModel {
     reportedLocation = location
     reportedType = type
     
+    print("Inicjuje sie")
+    
     routeApiService.getNearbyRoutes(location: reportedLocation) { (routes) in
-      print(routes)
     }
   }
 }
