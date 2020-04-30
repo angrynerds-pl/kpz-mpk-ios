@@ -1,5 +1,5 @@
 //
-//  LinePickViewModel.swift
+//  RoutePickViewModel.swift
 //  kpz-mpk
 //
 //  Created by Wojciech Konury on 28/04/2020.
@@ -11,15 +11,15 @@ import Foundation
 import UIKit
 import CoreLocation
 
-final class LinePickViewModel {
+final class RoutePickViewModel {
   private var reportedLocation: CLLocationCoordinate2D
   private var reportedType: IncidenType
-  private weak var presenter: LinePickViewController?
+  private weak var presenter: RoutePickViewController?
   
   let routeApiService: RouteApiServiceProtocole = RouteApiService()
 
   init(
-    presenter: LinePickViewController?,
+    presenter: RoutePickViewController?,
     reportedLocation location: CLLocationCoordinate2D,
     reportedType type: IncidenType
   ) {

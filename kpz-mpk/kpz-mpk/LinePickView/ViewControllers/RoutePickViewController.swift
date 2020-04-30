@@ -1,5 +1,5 @@
 //
-//  LinePickViewController.swift
+//  RoutePickViewController.swift
 //  kpz-mpk
 //
 //  Created by Wojciech Konury on 25/04/2020.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol LienePickViewControllerPresenter: NSObject {
+protocol RoutePickViewControllerPresenter: NSObject {
   func displayRoutes(dataSource data: RouteDataSource)
 }
 
-class LinePickViewController: UITableViewController {
+class RoutePickViewController: UITableViewController {
   
-  var viewModel: LinePickViewModel!
+  var viewModel: RoutePickViewModel!
   private var dataSource: RouteDataSource?
   
   override func viewDidLoad() {
@@ -22,7 +22,7 @@ class LinePickViewController: UITableViewController {
   }
 }
 
-extension LinePickViewController: LienePickViewControllerPresenter {
+extension RoutePickViewController: RoutePickViewControllerPresenter {
   func displayRoutes(dataSource data: RouteDataSource) {
     self.dataSource = data
     tableView.dataSource = self.dataSource

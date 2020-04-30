@@ -11,25 +11,25 @@ import Alamofire
 import CoreLocation
 
 enum TimetableEndpoint: ApiEndpoint {
-  case getNearbyLines(location: CLLocationCoordinate2D)
+  case getNearbyRoutes(location: CLLocationCoordinate2D)
   
   var method: HTTPMethod {
     switch self {
-    case .getNearbyLines:
+    case .getNearbyRoutes:
       return .get
     }
   }
   
   var path: String {
     switch self {
-    case .getNearbyLines:
+    case .getNearbyRoutes:
       return "timetable/nearby"
     }
   }
   
   var queryItems: Parameters? {
     switch self {
-    case .getNearbyLines(let location):
+    case .getNearbyRoutes(let location):
       return ["longitude": location.longitude,
               "latitude": location.latitude]
     }

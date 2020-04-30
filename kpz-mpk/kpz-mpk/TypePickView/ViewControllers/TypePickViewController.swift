@@ -41,14 +41,14 @@ class TypePickViewController: UITableViewController {
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "segueLine" {
-      let nextSceene = segue.destination as? LinePickViewController
+      let nextSceene = segue.destination as? RoutePickViewController
       let indexPath = self.tableView.indexPathForSelectedRow
       
       guard let selectedRow = IncidenType.allCases[safe: indexPath!.row] else {
         return
       }
       
-      nextSceene?.viewModel = LinePickViewModel(
+      nextSceene?.viewModel = RoutePickViewModel(
         presenter: nextSceene,
         reportedLocation: viewModel.reportedLocation,
         reportedType: selectedRow

@@ -17,7 +17,7 @@ class RouteApiService: RouteApiServiceProtocole {
   let apiService: ApiServiceProtocol = ApiService()
   
   func getNearbyRoutes(location: CLLocationCoordinate2D, success: (([Route]) -> ())?) {
-    apiService.request(endpoint: TimetableEndpoint.getNearbyLines(location: location)) { (response) in
+    apiService.request(endpoint: TimetableEndpoint.getNearbyRoutes(location: location)) { (response) in
       success?(response)
     }
   }
