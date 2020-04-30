@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 final class TypePickViewModel {
-  var reportedLocation: CLLocationCoordinate2D
+  private(set) var reportedLocation: CLLocationCoordinate2D
   
   init(reportedLocation location: CLLocationCoordinate2D) {
     reportedLocation = location

@@ -44,13 +44,14 @@ class TypePickViewController: UITableViewController {
       let nextSceene = segue.destination as? LinePickViewController
       let indexPath = self.tableView.indexPathForSelectedRow
       
-      // Pozbyc sie tego force unwrapa
-      let selectedRow = IncidenType.allCases[safe: indexPath!.row]
+      guard let selectedRow = IncidenType.allCases[safe: indexPath!.row] else {
+        return
+      }
       
       nextSceene?.viewModel = LinePickViewModel(
         presenter: nextSceene,
         reportedLocation: viewModel.reportedLocation,
-        reportedType: selectedRow!
+        reportedType: selectedRow
       )
     }
   }
