@@ -12,17 +12,28 @@ import UIKit
 import CoreLocation
 
 final class LinePickViewModel {
-  var reportedLocation: CLLocationCoordinate2D
-  var reportedType: IncidenType
+  private var reportedLocation: CLLocationCoordinate2D
+  private var reportedType: IncidenType
+  private weak var presenter: LinePickViewController?
+  
   let routeApiService: RouteApiServiceProtocole = RouteApiService()
-  
-  var routesAPI: [Route] = [Route(routeId: "test", distance: 12.2, trips: [], routeGtfsType: TimetableRouteType(rawValue: 3)!)]
-  
+
   init(
+    presenter: LinePickViewController?,
     reportedLocation location: CLLocationCoordinate2D,
     reportedType type: IncidenType
   ) {
+    self.presenter = presenter
     reportedLocation = location
     reportedType = type
+    
+    getRoutes()
+  }
+  
+  func getRoutes() {
+    routeApiService.getNearbyRoutes(location: reportedLocation) { (routes) in
+      let routesDataSource = RouteDataSource(routes: routes)
+      self.presenter?.displayRoutes(dataSource: routesDataSource)
+    }
   }
 }

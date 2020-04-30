@@ -48,7 +48,10 @@ class TypePickViewController: UITableViewController {
       let selectedRow = IncidenType.allCases[safe: indexPath!.row]
       
       nextSceene?.viewModel = LinePickViewModel(
-        reportedLocation: viewModel.reportedLocation, reportedType: selectedRow!)
+        presenter: nextSceene,
+        reportedLocation: viewModel.reportedLocation,
+        reportedType: selectedRow!
+      )
     }
   }
 }

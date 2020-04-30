@@ -8,42 +8,24 @@
 
 import UIKit
 
+protocol LienePickViewControllerPresenter: NSObject {
+  func displayRoutes(dataSource data: RouteDataSource)
+}
+
 class LinePickViewController: UITableViewController {
   
   var viewModel: LinePickViewModel!
+  private var dataSource: RouteDataSource?
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    tableView.delegate = self
-      
   }
-  
-  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    var policzone = viewModel.routesAPI.count
-    return policzone
+}
+
+extension LinePickViewController: LienePickViewControllerPresenter {
+  func displayRoutes(dataSource data: RouteDataSource) {
+    self.dataSource = data
+    tableView.dataSource = self.dataSource
+    tableView.reloadData()
   }
-  
-  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let routeItem = viewModel.routesAPI[indexPath.row]
-    let cell = tableView.dequeueReusableCell(withIdentifier: "RouteCell") as? RouteCell
-    
-    cell?.setCell(routeItem: routeItem)
-    return cell!
-    
-  }
-  
-//  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//    guard let routeItem = viewModel.routesAPI[safe: indexPath.row] else {
-//      return UITableViewCell()
-//    }
-//
-//    guard let cell = tableView.dequeueReusableCell(withIdentifier: "RouteCell") as? RouteCell else {
-//      return UITableViewCell()
-//    }
-//
-//    cell.setCell(routeItem: routeItem)
-//    return cell
-//  }
-  
 }
