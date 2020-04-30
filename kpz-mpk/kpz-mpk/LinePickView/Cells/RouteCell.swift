@@ -11,8 +11,8 @@ import UIKit
 class RouteCell: UITableViewCell {
   @IBOutlet private weak var routeIdLabel: UILabel!
   
-  func setCell(routeItem item: Route) {
-    routeIdLabel.text = item.routeId
+  func setCell(routeItem item: Trip) {
+    routeIdLabel.text = item.tripHeadsign
   }
   
 }

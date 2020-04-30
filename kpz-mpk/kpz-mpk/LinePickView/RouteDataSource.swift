@@ -16,12 +16,20 @@ class RouteDataSource: NSObject {
   }
 }
 extension RouteDataSource: UITableViewDataSource {
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  func numberOfSections(in tableView: UITableView) -> Int {
     return routes.count
   }
   
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    return routes[section].routeId
+  }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return routes[section].trips.count
+  }
+  
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let routeItem = routes[safe: indexPath.row] else {
+    guard let routeItem = routes[indexPath.section].trips[safe: indexPath.row] else {
       return UITableViewCell()
     }
     
