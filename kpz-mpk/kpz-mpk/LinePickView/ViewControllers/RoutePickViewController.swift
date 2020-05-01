@@ -23,8 +23,8 @@ class RoutePickViewController: UITableViewController {
 }
 
 extension RoutePickViewController: RoutePickViewControllerPresenter {
-  func displayRoutes(dataSource data: RouteDataSource) {
-    self.dataSource = data
+  func displayRoutes(dataSource: RouteDataSource) {
+    self.dataSource = dataSource
     tableView.dataSource = self.dataSource
     tableView.reloadData()
   }

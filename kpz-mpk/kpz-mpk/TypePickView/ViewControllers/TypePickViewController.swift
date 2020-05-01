@@ -23,11 +23,8 @@ class TypePickViewController: UITableViewController {
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-    guard let incidenTypeItem = IncidenType.allCases[safe: indexPath.row] else {
-      return UITableViewCell()
-    }
-    
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: "IncidentTypeCell") as? IncidentTypeCell else {
+    guard let incidenTypeItem = IncidenType.allCases[safe: indexPath.row],
+      let cell = tableView.dequeueReusableCell(withIdentifier: "IncidentTypeCell") as? IncidentTypeCell else {
       return UITableViewCell()
     }
     
