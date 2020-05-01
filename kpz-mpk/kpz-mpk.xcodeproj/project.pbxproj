@@ -20,6 +20,7 @@
 		160B79AF2449E79200720DCE /* IncidentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79AE2449E79200720DCE /* IncidentLocation.swift */; };
 		160B79B4244B862700720DCE /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79B3244B862700720DCE /* RoundedButton.swift */; };
 		160B79BA244C725100720DCE /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79B9244C725100720DCE /* RoundedView.swift */; };
+		161DBE07245C781D005A907B /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 161DBE06245C781D005A907B /* Auth0.plist */; };
 		1630C168240D365800203440 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630C167240D365800203440 /* AppDelegate.swift */; };
 		1630C16A240D365800203440 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630C169240D365800203440 /* SceneDelegate.swift */; };
 		1630C16C240D365800203440 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630C16B240D365800203440 /* MapViewController.swift */; };
@@ -27,6 +28,8 @@
 		1630C171240D365C00203440 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1630C170240D365C00203440 /* Assets.xcassets */; };
 		1630C174240D365C00203440 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1630C172240D365C00203440 /* LaunchScreen.storyboard */; };
 		16392D1E24485C1D00E227B6 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16392D1D24485C1D00E227B6 /* ApiConstants.swift */; };
+		164A3AB7245C8AB70038B161 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164A3AB6245C8AB70038B161 /* SessionManager.swift */; };
+		164A3ABA245C8EA40038B161 /* UserMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164A3AB9245C8EA40038B161 /* UserMenuViewController.swift */; };
 		16544AA6244DEE4D00319CB2 /* MapState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16544AA5244DEE4D00319CB2 /* MapState.swift */; };
 		16544AAE244E07FD00319CB2 /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16544AAD244E07FC00319CB2 /* ShadowButton.swift */; };
 		16544AB0244E087700319CB2 /* RoundedLeftButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16544AAF244E087700319CB2 /* RoundedLeftButton.swift */; };
@@ -61,6 +64,7 @@
 		160B79AE2449E79200720DCE /* IncidentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentLocation.swift; sourceTree = "<group>"; };
 		160B79B3244B862700720DCE /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		160B79B9244C725100720DCE /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		161DBE06245C781D005A907B /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		1630C164240D365800203440 /* kpz-mpk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kpz-mpk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1630C167240D365800203440 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1630C169240D365800203440 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 		1630C173240D365C00203440 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1630C175240D365C00203440 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16392D1D24485C1D00E227B6 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
+		164A3AB6245C8AB70038B161 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		164A3AB9245C8EA40038B161 /* UserMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuViewController.swift; sourceTree = "<group>"; };
 		16544AA5244DEE4D00319CB2 /* MapState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapState.swift; sourceTree = "<group>"; };
 		16544AAD244E07FC00319CB2 /* ShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
 		16544AAF244E087700319CB2 /* RoundedLeftButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedLeftButton.swift; sourceTree = "<group>"; };
@@ -180,6 +186,7 @@
 		1630C166240D365800203440 /* kpz-mpk */ = {
 			isa = PBXGroup;
 			children = (
+				164A3AB8245C8E840038B161 /* UserMenuView */,
 				16C783B82445A55C00375B88 /* API */,
 				1689912A245497E100B56408 /* LinePickView */,
 				16544AB3244E291900319CB2 /* TypePickView */,
@@ -188,9 +195,19 @@
 				1630C169240D365800203440 /* SceneDelegate.swift */,
 				1630C170240D365C00203440 /* Assets.xcassets */,
 				1630C172240D365C00203440 /* LaunchScreen.storyboard */,
+				161DBE06245C781D005A907B /* Auth0.plist */,
 				1630C175240D365C00203440 /* Info.plist */,
+				164A3AB6245C8AB70038B161 /* SessionManager.swift */,
 			);
 			path = "kpz-mpk";
+			sourceTree = "<group>";
+		};
+		164A3AB8245C8E840038B161 /* UserMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				164A3AB9245C8EA40038B161 /* UserMenuViewController.swift */,
+			);
+			path = UserMenuView;
 			sourceTree = "<group>";
 		};
 		16544AB3244E291900319CB2 /* TypePickView */ = {
@@ -382,6 +399,7 @@
 				1630C174240D365C00203440 /* LaunchScreen.storyboard in Resources */,
 				1630C171240D365C00203440 /* Assets.xcassets in Resources */,
 				1630C16F240D365800203440 /* Main.storyboard in Resources */,
+				161DBE07245C781D005A907B /* Auth0.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,12 +474,14 @@
 				16544AB5244E294F00319CB2 /* TypePickViewController.swift in Sources */,
 				1606028C2459F39C004FAD39 /* RouteDataSource.swift in Sources */,
 				16544AAE244E07FD00319CB2 /* ShadowButton.swift in Sources */,
+				164A3ABA245C8EA40038B161 /* UserMenuViewController.swift in Sources */,
 				160B79B4244B862700720DCE /* RoundedButton.swift in Sources */,
 				1630C16C240D365800203440 /* MapViewController.swift in Sources */,
 				1606027C245862B3004FAD39 /* Route.swift in Sources */,
 				160602822458BBC9004FAD39 /* TimetableRouteType.swift in Sources */,
 				16544AA6244DEE4D00319CB2 /* MapState.swift in Sources */,
 				1630C168240D365800203440 /* AppDelegate.swift in Sources */,
+				164A3AB7245C8AB70038B161 /* SessionManager.swift in Sources */,
 				16544AB0244E087700319CB2 /* RoundedLeftButton.swift in Sources */,
 				16D897C724277C5600EE6BF3 /* ApiService.swift in Sources */,
 				160B79AF2449E79200720DCE /* IncidentLocation.swift in Sources */,

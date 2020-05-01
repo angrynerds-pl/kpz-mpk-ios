@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Auth0
 
 protocol MapViewControllerPresenter: NSObject {
   func centerMap(coordinateRegion: MKCoordinateRegion)
@@ -46,6 +47,10 @@ class MapViewController: UIViewController {
   
   // MARK: - Buttons actions
   
+  @IBAction private func userMenuButtonPressed(_ sender: UIButton) {
+    viewModel.auth0Login()
+  }
+  
   @IBAction private func centerMapButtonPressed(_ sender: UIButton) {
     viewModel.centerMapOnUser()
   }
@@ -69,6 +74,15 @@ class MapViewController: UIViewController {
     if segue.identifier == "segueType" {
       let nextSceene = segue.destination as? TypePickViewController
       nextSceene?.viewModel = TypePickViewModel(reportedLocation: mapView.centerCoordinate)
+    }
+  }
+  
+  override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+    switch identifier {
+    case "userMenuSegue":
+      return SessionManager.shared.credentialsManager.hasValid()
+    default:
+      return true
     }
   }
 }

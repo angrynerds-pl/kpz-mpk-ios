@@ -8,16 +8,39 @@
 
 import Foundation
 import MapKit
+import Auth0
 
 final class MapViewModel {
   private weak var presenter: MapViewControllerPresenter?
   let locationService = LocationService()
   let incidentApiService: IncidentApiServiceProtocole = IncidentApiService()
-  
   init(presenter: MapViewControllerPresenter?) {
     self.presenter = presenter
     
     locationService.delegate = self
+  }
+  
+  func auth0Login() {
+    if !SessionManager.shared.credentialsManager.hasValid() {
+      Auth0
+        .webAuth()
+        .scope("openid profile")
+        .audience("https://wojtek717.eu.auth0.com/userinfo")
+        .start {
+          switch $0 {
+          case .failure(let error):
+            // Handle the error
+            print("Error: \(error)")
+          case .success(let credentials):
+            if !SessionManager.shared.store(credentials: credentials) {
+              print("Failed to store credentials")
+            }
+          }
+      }
+    } else {
+      print("Zalogowany")
+    }
+    
   }
   
   func presentState(stateToPresent state: MapState) {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Auth0
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,5 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(
     _ application: UIApplication,
     didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {}
+  
+  func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any]) -> Bool {
+      return Auth0.resumeAuth(url, options: options)
+  }
   
 }
