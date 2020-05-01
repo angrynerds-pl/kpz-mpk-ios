@@ -24,7 +24,7 @@ final class MapViewModel {
     if !SessionManager.shared.credentialsManager.hasValid() {
       Auth0
         .webAuth()
-        .scope("openid profile")
+        .scope("openid profile offline_access")
         .audience("https://wojtek717.eu.auth0.com/userinfo")
         .start {
           switch $0 {

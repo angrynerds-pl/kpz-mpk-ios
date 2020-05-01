@@ -43,6 +43,9 @@ class MapViewController: UIViewController {
     viewModel.centerMapOnUser()
     registerMapAnnotationViews()
     viewModel.displayAnnotations()
+    SessionManager.shared.renewAuth { (error) in
+      print(error)
+    }
   }
   
   // MARK: - Buttons actions

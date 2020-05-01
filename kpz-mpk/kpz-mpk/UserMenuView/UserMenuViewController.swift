@@ -9,11 +9,21 @@
 import UIKit
 
 class UserMenuViewController: UIViewController {
+    @IBOutlet weak var tokenLabel: UILabel!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    SessionManager.shared.credentialsManager.credentials { error, credentials in
+        guard error == nil, let credentials = credentials else {
+            // Handle Error, Present Login Page
+          return
+        }
+      self.tokenLabel.text = SessionManager.shared.credentials?.accessToken ?? "Dudud"
+    }
   }
   
+
   @IBAction private func logoutButtonPressed(_ sender: UIButton) {
     SessionManager.shared.logout { error in
       
