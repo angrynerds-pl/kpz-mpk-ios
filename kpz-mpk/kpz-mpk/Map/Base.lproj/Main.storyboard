@@ -25,7 +25,7 @@
                                 <rect key="frame" x="315" y="708" width="64" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQE-vO-mWQ">
-                                        <rect key="frame" x="18.333333333333314" y="19" width="27.666666666666671" height="26"/>
+                                        <rect key="frame" x="18" y="19" width="28" height="26"/>
                                         <state key="normal" image="location.fill" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="black"/>
                                         </state>
@@ -133,7 +133,7 @@
                                 </state>
                                 <connections>
                                     <action selector="confirmButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mzG-T8-lzM"/>
-                                    <segue destination="GlO-LA-RoF" kind="show" id="Z7g-8D-LO3"/>
+                                    <segue destination="GlO-LA-RoF" kind="show" identifier="segueType" id="Z7g-8D-LO3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -174,10 +174,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Type Pick View Controller-->
         <scene sceneID="7Nz-8h-3l9">
             <objects>
-                <tableViewController id="GlO-LA-RoF" customClass="TableViewController" customModule="kpz_mpk" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="GlO-LA-RoF" customClass="TypePickViewController" customModule="kpz_mpk" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1Jh-Sv-3Az">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -218,6 +218,7 @@
                                 <connections>
                                     <outlet property="incidenTypeImageView" destination="6Ah-zP-Wjg" id="T76-dK-wHQ"/>
                                     <outlet property="incidenTypeName" destination="uee-zx-QDg" id="So3-qq-Qhf"/>
+                                    <segue destination="Yct-X7-adb" kind="show" identifier="segueLine" id="Dqa-lg-vAc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -231,6 +232,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xkz-Gd-8BV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1138" y="149"/>
+        </scene>
+        <!--Route Pick View Controller-->
+        <scene sceneID="ozo-Ue-fRL">
+            <objects>
+                <tableViewController id="Yct-X7-adb" customClass="RoutePickViewController" customModule="kpz_mpk" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JVK-y6-9Pd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RouteCell" id="dbK-K5-cmf" customClass="RouteCell" customModule="kpz_mpk" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.333332061767578"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dbK-K5-cmf" id="TpY-da-gGp">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.333332061767578"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJX-cb-gmL">
+                                            <rect key="frame" x="20" y="10.999999999999998" width="374" height="21.333333333333329"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="vJX-cb-gmL" firstAttribute="top" secondItem="TpY-da-gGp" secondAttribute="topMargin" id="0rv-4c-Ujz"/>
+                                        <constraint firstItem="vJX-cb-gmL" firstAttribute="centerY" secondItem="TpY-da-gGp" secondAttribute="centerY" id="KYh-Fg-KmZ"/>
+                                        <constraint firstItem="vJX-cb-gmL" firstAttribute="centerX" secondItem="TpY-da-gGp" secondAttribute="centerX" id="YKJ-bg-TjX"/>
+                                        <constraint firstItem="vJX-cb-gmL" firstAttribute="leading" secondItem="TpY-da-gGp" secondAttribute="leadingMargin" id="fox-Ju-ne3"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="routeIdLabel" destination="vJX-cb-gmL" id="a1p-Di-fd1"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Yct-X7-adb" id="RZN-ZY-Cls"/>
+                            <outlet property="delegate" destination="Yct-X7-adb" id="5LP-7t-egw"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="XxB-YO-PUO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O0k-0n-qpu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2145" y="152"/>
         </scene>
     </scenes>
     <resources>
