@@ -35,6 +35,7 @@ final class MapViewModel {
         .webAuth()
         .scope("openid profile offline_access")
         .audience("https://wojtek717.eu.auth0.com/userinfo")
+        .parameters(["prompt": "login"])
         .start {
           switch $0 {
           case .failure(let error):
