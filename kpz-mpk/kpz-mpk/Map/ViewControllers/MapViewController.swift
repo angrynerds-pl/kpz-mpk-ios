@@ -44,7 +44,7 @@ class MapViewController: UIViewController {
     registerMapAnnotationViews()
     viewModel.displayAnnotations()
     SessionManager.shared.renewAuth { (error) in
-      print(error)
+      print(error ?? "RenewAuth Error")
     }
   }
   
@@ -73,6 +73,8 @@ class MapViewController: UIViewController {
     mapView.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(IncidentAnnotation.self))
   }
   
+  // MARK: - Segues
+  
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "segueType" {
       let nextSceene = segue.destination as? TypePickViewController
@@ -81,12 +83,7 @@ class MapViewController: UIViewController {
   }
   
   override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-    switch identifier {
-    case "userMenuSegue":
-      return SessionManager.shared.credentialsManager.hasValid()
-    default:
-      return true
-    }
+    return viewModel.shouldPerformSegue(withIdentifier: "userMenuSegue")
   }
 }
 

@@ -20,6 +20,15 @@ final class MapViewModel {
     locationService.delegate = self
   }
   
+  func shouldPerformSegue(withIdentifier identifier: String) -> Bool {
+    switch identifier {
+    case "userMenuSegue":
+      return SessionManager.shared.credentialsManager.hasValid()
+    default:
+      return true
+    }
+  }
+  
   func auth0Login() {
     if !SessionManager.shared.credentialsManager.hasValid() {
       Auth0
