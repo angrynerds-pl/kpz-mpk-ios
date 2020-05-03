@@ -24,6 +24,8 @@ final class MapViewModel {
     switch identifier {
     case "userMenuSegue":
       return SessionManager.shared.credentialsManager.hasValid()
+    case "segueType":
+      return SessionManager.shared.credentialsManager.hasValid()
     default:
       return true
     }

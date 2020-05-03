@@ -63,6 +63,7 @@ class MapViewController: UIViewController {
   }
   
   @IBAction private func confirmButtonPressed(_ sender: UIButton) {
+    viewModel.auth0Login()
   }
   
   @IBAction func cancelButtonPressed(_ sender: UIButton) {
@@ -83,7 +84,7 @@ class MapViewController: UIViewController {
   }
   
   override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-    return viewModel.shouldPerformSegue(withIdentifier: "userMenuSegue")
+    return viewModel.shouldPerformSegue(withIdentifier: identifier)
   }
 }
 
