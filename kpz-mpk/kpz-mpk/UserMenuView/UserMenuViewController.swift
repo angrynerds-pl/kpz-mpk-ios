@@ -21,6 +21,7 @@ class UserMenuViewController: UIViewController {
     SessionManager.shared.logout { error in
       
       guard error == nil else {
+        SessionManager.shared.credentialsManager.clear()
         return print("Error revoking token: \(String(describing: error))")
       }
       

@@ -36,7 +36,7 @@ final class MapViewModel {
       Auth0
         .webAuth()
         .scope("openid profile offline_access")
-        .audience("https://wojtek717.eu.auth0.com/userinfo")
+        .audience("https://kpz-mpk.eu.auth0.com/userinfo")
         .parameters(["prompt": "login"])
         .start {
           switch $0 {
