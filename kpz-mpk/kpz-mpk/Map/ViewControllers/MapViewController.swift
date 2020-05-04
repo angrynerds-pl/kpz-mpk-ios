@@ -44,7 +44,7 @@ class MapViewController: UIViewController {
     registerMapAnnotationViews()
     viewModel.displayAnnotations()
     SessionManager.shared.renewAuth { (error) in
-      print(error ?? "RenewAuth Error")
+      if error != nil { print(error!) }
     }
   }
   
