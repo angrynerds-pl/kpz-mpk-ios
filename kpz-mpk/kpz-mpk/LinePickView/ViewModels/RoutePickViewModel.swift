@@ -31,9 +31,11 @@ final class RoutePickViewModel {
   }
   
   func getRoutes() {
-    routeApiService.getNearbyRoutes(location: reportedLocation) { (routes) in
+    routeApiService.getNearbyRoutes(location: reportedLocation, success: { (routes) in
       let routesDataSource = RouteDataSource(routes: routes)
       self.presenter?.displayRoutes(dataSource: routesDataSource)
+    }) { (apiError) in
+      print(apiError)
     }
   }
 }

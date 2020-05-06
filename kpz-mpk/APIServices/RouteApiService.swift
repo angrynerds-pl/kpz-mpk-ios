@@ -10,15 +10,18 @@ import Foundation
 import CoreLocation
 
 protocol RouteApiServiceProtocole {
-  func getNearbyRoutes(location: CLLocationCoordinate2D, success: (([Route]) -> ())?)
+  func getNearbyRoutes(location: CLLocationCoordinate2D, success: (([Route]) -> ())?, failure: ((ApiError) -> Void)?)
 }
 
 class RouteApiService: RouteApiServiceProtocole {
   let apiService: ApiServiceProtocol = ApiService()
   
-  func getNearbyRoutes(location: CLLocationCoordinate2D, success: (([Route]) -> ())?) {
-    apiService.request(endpoint: TimetableEndpoint.getNearbyRoutes(location: location)) { (response) in
+  func getNearbyRoutes(location: CLLocationCoordinate2D, success: (([Route]) -> ())?, failure: ((ApiError) -> Void)?) {
+    apiService.request(endpoint: TimetableEndpoint.getNearbyRoutes(location: location), success: { (response) in
       success?(response)
+    }) { (apiError) in
+      failure?(apiError)
     }
   }
+  
 }
