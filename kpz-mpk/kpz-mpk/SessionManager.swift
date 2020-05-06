@@ -22,19 +22,36 @@ class SessionManager {
     _ = self.authentication.logging(enabled: true) // API Logging
   }
   
-  func retrieveProfile(_ callback: @escaping (Error?) -> ()) {
-    guard let accessToken = self.credentials?.accessToken
-      else { return callback(CredentialsManagerError.noCredentials) }
-    self.authentication
-      .userInfo(withAccessToken: accessToken)
-      .start { result in
-        switch result {
-        case .success(let profile):
-          self.profile = profile
-          callback(nil)
-        case .failure(let error):
-          callback(error)
-        }
+  func auth0Login() {
+    if !SessionManager.shared.credentialsManager.hasValid() {
+      Auth0
+        .webAuth()
+        .scope("openid profile offline_access")
+        .audience("https://kpz-mpk.eu.auth0.com/userinfo")
+        .parameters(["prompt": "login"])
+        .start {
+          switch $0 {
+          case .failure(let error):
+            // Handle the error
+            print("Error: \(error)")
+          case .success(let credentials):
+            if !SessionManager.shared.store(credentials: credentials) {
+              print("Failed to store credentials")
+            }
+          }
+      }
+    } else {
+      return
+    }
+  }
+  
+  func auth0Logout() {
+    SessionManager.shared.logout { error in
+      
+      guard error == nil else {
+        _ = SessionManager.shared.credentialsManager.clear()
+        return print("Error revoking token: \(String(describing: error))")
+      }
     }
   }
   
@@ -52,20 +69,36 @@ class SessionManager {
     }
   }
   
-  func logout(_ callback: @escaping (Error?) -> Void) {
+  private func retrieveProfile(_ callback: @escaping (Error?) -> ()) {
+    guard let accessToken = self.credentials?.accessToken
+      else { return callback(CredentialsManagerError.noCredentials) }
+    self.authentication
+      .userInfo(withAccessToken: accessToken)
+      .start { result in
+        switch result {
+        case .success(let profile):
+          self.profile = profile
+          callback(nil)
+        case .failure(let error):
+          callback(error)
+        }
+    }
+  }
+  
+ private func logout(_ callback: @escaping (Error?) -> Void) {
     // Remove credentials from KeyChain
     self.credentials = nil
     self.credentialsManager.revoke(callback)
   }
   
-  func store(credentials: Credentials) -> Bool {
+  private func store(credentials: Credentials) -> Bool {
     self.credentials = credentials
     // Store credentials in KeyChain
     return self.credentialsManager.store(credentials: credentials)
   }
 }
 
-func plistValues(bundle: Bundle) -> (clientId: String, domain: String)? {
+private func plistValues(bundle: Bundle) -> (clientId: String, domain: String)? {
   guard
     let path = bundle.path(forResource: "Auth0", ofType: "plist"),
     let values = NSDictionary(contentsOfFile: path) as? [String: Any]

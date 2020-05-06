@@ -21,6 +21,6 @@ class UserMenuViewController: UIViewController {
   }
   
   @IBAction private func logoutButtonPressed(_ sender: UIButton) {
-    viewModel.auth0Logout()
+    viewModel.logout()
   }
 }

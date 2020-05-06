@@ -51,7 +51,7 @@ class MapViewController: UIViewController {
   // MARK: - Buttons actions
   
   @IBAction private func userMenuButtonPressed(_ sender: UIButton) {
-    viewModel.auth0Login()
+    viewModel.login()
   }
   
   @IBAction private func centerMapButtonPressed(_ sender: UIButton) {
@@ -63,7 +63,7 @@ class MapViewController: UIViewController {
   }
   
   @IBAction private func confirmButtonPressed(_ sender: UIButton) {
-    viewModel.auth0Login()
+    viewModel.login()
   }
   
   @IBAction func cancelButtonPressed(_ sender: UIButton) {
