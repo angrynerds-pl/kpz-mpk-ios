@@ -14,6 +14,7 @@ final class MapViewModel {
   private weak var presenter: MapViewControllerPresenter?
   let locationService = LocationService()
   let incidentApiService: IncidentApiServiceProtocole = IncidentApiService()
+  
   init(presenter: MapViewControllerPresenter?) {
     self.presenter = presenter
     
@@ -69,7 +70,7 @@ final class MapViewModel {
       let annotations = incidents.map { IncidentAnnotation(forIncident: $0)}
       self.presenter?.displayAnnotations(annotations: annotations)
     }) { (apiError) in
-      print(apiError)
+      self.presenter?.present(error: apiError)
     }
   }
   

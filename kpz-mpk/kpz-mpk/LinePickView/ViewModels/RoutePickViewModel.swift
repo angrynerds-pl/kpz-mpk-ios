@@ -14,12 +14,12 @@ import CoreLocation
 final class RoutePickViewModel {
   private var reportedLocation: CLLocationCoordinate2D
   private var reportedType: IncidenType
-  private weak var presenter: RoutePickViewController?
+  private weak var presenter: RoutePickViewControllerPresenter?
   
   let routeApiService: RouteApiServiceProtocole = RouteApiService()
 
   init(
-    presenter: RoutePickViewController?,
+    presenter: RoutePickViewControllerPresenter?,
     reportedLocation location: CLLocationCoordinate2D,
     reportedType type: IncidenType
   ) {
@@ -35,7 +35,7 @@ final class RoutePickViewModel {
       let routesDataSource = RouteDataSource(routes: routes)
       self.presenter?.displayRoutes(dataSource: routesDataSource)
     }) { (apiError) in
-      print(apiError)
+      self.presenter?.present(error: apiError)
     }
   }
 }

@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import Auth0
 
-protocol MapViewControllerPresenter: NSObject {
+protocol MapViewControllerPresenter: NSObject, ErrorPresenting {
   func centerMap(coordinateRegion: MKCoordinateRegion)
   func displayCenterLocation(latitudeText: String, longitude: String)
   func setUpUI()
@@ -87,10 +87,13 @@ class MapViewController: UIViewController {
     return viewModel.shouldPerformSegue(withIdentifier: identifier)
   }
 }
-
 // MARK: - MapViewControllerPresenter protocole
 
 extension MapViewController: MapViewControllerPresenter {
+  func present(error: ApiError) {
+    showApiError(error: error)
+  }
+  
   func showMapBrowsingState() {
     confirmButton.isHidden = true
     cancelButton.isHidden = true

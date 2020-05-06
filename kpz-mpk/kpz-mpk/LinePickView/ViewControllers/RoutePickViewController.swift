@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol RoutePickViewControllerPresenter: NSObject {
+protocol RoutePickViewControllerPresenter: NSObject, ErrorPresenting {
   func displayRoutes(dataSource data: RouteDataSource)
 }
 
@@ -23,6 +23,10 @@ class RoutePickViewController: UITableViewController {
 }
 
 extension RoutePickViewController: RoutePickViewControllerPresenter {
+  func present(error: ApiError) {
+    showApiError(error: error)
+  }
+  
   func displayRoutes(dataSource: RouteDataSource) {
     self.dataSource = dataSource
     tableView.dataSource = self.dataSource
