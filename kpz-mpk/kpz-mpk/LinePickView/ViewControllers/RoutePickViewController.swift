@@ -23,9 +23,6 @@ class RoutePickViewController: UITableViewController {
 }
 
 extension RoutePickViewController: RoutePickViewControllerPresenter {
-  func present(error: ApiError) {
-    showApiError(error: error)
-  }
   
   func displayRoutes(dataSource: RouteDataSource) {
     self.dataSource = dataSource

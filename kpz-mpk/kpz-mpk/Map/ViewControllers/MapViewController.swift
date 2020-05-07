@@ -90,9 +90,6 @@ class MapViewController: UIViewController {
 // MARK: - MapViewControllerPresenter protocole
 
 extension MapViewController: MapViewControllerPresenter {
-  func present(error: ApiError) {
-    showApiError(error: error)
-  }
   
   func showMapBrowsingState() {
     confirmButton.isHidden = true

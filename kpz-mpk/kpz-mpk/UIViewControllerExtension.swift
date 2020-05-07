@@ -28,3 +28,9 @@ extension UIViewController {
     self.present(alert, animated: true, completion: nil)
   }
 }
+
+extension UIViewController: ErrorPresenting {
+  func present(error: ApiError) {
+    showApiError(error: error)
+  }
+}
