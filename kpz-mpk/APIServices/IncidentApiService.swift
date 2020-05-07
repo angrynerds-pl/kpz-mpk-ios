@@ -16,19 +16,11 @@ protocol IncidentApiServiceProtocole {
 class IncidentApiService: IncidentApiServiceProtocole {
   let apiService: ApiServiceProtocol = ApiService()
   
-  func getIncidents(success: (([Incident]) -> ())?, failure: ((ApiError) -> Void)?) {
-    apiService.request(endpoint: IncidentEndpoint.getIncidents, success: { (response) in
-      success?(response)
-    }, failure: { (apiError) in
-      failure?(apiError)
-    })
+  func getIncident(id: String, success: ((Incident) -> ())?, failure: ((ApiError) -> Void)?) {
+    apiService.request(endpoint: IncidentEndpoint.getIncident(id: id), success: success, failure: failure)
   }
   
-  func getIncident(id: String, success: ((Incident) -> ())?, failure: ((ApiError) -> Void)?) {
-    apiService.request(endpoint: IncidentEndpoint.getIncident(id: id), success: { (response) in
-      success?(response)
-    }, failure: { (apiError) in
-      failure?(apiError)
-    })
+  func getIncidents(success: (([Incident]) -> ())?, failure: ((ApiError) -> Void)?) {
+    apiService.request(endpoint: IncidentEndpoint.getIncidents, success: success, failure: failure)
   }
 }
