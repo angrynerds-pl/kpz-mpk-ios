@@ -8,16 +8,40 @@
 
 import Foundation
 import MapKit
+import Auth0
 
 final class MapViewModel {
   private weak var presenter: MapViewControllerPresenter?
   let locationService = LocationService()
   let incidentApiService: IncidentApiServiceProtocole = IncidentApiService()
+  let sessionManager: SessionManager
   
-  init(presenter: MapViewControllerPresenter?) {
+  init(presenter: MapViewControllerPresenter?, sessionManager: SessionManager = SessionManager.shared) {
     self.presenter = presenter
+    self.sessionManager = sessionManager
     
     locationService.delegate = self
+  }
+  
+  func login() {
+    sessionManager.auth0Login()
+  }
+  
+  func renewAuth() {
+    sessionManager.renewAuth { (error) in
+      if let error = error {print(error)}
+    }
+  }
+  
+  func shouldPerformSegue(withIdentifier identifier: String) -> Bool {
+    switch identifier {
+    case "userMenuSegue":
+      return SessionManager.shared.credentialsManager.hasValid()
+    case "segueType":
+      return SessionManager.shared.credentialsManager.hasValid()
+    default:
+      return true
+    }
   }
   
   func presentState(stateToPresent state: MapState) {

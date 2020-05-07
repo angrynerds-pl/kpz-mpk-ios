@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Auth0
 
 protocol MapViewControllerPresenter: NSObject {
   func centerMap(coordinateRegion: MKCoordinateRegion)
@@ -42,9 +43,16 @@ class MapViewController: UIViewController {
     viewModel.centerMapOnUser()
     registerMapAnnotationViews()
     viewModel.displayAnnotations()
+    SessionManager.shared.renewAuth { (error) in
+      if error != nil { print(error!) }
+    }
   }
   
   // MARK: - Buttons actions
+  
+  @IBAction private func userMenuButtonPressed(_ sender: UIButton) {
+    viewModel.login()
+  }
   
   @IBAction private func centerMapButtonPressed(_ sender: UIButton) {
     viewModel.centerMapOnUser()
@@ -55,6 +63,7 @@ class MapViewController: UIViewController {
   }
   
   @IBAction private func confirmButtonPressed(_ sender: UIButton) {
+    viewModel.login()
   }
   
   @IBAction func cancelButtonPressed(_ sender: UIButton) {
@@ -65,11 +74,17 @@ class MapViewController: UIViewController {
     mapView.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(IncidentAnnotation.self))
   }
   
+  // MARK: - Segues
+  
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "segueType" {
       let nextSceene = segue.destination as? TypePickViewController
       nextSceene?.viewModel = TypePickViewModel(reportedLocation: mapView.centerCoordinate)
     }
+  }
+  
+  override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+    return viewModel.shouldPerformSegue(withIdentifier: identifier)
   }
 }
 

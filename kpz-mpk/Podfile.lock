@@ -1,20 +1,32 @@
 PODS:
   - Alamofire (5.0.5)
+  - Auth0 (1.24.1):
+    - JWTDecode
+    - SimpleKeychain
+  - JWTDecode (2.4.1)
+  - SimpleKeychain (0.11.1)
   - SwiftLint (0.39.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0)
+  - Auth0 (~> 1.19)
   - SwiftLint (~> 0.39.1)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Auth0
+    - JWTDecode
+    - SimpleKeychain
     - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
+  Auth0: 483dcd2df3bb4abe48bb0b355a760181fb7f5477
+  JWTDecode: 4bd4da0cdf0f8154fd467fa48499f34ec057fb88
+  SimpleKeychain: 0c657949c7afff92337d2ff64052d5eb5c53823e
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: bb6c6c1cb020956b1d52ef44098d0b58ba806245
+PODFILE CHECKSUM: 9581d604e94f1d6421f423ebc581e61049fa16ee
 
 COCOAPODS: 1.9.0
