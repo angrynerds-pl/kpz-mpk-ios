@@ -14,11 +14,23 @@ final class MapViewModel {
   private weak var presenter: MapViewControllerPresenter?
   let locationService = LocationService()
   let incidentApiService: IncidentApiServiceProtocole = IncidentApiService()
+  let sessionManager: SessionManager
   
-  init(presenter: MapViewControllerPresenter?) {
+  init(presenter: MapViewControllerPresenter?, sessionManager: SessionManager = SessionManager.shared) {
     self.presenter = presenter
+    self.sessionManager = sessionManager
     
     locationService.delegate = self
+  }
+  
+  func login() {
+    sessionManager.auth0Login()
+  }
+  
+  func renewAuth() {
+    sessionManager.renewAuth { (error) in
+      if let error = error {print(error)}
+    }
   }
   
   func shouldPerformSegue(withIdentifier identifier: String) -> Bool {
@@ -30,30 +42,6 @@ final class MapViewModel {
     default:
       return true
     }
-  }
-  
-  func auth0Login() {
-    if !SessionManager.shared.credentialsManager.hasValid() {
-      Auth0
-        .webAuth()
-        .scope("openid profile offline_access")
-        .audience("https://kpz-mpk.eu.auth0.com/userinfo")
-        .parameters(["prompt": "login"])
-        .start {
-          switch $0 {
-          case .failure(let error):
-            // Handle the error
-            print("Error: \(error)")
-          case .success(let credentials):
-            if !SessionManager.shared.store(credentials: credentials) {
-              print("Failed to store credentials")
-            }
-          }
-      }
-    } else {
-      print("Zalogowany")
-    }
-    
   }
   
   func presentState(stateToPresent state: MapState) {
