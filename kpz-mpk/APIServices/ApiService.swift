@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 protocol ApiServiceProtocol {
-  func request<T: Decodable>(endpoint: ApiEndpoint, success: ((T) -> ())?)
+  func request<T: Decodable>(endpoint: ApiEndpoint, success: ((T) -> ())?, failure: ((ApiError) -> ())?)
 }
 
 class ApiService: ApiServiceProtocol {
@@ -20,7 +20,7 @@ class ApiService: ApiServiceProtocol {
     return Session()
   }()
   
-  func request<T: Decodable>(endpoint: ApiEndpoint, success: ((T) -> ())?) {
+  func request<T: Decodable>(endpoint: ApiEndpoint, success: ((T) -> ())?, failure: ((ApiError) -> ())?) {
     
     let url = ApiConstants.baseURL
     var request: URLRequest = URLRequest(url: url.appendingPathComponent(endpoint.path))
@@ -35,6 +35,7 @@ class ApiService: ApiServiceProtocol {
     
     let urlConvertible: URLRequestConvertible = request
     let dataRequest: DataRequest = session.request(urlConvertible)
+    let decoder = JSONDecoder()
     
     dataRequest
       .validate()
@@ -44,6 +45,8 @@ class ApiService: ApiServiceProtocol {
           success?(data)
         case let .failure(error):
           print(error)
+          let apiError = try? decoder.decode(ApiError.self, from: response.data ?? Data())
+          failure?(apiError!)
         }
     }
   }

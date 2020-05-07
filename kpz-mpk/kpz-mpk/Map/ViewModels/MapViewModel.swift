@@ -54,9 +54,11 @@ final class MapViewModel {
   }
   
   func displayAnnotations() {
-    incidentApiService.getIncidents { (incidents) in
+    incidentApiService.getIncidents(success: { (incidents) in
       let annotations = incidents.map { IncidentAnnotation(forIncident: $0)}
       self.presenter?.displayAnnotations(annotations: annotations)
+    }) { (apiError) in
+      self.presenter?.present(error: apiError)
     }
   }
   
