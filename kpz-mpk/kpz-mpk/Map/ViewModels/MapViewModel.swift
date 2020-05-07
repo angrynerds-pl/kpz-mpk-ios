@@ -29,7 +29,7 @@ final class MapViewModel {
   
   func renewAuth() {
     sessionManager.renewAuth { (error) in
-      if error != nil {print(error!)}
+      if let error = error {print(error)}
     }
   }
   
