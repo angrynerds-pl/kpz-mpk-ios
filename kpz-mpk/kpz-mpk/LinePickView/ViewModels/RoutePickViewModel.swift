@@ -17,6 +17,7 @@ final class RoutePickViewModel {
   private weak var presenter: RoutePickViewControllerPresenter?
   
   let routeApiService: RouteApiServiceProtocole = RouteApiService()
+  let incidentApiService: IncidentApiService = IncidentApiService()
 
   init(
     presenter: RoutePickViewControllerPresenter?,
@@ -34,6 +35,17 @@ final class RoutePickViewModel {
     routeApiService.getNearbyRoutes(location: reportedLocation, success: { (routes) in
       let routesDataSource = RouteDataSource(routes: routes)
       self.presenter?.displayRoutes(dataSource: routesDataSource)
+    }) { (apiError) in
+      self.presenter?.present(error: apiError)
+    }
+  }
+  
+  func reportIncident(routeId: String, tripHeadsign: String) {
+    let location = IncidentLocation(latitude: self.reportedLocation.latitude, longitude: self.reportedLocation.longitude)
+    let incident = ReportIncident(description: "", type: self.reportedType, location: location, routeId: routeId, tripHeadsign: tripHeadsign)
+    
+    incidentApiService.psotIncident(incidentToReport: incident, success: { (incident) in
+      print("Post success")
     }) { (apiError) in
       self.presenter?.present(error: apiError)
     }

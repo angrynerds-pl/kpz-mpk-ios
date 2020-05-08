@@ -20,6 +20,16 @@ class RoutePickViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
   }
+  
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    guard
+      let routeId = self.dataSource?.routes[indexPath.section].routeId,
+      let tripHeadsign = self.dataSource?.routes[indexPath.section].trips[indexPath.item].tripHeadsign else {
+        return
+    }
+    
+    viewModel.reportIncident(routeId: routeId, tripHeadsign: tripHeadsign)
+  }
 }
 
 extension RoutePickViewController: RoutePickViewControllerPresenter {
