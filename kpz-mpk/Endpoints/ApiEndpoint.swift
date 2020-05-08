@@ -20,6 +20,8 @@ protocol ApiEndpoint {
 extension ApiEndpoint {
   var encoding: ParameterEncoding {
     switch method {
+    case .post:
+      return JSONEncoding.default
     case .get:
       return URLEncoding.default
     default:

@@ -26,6 +26,7 @@ class ApiService: ApiServiceProtocol {
     var request: URLRequest = URLRequest(url: url.appendingPathComponent(endpoint.path))
     
     request.httpMethod = endpoint.method.rawValue
+    request.allHTTPHeaderFields = ["Authorization": "Barer \(SessionManager.shared.credentials?.accessToken)"]
     
     if let encodedRequest = try? endpoint.encoding.encode(request, with: endpoint.queryItems) {
       request = encodedRequest

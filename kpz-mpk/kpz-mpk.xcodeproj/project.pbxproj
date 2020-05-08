@@ -49,6 +49,7 @@
 		16E73F5724325E6100AD17AF /* IncidentApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E73F5624325E6100AD17AF /* IncidentApiService.swift */; };
 		16FB5E032461E61D0035F5EE /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FB5E022461E61D0035F5EE /* ApiError.swift */; };
 		16FB5E052462A7630035F5EE /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FB5E042462A7630035F5EE /* UIViewControllerExtension.swift */; };
+		16FB5E2B24657B310035F5EE /* ReportIncident.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FB5E2A24657B310035F5EE /* ReportIncident.swift */; };
 		C8B32937055AB4EF96F74A42 /* Pods_kpz_mpk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA19E5D9E328BC0FABB62F4 /* Pods_kpz_mpk.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,7 @@
 		16E73F5624325E6100AD17AF /* IncidentApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentApiService.swift; sourceTree = "<group>"; };
 		16FB5E022461E61D0035F5EE /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		16FB5E042462A7630035F5EE /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		16FB5E2A24657B310035F5EE /* ReportIncident.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportIncident.swift; sourceTree = "<group>"; };
 		81F756A9BC36FF56D54EB50A /* Pods-kpz-mpk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kpz-mpk.debug.xcconfig"; path = "Target Support Files/Pods-kpz-mpk/Pods-kpz-mpk.debug.xcconfig"; sourceTree = "<group>"; };
 		BBA19E5D9E328BC0FABB62F4 /* Pods_kpz_mpk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kpz_mpk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -156,6 +158,7 @@
 				160B79AC2449E76A00720DCE /* IncidentType.swift */,
 				160B79AE2449E79200720DCE /* IncidentLocation.swift */,
 				160602832458BBE0004FAD39 /* RouteModels */,
+				16FB5E2A24657B310035F5EE /* ReportIncident.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				169F6B28241A3D4800B600DC /* MapViewModel.swift in Sources */,
 				16392D1E24485C1D00E227B6 /* ApiConstants.swift in Sources */,
 				1610967F245EFA5000C7B0DC /* UserMenuViewModel.swift in Sources */,
+				16FB5E2B24657B310035F5EE /* ReportIncident.swift in Sources */,
 				16DDF03424422A4300E2633E /* ApiEndpoint.swift in Sources */,
 				1606027A245852D9004FAD39 /* TimetableEndpoint.swift in Sources */,
 				1606028A2459BC30004FAD39 /* RouteCell.swift in Sources */,
