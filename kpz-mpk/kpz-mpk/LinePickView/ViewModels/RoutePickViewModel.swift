@@ -42,7 +42,7 @@ final class RoutePickViewModel {
   
   func reportIncident(routeId: String, tripHeadsign: String) {
     let location = IncidentLocation(latitude: self.reportedLocation.latitude, longitude: self.reportedLocation.longitude)
-    let incident = ReportIncident(description: "", type: self.reportedType, location: location, routeId: routeId, tripHeadsign: tripHeadsign)
+    let incident = ReportIncident(description: "test", type: self.reportedType, location: location, routeId: routeId, tripHeadsign: tripHeadsign)
     
     incidentApiService.psotIncident(incidentToReport: incident, success: { (incident) in
       print("Post success")

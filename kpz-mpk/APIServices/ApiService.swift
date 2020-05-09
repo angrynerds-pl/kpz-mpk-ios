@@ -15,6 +15,12 @@ protocol ApiServiceProtocol {
 
 class ApiService: ApiServiceProtocol {
   
+  let sessionManager: SessionManager
+  
+  init(sessionManager: SessionManager = SessionManager.shared) {
+    self.sessionManager = sessionManager
+  }
+  
   // MARK: - Private Properties
   private lazy var session: Session = {
     return Session()
@@ -26,7 +32,10 @@ class ApiService: ApiServiceProtocol {
     var request: URLRequest = URLRequest(url: url.appendingPathComponent(endpoint.path))
     
     request.httpMethod = endpoint.method.rawValue
-    request.allHTTPHeaderFields = ["Authorization": "Barer \(SessionManager.shared.credentials?.accessToken)"]
+    
+    if let token = sessionManager.credentials?.idToken {
+      request.allHTTPHeaderFields = ["Authorization": "Bearer " + token]
+    }
     
     if let encodedRequest = try? endpoint.encoding.encode(request, with: endpoint.queryItems) {
       request = encodedRequest
