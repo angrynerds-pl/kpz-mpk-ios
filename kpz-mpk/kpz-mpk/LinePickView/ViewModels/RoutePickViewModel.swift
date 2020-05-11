@@ -18,7 +18,7 @@ final class RoutePickViewModel {
   
   let routeApiService: RouteApiServiceProtocole = RouteApiService()
   let incidentApiService: IncidentApiService = IncidentApiService()
-
+  
   init(
     presenter: RoutePickViewControllerPresenter?,
     reportedLocation location: CLLocationCoordinate2D,
@@ -42,12 +42,18 @@ final class RoutePickViewModel {
   
   func reportIncident(routeId: String, tripHeadsign: String) {
     let location = IncidentLocation(latitude: self.reportedLocation.latitude, longitude: self.reportedLocation.longitude)
-    let incident = ReportIncident(description: "test", type: self.reportedType, location: location, routeId: routeId, tripHeadsign: tripHeadsign)
+    let incident = ReportIncident(
+      description: tripHeadsign,
+      type: self.reportedType,
+      location: location, routeId: routeId,
+      tripHeadsign: tripHeadsign
+    )
     
-    incidentApiService.psotIncident(incidentToReport: incident, success: { (incident) in
+    incidentApiService.postIncident(incidentToReport: incident, success: { (incident) in
       print("Post success")
     }) { (apiError) in
       self.presenter?.present(error: apiError)
+      print(incident)
     }
   }
 }
