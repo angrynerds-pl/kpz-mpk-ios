@@ -10,6 +10,7 @@ import UIKit
 
 protocol RoutePickViewControllerPresenter: NSObject, ErrorPresenting {
   func displayRoutes(dataSource data: RouteDataSource)
+  func dismissView()
 }
 
 class RoutePickViewController: UITableViewController {
@@ -33,6 +34,9 @@ class RoutePickViewController: UITableViewController {
 }
 
 extension RoutePickViewController: RoutePickViewControllerPresenter {
+  func dismissView() {
+    self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+  }
   
   func displayRoutes(dataSource: RouteDataSource) {
     self.dataSource = dataSource

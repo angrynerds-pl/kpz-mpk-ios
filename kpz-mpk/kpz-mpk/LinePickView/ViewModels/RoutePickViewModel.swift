@@ -50,7 +50,7 @@ final class RoutePickViewModel {
     )
     
     incidentApiService.postIncident(incidentToReport: incident, success: { (incident) in
-      print("Post success")
+      self.presenter?.dismissView()
     }) { (apiError) in
       self.presenter?.present(error: apiError)
       print(incident)

@@ -34,6 +34,7 @@ class ApiService: ApiServiceProtocol {
     request.httpMethod = endpoint.method.rawValue
     
     if let token = sessionManager.credentials?.idToken {
+      request.setValue("application/json", forHTTPHeaderField: "Content-Type")
       request.allHTTPHeaderFields = ["Authorization": "Bearer " + token]
     }
     
