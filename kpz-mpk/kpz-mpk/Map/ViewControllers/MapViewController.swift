@@ -79,7 +79,7 @@ class MapViewController: UIViewController {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "segueType" {
       let nextSceene = segue.destination as? TypePickViewController
-      nextSceene?.viewModel = TypePickViewModel(reportedLocation: mapView.centerCoordinate)
+      nextSceene?.viewModel = TypePickViewModel(reportedLocation: mapView.centerCoordinate, mapViewDelegate: self)
     }
   }
   
@@ -154,5 +154,12 @@ extension MapViewController: MKMapViewDelegate {
     annotationView.image = annotation.incident.type.image
     
     return annotationView
+  }
+}
+
+extension MapViewController: MapViewDelegate {
+  func mapView(incidentIsReported incident: Incident) {
+    viewModel.presentState(stateToPresent: .mapBrowsing)
+    viewModel.displayAnnotations()
   }
 }

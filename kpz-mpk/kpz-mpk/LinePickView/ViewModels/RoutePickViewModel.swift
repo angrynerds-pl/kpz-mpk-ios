@@ -12,6 +12,7 @@ import UIKit
 import CoreLocation
 
 final class RoutePickViewModel {
+  weak var mapViewDelegate: MapViewDelegate?
   private var reportedLocation: CLLocationCoordinate2D
   private var reportedType: IncidenType
   private weak var presenter: RoutePickViewControllerPresenter?
@@ -22,11 +23,13 @@ final class RoutePickViewModel {
   init(
     presenter: RoutePickViewControllerPresenter?,
     reportedLocation location: CLLocationCoordinate2D,
-    reportedType type: IncidenType
+    reportedType type: IncidenType,
+    mapViewDelegate delegate: MapViewDelegate?
   ) {
     self.presenter = presenter
     reportedLocation = location
     reportedType = type
+    mapViewDelegate = delegate
     
     getRoutes()
   }
@@ -51,6 +54,7 @@ final class RoutePickViewModel {
     
     incidentApiService.postIncident(incidentToReport: incident, success: { (incident) in
       self.presenter?.dismissView()
+      self.mapViewDelegate?.mapView(incidentIsReported: incident)
     }) { (apiError) in
       self.presenter?.present(error: apiError)
       print(incident)

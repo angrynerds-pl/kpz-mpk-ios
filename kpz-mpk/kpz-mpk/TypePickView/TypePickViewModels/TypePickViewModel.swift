@@ -10,9 +10,14 @@ import UIKit
 import CoreLocation
 
 final class TypePickViewModel {
+  weak var mapViewDelegate: MapViewDelegate?
+  
   private(set) var reportedLocation: CLLocationCoordinate2D
   
-  init(reportedLocation location: CLLocationCoordinate2D) {
+  init(reportedLocation location: CLLocationCoordinate2D,
+       mapViewDelegate delegate: MapViewDelegate?
+  ) {
     reportedLocation = location
+    self.mapViewDelegate = delegate
   }
 }
