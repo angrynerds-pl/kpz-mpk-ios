@@ -21,6 +21,13 @@ protocol MapViewControllerPresenter: NSObject, ErrorPresenting {
 
 class MapViewController: UIViewController {
   
+  private enum Constants {
+    static let regionRadius = 1000.0
+    static let segueTypeString = "segueType"
+    static let pickLocationUpLabelString = "Center lat -> "
+    static let pickLocationDownLabelString = "Center long -> "
+    static let centerMapButtonImage = UIImage(systemName: "location.fill")
+  }
   // MARK: - IBOutlets
   @IBOutlet private weak var cancelButton: RoundedLeftButton!
   @IBOutlet private weak var confirmButton: RoundedRightButton!
@@ -38,7 +45,6 @@ class MapViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     mapView.delegate = self
-    
     setUpUI()
     viewModel.centerMapOnUser()
     registerMapAnnotationViews()
@@ -77,7 +83,7 @@ class MapViewController: UIViewController {
   // MARK: - Segues
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "segueType" {
+    if segue.identifier == Constants.segueTypeString {
       let nextSceene = segue.destination as? TypePickViewController
       nextSceene?.viewModel = TypePickViewModel(reportedLocation: mapView.centerCoordinate)
     }
@@ -110,15 +116,13 @@ extension MapViewController: MapViewControllerPresenter {
   }
   
   func displayCenterLocation(latitudeText: String, longitude: String) {
-    pickLocationUpLabel.text = "Center lat -> \(latitudeText)"
-    pickLocationDownLabel.text = "Center long -> \(longitude)"
+    pickLocationUpLabel.text = Constants.pickLocationUpLabelString + latitudeText
+    pickLocationDownLabel.text = Constants.pickLocationDownLabelString + longitude
   }
   
   func setUpUI() {
     viewModel.presentState(stateToPresent: .mapBrowsing)
-    
-    //Center Map Button
-    centerMapButton.setImage(UIImage(systemName: "location.fill"), for: .normal)
+    centerMapButton.setImage(Constants.centerMapButtonImage, for: .normal)
   }
   
   func displayAnnotations(annotations: [MKAnnotation]) {
@@ -150,9 +154,7 @@ extension MapViewController: MKMapViewDelegate {
   private func setupIncidentAnnotationView(for annotation: IncidentAnnotation, on mapView: MKMapView) -> MKAnnotationView {
     let reuseIdentifier = NSStringFromClass(IncidentAnnotation.self)
     let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier, for: annotation)
-    
     annotationView.image = annotation.incident.type.image
-    
     return annotationView
   }
 }

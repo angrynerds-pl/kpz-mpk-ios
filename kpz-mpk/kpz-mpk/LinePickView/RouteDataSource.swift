@@ -29,12 +29,10 @@ extension RouteDataSource: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let routeItem = routes[indexPath.section].trips[safe: indexPath.row],
-      let cell = tableView.dequeueReusableCell(withIdentifier: "RouteCell") as? RouteCell else {
-      return UITableViewCell()
+    let cell: RouteCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+    if let routeItem = routes[indexPath.section].trips[safe: indexPath.row] {
+      cell.setCell(routeItem: routeItem)
     }
-    
-    cell.setCell(routeItem: routeItem)
     return cell
   }
 }

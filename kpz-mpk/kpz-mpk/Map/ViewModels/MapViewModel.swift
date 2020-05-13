@@ -11,10 +11,18 @@ import MapKit
 import Auth0
 
 final class MapViewModel {
+    
+  private enum Constants {
+    static let regionRadius = 1000.0
+    static let centerOptionalCoordiate = CLLocationCoordinate2D(latitude: 51.06280, longitude: 17.02193)
+    static let coordinateFormatType = "%.4f"
+    static let userMenuSegueString = "userMenuSegue"
+    static let segueTypeString = "segueType"
+  }
   private weak var presenter: MapViewControllerPresenter?
-  let locationService = LocationService()
-  let incidentApiService: IncidentApiServiceProtocole = IncidentApiService()
-  let sessionManager: SessionManager
+  private let locationService = LocationService()
+  private let incidentApiService: IncidentApiServiceProtocole = IncidentApiService()
+  private let sessionManager: SessionManager
   
   init(presenter: MapViewControllerPresenter?, sessionManager: SessionManager = SessionManager.shared) {
     self.presenter = presenter
@@ -35,9 +43,9 @@ final class MapViewModel {
   
   func shouldPerformSegue(withIdentifier identifier: String) -> Bool {
     switch identifier {
-    case "userMenuSegue":
+    case Constants.userMenuSegueString:
       return SessionManager.shared.credentialsManager.hasValid()
-    case "segueType":
+    case Constants.segueTypeString:
       return SessionManager.shared.credentialsManager.hasValid()
     default:
       return true
@@ -63,23 +71,18 @@ final class MapViewModel {
   }
   
   func centerMapOnUser() {
-    let regionRadius: Double = 1000
     let coordinateRegion = MKCoordinateRegion(
       center: locationService.userLocation ??
-        CLLocationCoordinate2D(
-          latitude: 51.06280,
-          longitude: 17.02193),
-      latitudinalMeters: regionRadius,
-      longitudinalMeters: regionRadius)
-    
+        Constants.centerOptionalCoordiate,
+      latitudinalMeters: Constants.regionRadius,
+      longitudinalMeters: Constants.regionRadius)
     presenter?.centerMap(coordinateRegion: coordinateRegion)
   }
   
   func displayCenterLocation(for centerLocation: CLLocationCoordinate2D) {
     // Later we will display location address
-    let lat: String = String(format: "%.4f", centerLocation.latitude)
-    let long: String = String(format: "%.4f", centerLocation.longitude)
-    
+    let lat: String = String(format: Constants.coordinateFormatType, centerLocation.latitude)
+    let long: String = String(format: Constants.coordinateFormatType, centerLocation.longitude)
     presenter?.displayCenterLocation(latitudeText: lat, longitude: long)
   }
 }
