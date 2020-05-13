@@ -57,7 +57,6 @@ final class RoutePickViewModel {
       self.mapViewDelegate?.mapView(incidentIsReported: incident)
     }) { (apiError) in
       self.presenter?.present(error: apiError)
-      print(incident)
     }
   }
 }
