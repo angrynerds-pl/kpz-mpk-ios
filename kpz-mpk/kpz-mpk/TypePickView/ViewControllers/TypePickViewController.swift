@@ -10,6 +10,9 @@ import UIKit
 
 class TypePickViewController: UITableViewController {
   
+  private enum Constants {
+    static let segueLineIdentifier = "segueLine"
+  }
   var viewModel: TypePickViewModel!
   
   override func viewDidLoad() {
@@ -22,22 +25,19 @@ class TypePickViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
-    guard let incidenTypeItem = IncidenType.allCases[safe: indexPath.row],
-      let cell = tableView.dequeueReusableCell(withIdentifier: "IncidentTypeCell") as? IncidentTypeCell else {
-      return UITableViewCell()
+    let cell: IncidentTypeCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+    if let incidenTypeItem = IncidenType.allCases[safe: indexPath.row] {
+        cell.setCell(incidentTypeItem: incidenTypeItem)
     }
-    
-    cell.setCell(incidentTypeItem: incidenTypeItem)
     return cell
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    self.performSegue(withIdentifier: "segueLine", sender: self)
+    self.performSegue(withIdentifier: Constants.segueLineIdentifier, sender: self)
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "segueLine" {
+    if segue.identifier == Constants.segueLineIdentifier {
       let nextSceene = segue.destination as? RoutePickViewController
       let indexPath = self.tableView.indexPathForSelectedRow
       
