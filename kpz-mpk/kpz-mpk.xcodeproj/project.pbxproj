@@ -49,6 +49,9 @@
 		16E73F5724325E6100AD17AF /* IncidentApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E73F5624325E6100AD17AF /* IncidentApiService.swift */; };
 		16FB5E032461E61D0035F5EE /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FB5E022461E61D0035F5EE /* ApiError.swift */; };
 		16FB5E052462A7630035F5EE /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FB5E042462A7630035F5EE /* UIViewControllerExtension.swift */; };
+		4F8D7814246C1547001D8288 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8D7813246C1547001D8288 /* UITableView+Extension.swift */; };
+		4F8D7817246C166D001D8288 /* UITableViewCell+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8D7816246C166D001D8288 /* UITableViewCell+Nib.swift */; };
+		4F8D7819246C16A5001D8288 /* HavingXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8D7818246C16A5001D8288 /* HavingXib.swift */; };
 		C8B32937055AB4EF96F74A42 /* Pods_kpz_mpk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA19E5D9E328BC0FABB62F4 /* Pods_kpz_mpk.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +101,9 @@
 		16E73F5624325E6100AD17AF /* IncidentApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentApiService.swift; sourceTree = "<group>"; };
 		16FB5E022461E61D0035F5EE /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		16FB5E042462A7630035F5EE /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		4F8D7813246C1547001D8288 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		4F8D7816246C166D001D8288 /* UITableViewCell+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Nib.swift"; sourceTree = "<group>"; };
+		4F8D7818246C16A5001D8288 /* HavingXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HavingXib.swift; sourceTree = "<group>"; };
 		81F756A9BC36FF56D54EB50A /* Pods-kpz-mpk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kpz-mpk.debug.xcconfig"; path = "Target Support Files/Pods-kpz-mpk/Pods-kpz-mpk.debug.xcconfig"; sourceTree = "<group>"; };
 		BBA19E5D9E328BC0FABB62F4 /* Pods_kpz_mpk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kpz_mpk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -193,6 +199,7 @@
 		1630C166240D365800203440 /* kpz-mpk */ = {
 			isa = PBXGroup;
 			children = (
+				4F8D7812246C151E001D8288 /* Helpers */,
 				16C783B82445A55C00375B88 /* API */,
 				164A3AB8245C8E840038B161 /* UserMenuView */,
 				1689912A245497E100B56408 /* LinePickView */,
@@ -325,6 +332,16 @@
 				1606027D2458AB72004FAD39 /* RouteApiService.swift */,
 			);
 			path = APIServices;
+			sourceTree = "<group>";
+		};
+		4F8D7812246C151E001D8288 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4F8D7813246C1547001D8288 /* UITableView+Extension.swift */,
+				4F8D7816246C166D001D8288 /* UITableViewCell+Nib.swift */,
+				4F8D7818246C16A5001D8288 /* HavingXib.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		52889224BB2DC147E4560CEF /* Frameworks */ = {
@@ -480,6 +497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16E73F5724325E6100AD17AF /* IncidentApiService.swift in Sources */,
+				4F8D7817246C166D001D8288 /* UITableViewCell+Nib.swift in Sources */,
 				16544AB5244E294F00319CB2 /* TypePickViewController.swift in Sources */,
 				1606028C2459F39C004FAD39 /* RouteDataSource.swift in Sources */,
 				16544AAE244E07FD00319CB2 /* ShadowButton.swift in Sources */,
@@ -495,6 +513,7 @@
 				16544AB0244E087700319CB2 /* RoundedLeftButton.swift in Sources */,
 				16D897C724277C5600EE6BF3 /* ApiService.swift in Sources */,
 				160B79AF2449E79200720DCE /* IncidentLocation.swift in Sources */,
+				4F8D7819246C16A5001D8288 /* HavingXib.swift in Sources */,
 				16FB5E052462A7630035F5EE /* UIViewControllerExtension.swift in Sources */,
 				16DDF0362442334700E2633E /* IncidentEndpoint.swift in Sources */,
 				16680163241A8E820051C0DD /* LocationService.swift in Sources */,
@@ -517,6 +536,7 @@
 				160602752458312F004FAD39 /* TypePickViewModel.swift in Sources */,
 				16DDF038244235A500E2633E /* Incident.swift in Sources */,
 				16C783BE24479AEB00375B88 /* IncidentAnnotation.swift in Sources */,
+				4F8D7814246C1547001D8288 /* UITableView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
