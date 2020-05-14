@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol MapViewDelegate: class {
-  func mapView(incidentIsReported incident: Incident)
+protocol IncidentDelegate: class {
+  func incidentDelegate(incidentIsReported incident: Incident)
 }

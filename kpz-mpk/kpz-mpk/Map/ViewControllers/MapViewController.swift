@@ -79,7 +79,7 @@ class MapViewController: UIViewController {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "segueType" {
       let nextSceene = segue.destination as? TypePickViewController
-      nextSceene?.viewModel = TypePickViewModel(reportedLocation: mapView.centerCoordinate, mapViewDelegate: self)
+      nextSceene?.viewModel = TypePickViewModel(reportedLocation: mapView.centerCoordinate, incidentDelegate: self)
     }
   }
   
@@ -157,9 +157,10 @@ extension MapViewController: MKMapViewDelegate {
   }
 }
 
-extension MapViewController: MapViewDelegate {
-  func mapView(incidentIsReported incident: Incident) {
+extension MapViewController: IncidentDelegate {
+  func incidentDelegate(incidentIsReported incident: Incident) {
     viewModel.presentState(stateToPresent: .mapBrowsing)
     viewModel.displayAnnotations()
+    self.dismiss(animated: true, completion: nil)
   }
 }

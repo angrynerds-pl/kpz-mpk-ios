@@ -49,7 +49,7 @@ class TypePickViewController: UITableViewController {
         presenter: nextSceene,
         reportedLocation: viewModel.reportedLocation,
         reportedType: selectedRow,
-        mapViewDelegate: viewModel.mapViewDelegate
+        incidentDelegate: viewModel.incidentDelegate
       )
     }
   }
