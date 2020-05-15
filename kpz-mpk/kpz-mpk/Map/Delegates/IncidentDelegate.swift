@@ -9,5 +9,5 @@
 import Foundation
 
 protocol IncidentDelegate: class {
-  func incidentDelegate(incidentIsReported incident: Incident)
+  func incidentDelegate(didReport incident: Incident)
 }

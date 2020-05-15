@@ -13,9 +13,10 @@ import CoreLocation
 
 final class RoutePickViewModel {
   weak var incidentDelegate: IncidentDelegate?
+  
+  private weak var presenter: RoutePickViewControllerPresenter?
   private var reportedLocation: CLLocationCoordinate2D
   private var reportedType: IncidenType
-  private weak var presenter: RoutePickViewControllerPresenter?
   private let routeApiService: RouteApiServiceProtocole = RouteApiService()
   private let incidentApiService: IncidentApiService = IncidentApiService()
   
@@ -52,7 +53,7 @@ final class RoutePickViewModel {
     )
     
     incidentApiService.postIncident(incidentToReport: incident, success: { (incident) in
-      self.incidentDelegate?.incidentDelegate(incidentIsReported: incident)
+      self.incidentDelegate?.incidentDelegate(didReport: incident)
     }) { (apiError) in
       self.presenter?.present(error: apiError)
     }

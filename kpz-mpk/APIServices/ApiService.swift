@@ -14,8 +14,7 @@ protocol ApiServiceProtocol {
 }
 
 class ApiService: ApiServiceProtocol {
-  
-  let sessionManager: SessionManager
+  private let sessionManager: SessionManager
   
   init(sessionManager: SessionManager = SessionManager.shared) {
     self.sessionManager = sessionManager

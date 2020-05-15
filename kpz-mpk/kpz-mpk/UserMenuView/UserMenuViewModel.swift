@@ -13,7 +13,7 @@ import CoreLocation
 final class UserMenuViewModel {
   
   private weak var presenter: UserMenuViewController?
-  let sessionManager: SessionManager
+  private let sessionManager: SessionManager
   
   init(presenter: UserMenuViewController?, sessionManager: SessionManager = SessionManager.shared) {
     self.presenter = presenter

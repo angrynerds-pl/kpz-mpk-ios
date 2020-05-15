@@ -158,7 +158,7 @@ extension MapViewController: MKMapViewDelegate {
 }
 
 extension MapViewController: IncidentDelegate {
-  func incidentDelegate(incidentIsReported incident: Incident) {
+  func incidentDelegate(didReport incident: Incident) {
     viewModel.presentState(stateToPresent: .mapBrowsing)
     viewModel.displayAnnotations()
     self.dismiss(animated: true, completion: nil)
