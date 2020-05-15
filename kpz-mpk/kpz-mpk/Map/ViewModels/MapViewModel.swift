@@ -12,9 +12,9 @@ import Auth0
 
 final class MapViewModel {
   private weak var presenter: MapViewControllerPresenter?
-  let locationService = LocationService()
-  let incidentApiService: IncidentApiServiceProtocole = IncidentApiService()
-  let sessionManager: SessionManager
+  private let sessionManager: SessionManager
+  private let locationService = LocationService()
+  private let incidentApiService: IncidentApiServiceProtocole = IncidentApiService()
   
   init(presenter: MapViewControllerPresenter?, sessionManager: SessionManager = SessionManager.shared) {
     self.presenter = presenter

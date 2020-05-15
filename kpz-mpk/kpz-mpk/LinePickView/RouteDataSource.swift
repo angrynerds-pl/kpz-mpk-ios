@@ -9,7 +9,7 @@
 import UIKit
 
 class RouteDataSource: NSObject {
-  private var routes: [Route]
+  private(set) var routes: [Route]
   
   init(routes: [Route]) {
     self.routes = routes

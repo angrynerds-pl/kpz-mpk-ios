@@ -48,7 +48,8 @@ class TypePickViewController: UITableViewController {
       nextSceene?.viewModel = RoutePickViewModel(
         presenter: nextSceene,
         reportedLocation: viewModel.reportedLocation,
-        reportedType: selectedRow
+        reportedType: selectedRow,
+        incidentDelegate: viewModel.incidentDelegate
       )
     }
   }

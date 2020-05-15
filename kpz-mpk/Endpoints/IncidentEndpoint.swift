@@ -12,6 +12,7 @@ import Alamofire
 enum IncidentEndpoint: ApiEndpoint {
   case getIncidents
   case getIncident(id: String)
+  case postIncident(incident: ReportIncident)
   
   var method: HTTPMethod {
     switch self {
@@ -19,6 +20,8 @@ enum IncidentEndpoint: ApiEndpoint {
       return .get
     case .getIncident:
       return .get
+    case .postIncident:
+      return .post
     }
   }
   
@@ -28,6 +31,17 @@ enum IncidentEndpoint: ApiEndpoint {
       return "incidents"
     case .getIncident(let id):
       return "incidents/\(id)"
+    case .postIncident:
+      return "incidents"
+    }
+  }
+  
+  var bodyParameters: Encodable? {
+    switch self {
+    case .postIncident(let incident):
+      return incident
+    default:
+      return nil
     }
   }
   
