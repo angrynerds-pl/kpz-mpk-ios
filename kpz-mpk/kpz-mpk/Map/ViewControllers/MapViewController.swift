@@ -70,6 +70,10 @@ class MapViewController: UIViewController {
     viewModel.presentState(stateToPresent: .mapBrowsing)
   }
   
+  @objc func calloutButtonPressed(_ sender: CalloutButton) {
+    print(sender.incidentAnnotation.incident.routeId)
+  }
+  
   private func registerMapAnnotationViews() {
     mapView.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(IncidentAnnotation.self))
   }
@@ -144,11 +148,13 @@ extension MapViewController: MKMapViewDelegate {
       annotationView = setupIncidentAnnotationView(for: annotation, on: mapView)
       annotationView?.canShowCallout = true
       
-      // Propably move to class
-      let button = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-      button.setImage(UIImage(systemName: "info.circle"), for: .normal)
+      let calloutButton = CalloutButton(
+        frame: CGRect(x: 0, y: 0, width: 30, height: 30),
+        incidentAnnotation: annotation
+      )
+      calloutButton.addTarget(self, action: #selector(calloutButtonPressed(_:)), for: .touchUpInside)
 
-      annotationView?.rightCalloutAccessoryView = button
+      annotationView?.rightCalloutAccessoryView = calloutButton
     }
     
     return annotationView
