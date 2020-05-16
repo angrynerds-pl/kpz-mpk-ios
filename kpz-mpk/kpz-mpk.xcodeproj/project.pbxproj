@@ -49,6 +49,7 @@
 		16DDF038244235A500E2633E /* Incident.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDF037244235A500E2633E /* Incident.swift */; };
 		16E73F5724325E6100AD17AF /* IncidentApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E73F5624325E6100AD17AF /* IncidentApiService.swift */; };
 		16FA941F246EEA17005ABA65 /* AffectedHeadsign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FA941E246EEA17005ABA65 /* AffectedHeadsign.swift */; };
+		16FA9424246F14F1005ABA65 /* CalloutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FA9423246F14F1005ABA65 /* CalloutButton.swift */; };
 		16FB5E032461E61D0035F5EE /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FB5E022461E61D0035F5EE /* ApiError.swift */; };
 		16FB5E052462A7630035F5EE /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FB5E042462A7630035F5EE /* UIViewControllerExtension.swift */; };
 		16FB5E2B24657B310035F5EE /* ReportIncident.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FB5E2A24657B310035F5EE /* ReportIncident.swift */; };
@@ -101,6 +102,7 @@
 		16DDF037244235A500E2633E /* Incident.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Incident.swift; sourceTree = "<group>"; };
 		16E73F5624325E6100AD17AF /* IncidentApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentApiService.swift; sourceTree = "<group>"; };
 		16FA941E246EEA17005ABA65 /* AffectedHeadsign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffectedHeadsign.swift; sourceTree = "<group>"; };
+		16FA9423246F14F1005ABA65 /* CalloutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutButton.swift; sourceTree = "<group>"; };
 		16FB5E022461E61D0035F5EE /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		16FB5E042462A7630035F5EE /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		16FB5E2A24657B310035F5EE /* ReportIncident.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportIncident.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				16544AAD244E07FC00319CB2 /* ShadowButton.swift */,
 				16544AAF244E087700319CB2 /* RoundedLeftButton.swift */,
 				16544AB1244E08CF00319CB2 /* RoundedRightButton.swift */,
+				16FA9423246F14F1005ABA65 /* CalloutButton.swift */,
 			);
 			path = Componnents;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				168991292454705E00B56408 /* CollectionExtensions.swift in Sources */,
 				1689912C2454985E00B56408 /* RoutePickViewController.swift in Sources */,
 				160B79BA244C725100720DCE /* RoundedView.swift in Sources */,
+				16FA9424246F14F1005ABA65 /* CalloutButton.swift in Sources */,
 				160B79AD2449E76A00720DCE /* IncidentType.swift in Sources */,
 				1606027E2458AB72004FAD39 /* RouteApiService.swift in Sources */,
 				1630C16A240D365800203440 /* SceneDelegate.swift in Sources */,

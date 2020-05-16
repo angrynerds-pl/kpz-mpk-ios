@@ -142,6 +142,13 @@ extension MapViewController: MKMapViewDelegate {
     
     if let annotation = annotation as? IncidentAnnotation {
       annotationView = setupIncidentAnnotationView(for: annotation, on: mapView)
+      annotationView?.canShowCallout = true
+      
+      // Propably move to class
+      let button = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+      button.setImage(UIImage(systemName: "info.circle"), for: .normal)
+
+      annotationView?.rightCalloutAccessoryView = button
     }
     
     return annotationView
