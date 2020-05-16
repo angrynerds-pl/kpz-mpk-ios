@@ -29,6 +29,8 @@
 		1630C171240D365C00203440 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1630C170240D365C00203440 /* Assets.xcassets */; };
 		1630C174240D365C00203440 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1630C172240D365C00203440 /* LaunchScreen.storyboard */; };
 		16392D1E24485C1D00E227B6 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16392D1D24485C1D00E227B6 /* ApiConstants.swift */; };
+		1641E3AB24704A4B0037B37B /* IncidentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1641E3AA24704A4B0037B37B /* IncidentDetailsViewController.swift */; };
+		1641E3AE24704B2A0037B37B /* IncidentDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1641E3AD24704B2A0037B37B /* IncidentDetailsViewModel.swift */; };
 		164A3AB7245C8AB70038B161 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164A3AB6245C8AB70038B161 /* SessionManager.swift */; };
 		164A3ABA245C8EA40038B161 /* UserMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164A3AB9245C8EA40038B161 /* UserMenuViewController.swift */; };
 		16544AA6244DEE4D00319CB2 /* MapState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16544AA5244DEE4D00319CB2 /* MapState.swift */; };
@@ -82,6 +84,8 @@
 		1630C173240D365C00203440 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1630C175240D365C00203440 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16392D1D24485C1D00E227B6 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
+		1641E3AA24704A4B0037B37B /* IncidentDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentDetailsViewController.swift; sourceTree = "<group>"; };
+		1641E3AD24704B2A0037B37B /* IncidentDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentDetailsViewModel.swift; sourceTree = "<group>"; };
 		164A3AB6245C8AB70038B161 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		164A3AB9245C8EA40038B161 /* UserMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuViewController.swift; sourceTree = "<group>"; };
 		16544AA5244DEE4D00319CB2 /* MapState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapState.swift; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 				164A3AB8245C8E840038B161 /* UserMenuView */,
 				1689912A245497E100B56408 /* LinePickView */,
 				16544AB3244E291900319CB2 /* TypePickView */,
+				1641E3AC24704AF30037B37B /* IncidentDetails */,
 				169F6B24241A3ABA00B600DC /* Map */,
 				1630C167240D365800203440 /* AppDelegate.swift */,
 				1630C169240D365800203440 /* SceneDelegate.swift */,
@@ -219,6 +224,15 @@
 				164A3AB6245C8AB70038B161 /* SessionManager.swift */,
 			);
 			path = "kpz-mpk";
+			sourceTree = "<group>";
+		};
+		1641E3AC24704AF30037B37B /* IncidentDetails */ = {
+			isa = PBXGroup;
+			children = (
+				1641E3AA24704A4B0037B37B /* IncidentDetailsViewController.swift */,
+				1641E3AD24704B2A0037B37B /* IncidentDetailsViewModel.swift */,
+			);
+			path = IncidentDetails;
 			sourceTree = "<group>";
 		};
 		164A3AB8245C8E840038B161 /* UserMenuView */ = {
@@ -520,10 +534,12 @@
 				16680163241A8E820051C0DD /* LocationService.swift in Sources */,
 				168991292454705E00B56408 /* CollectionExtensions.swift in Sources */,
 				1689912C2454985E00B56408 /* RoutePickViewController.swift in Sources */,
+				1641E3AE24704B2A0037B37B /* IncidentDetailsViewModel.swift in Sources */,
 				160B79BA244C725100720DCE /* RoundedView.swift in Sources */,
 				16FA9424246F14F1005ABA65 /* CalloutButton.swift in Sources */,
 				160B79AD2449E76A00720DCE /* IncidentType.swift in Sources */,
 				1606027E2458AB72004FAD39 /* RouteApiService.swift in Sources */,
+				1641E3AB24704A4B0037B37B /* IncidentDetailsViewController.swift in Sources */,
 				1630C16A240D365800203440 /* SceneDelegate.swift in Sources */,
 				16544AB2244E08CF00319CB2 /* RoundedRightButton.swift in Sources */,
 				169F6B28241A3D4800B600DC /* MapViewModel.swift in Sources */,

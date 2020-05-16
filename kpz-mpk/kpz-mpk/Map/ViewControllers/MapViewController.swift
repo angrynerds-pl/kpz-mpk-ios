@@ -71,7 +71,7 @@ class MapViewController: UIViewController {
   }
   
   @objc func calloutButtonPressed(_ sender: CalloutButton) {
-    print(sender.incidentAnnotation.incident.routeId)
+    performSegue(withIdentifier: "detailsSegue", sender: sender)
   }
   
   private func registerMapAnnotationViews() {
@@ -84,6 +84,15 @@ class MapViewController: UIViewController {
     if segue.identifier == "segueType" {
       let nextSceene = segue.destination as? TypePickViewController
       nextSceene?.viewModel = TypePickViewModel(reportedLocation: mapView.centerCoordinate, incidentDelegate: self)
+    }
+    if segue.identifier == "detailsSegue" {
+      let calloutButton = sender as? CalloutButton
+      let nextSceene = segue.destination as? IncidentDetailsViewController
+      nextSceene?.viewModel = IncidentDetailsViewModel(
+        presenter: nextSceene,
+        incident: (calloutButton?.incidentAnnotation.incident)!,
+        incidentDelegate: self
+      )
     }
   }
   
