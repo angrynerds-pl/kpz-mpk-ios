@@ -81,11 +81,12 @@ class MapViewController: UIViewController {
   // MARK: - Segues
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "segueType" {
+    
+    switch segue.identifier {
+    case "segueType":
       let nextSceene = segue.destination as? TypePickViewController
       nextSceene?.viewModel = TypePickViewModel(reportedLocation: mapView.centerCoordinate, incidentDelegate: self)
-    }
-    if segue.identifier == "detailsSegue" {
+    case "detailsSegue":
       let calloutButton = sender as? CalloutButton
       let nextSceene = segue.destination as? IncidentDetailsViewController
       nextSceene?.viewModel = IncidentDetailsViewModel(
@@ -93,11 +94,13 @@ class MapViewController: UIViewController {
         incident: (calloutButton?.incidentAnnotation.incident)!,
         incidentDelegate: self
       )
+    default:
+      return
     }
   }
   
   override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-    return viewModel.shouldPerformSegue(withIdentifier: identifier)
+    return viewModel.shouldPerformSegue(withIdentifier: identifier, sender: sender)
   }
 }
 // MARK: - MapViewControllerPresenter protocole
@@ -162,7 +165,7 @@ extension MapViewController: MKMapViewDelegate {
         incidentAnnotation: annotation
       )
       calloutButton.addTarget(self, action: #selector(calloutButtonPressed(_:)), for: .touchUpInside)
-
+      
       annotationView?.rightCalloutAccessoryView = calloutButton
     }
     
