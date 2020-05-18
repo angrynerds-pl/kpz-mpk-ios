@@ -81,7 +81,6 @@ class MapViewController: UIViewController {
   // MARK: - Segues
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
     switch segue.identifier {
     case "segueType":
       let nextSceene = segue.destination as? TypePickViewController

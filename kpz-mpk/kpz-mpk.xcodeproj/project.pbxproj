@@ -189,6 +189,30 @@
 			path = Componnents;
 			sourceTree = "<group>";
 		};
+		161966C62472ADFA00F4C888 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				161966C42472A66C00F4C888 /* AffectedHeadsignCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		161966C72472AE0300F4C888 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1641E3AD24704B2A0037B37B /* IncidentDetailsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		161966C82472AE1000F4C888 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1641E3AA24704A4B0037B37B /* IncidentDetailsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		1630C15B240D365800203440 = {
 			isa = PBXGroup;
 			children = (
@@ -231,9 +255,9 @@
 		1641E3AC24704AF30037B37B /* IncidentDetails */ = {
 			isa = PBXGroup;
 			children = (
-				1641E3AA24704A4B0037B37B /* IncidentDetailsViewController.swift */,
-				1641E3AD24704B2A0037B37B /* IncidentDetailsViewModel.swift */,
-				161966C42472A66C00F4C888 /* AffectedHeadsignCell.swift */,
+				161966C82472AE1000F4C888 /* ViewControllers */,
+				161966C72472AE0300F4C888 /* ViewModels */,
+				161966C62472ADFA00F4C888 /* Cells */,
 			);
 			path = IncidentDetails;
 			sourceTree = "<group>";
