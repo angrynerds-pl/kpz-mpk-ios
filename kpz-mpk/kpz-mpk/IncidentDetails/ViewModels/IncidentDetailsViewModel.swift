@@ -35,10 +35,4 @@ final class IncidentDetailsViewModel {
       headsign: incident.tripHeadsign
     )
   }
-  
-  func getAffectedheadsignsSorted() -> [AffectedHeadsign] {
-    return(incident.affectedHeadsigns.sorted(by: {
-      $0.routeId < $1.routeId
-    }))
-  }
 }
