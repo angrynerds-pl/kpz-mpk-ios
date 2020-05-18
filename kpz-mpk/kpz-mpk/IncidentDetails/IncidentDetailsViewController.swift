@@ -19,10 +19,13 @@ class IncidentDetailsViewController: UIViewController {
   @IBOutlet private weak var incidentTypeLabel: UILabel!
   @IBOutlet private weak var routeIdLabel: UILabel!
   @IBOutlet private weak var tripHeadsignLabel: UILabel!
+  @IBOutlet private weak var tableView: UITableView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    tableView.delegate = self
+    tableView.dataSource = self
     viewModel.setLabels()
   }
 }
@@ -33,5 +36,23 @@ extension IncidentDetailsViewController: IncidentDetailsControllerPresenter {
     incidentTypeLabel.text = type
     routeIdLabel.text = routeId
     tripHeadsignLabel.text = headsign
+  }
+}
+
+extension IncidentDetailsViewController: UITableViewDelegate, UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return viewModel.incident.affectedHeadsigns.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    guard
+      let affectedHeadsignItem = viewModel.incident.affectedHeadsigns[safe: indexPath.row],
+      let cell = tableView.dequeueReusableCell(withIdentifier: "affectedHeadsignCell") as? AffectedHeadsignCell else {
+        return UITableViewCell()
+    }
+    
+    cell.setCell(affectedHeadSign: affectedHeadsignItem)
+    return cell
   }
 }

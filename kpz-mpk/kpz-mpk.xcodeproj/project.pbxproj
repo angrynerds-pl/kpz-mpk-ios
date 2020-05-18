@@ -21,6 +21,7 @@
 		160B79B4244B862700720DCE /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79B3244B862700720DCE /* RoundedButton.swift */; };
 		160B79BA244C725100720DCE /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79B9244C725100720DCE /* RoundedView.swift */; };
 		1610967F245EFA5000C7B0DC /* UserMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1610967E245EFA5000C7B0DC /* UserMenuViewModel.swift */; };
+		161966C52472A66C00F4C888 /* AffectedHeadsignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161966C42472A66C00F4C888 /* AffectedHeadsignCell.swift */; };
 		161DBE07245C781D005A907B /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 161DBE06245C781D005A907B /* Auth0.plist */; };
 		1630C168240D365800203440 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630C167240D365800203440 /* AppDelegate.swift */; };
 		1630C16A240D365800203440 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630C169240D365800203440 /* SceneDelegate.swift */; };
@@ -74,6 +75,7 @@
 		160B79B3244B862700720DCE /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		160B79B9244C725100720DCE /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		1610967E245EFA5000C7B0DC /* UserMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuViewModel.swift; sourceTree = "<group>"; };
+		161966C42472A66C00F4C888 /* AffectedHeadsignCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffectedHeadsignCell.swift; sourceTree = "<group>"; };
 		161DBE06245C781D005A907B /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		1630C164240D365800203440 /* kpz-mpk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kpz-mpk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1630C167240D365800203440 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 			children = (
 				1641E3AA24704A4B0037B37B /* IncidentDetailsViewController.swift */,
 				1641E3AD24704B2A0037B37B /* IncidentDetailsViewModel.swift */,
+				161966C42472A66C00F4C888 /* AffectedHeadsignCell.swift */,
 			);
 			path = IncidentDetails;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				1689912C2454985E00B56408 /* RoutePickViewController.swift in Sources */,
 				1641E3AE24704B2A0037B37B /* IncidentDetailsViewModel.swift in Sources */,
 				160B79BA244C725100720DCE /* RoundedView.swift in Sources */,
+				161966C52472A66C00F4C888 /* AffectedHeadsignCell.swift in Sources */,
 				16FA9424246F14F1005ABA65 /* CalloutButton.swift in Sources */,
 				160B79AD2449E76A00720DCE /* IncidentType.swift in Sources */,
 				1606027E2458AB72004FAD39 /* RouteApiService.swift in Sources */,
