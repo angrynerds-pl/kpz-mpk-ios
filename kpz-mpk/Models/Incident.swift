@@ -15,11 +15,5 @@ struct Incident: Codable {
   let location: IncidentLocation
   let routeId: String
   let tripHeadsign: String
-  let affectedHeadsigns: [AffectedHeadsign]
-  
-  func affectedHeadsignsSort() -> [AffectedHeadsign] {
-    return(self.affectedHeadsigns.sorted(by: {
-      $0.routeId < $1.routeId
-    }))
-  }
+  var affectedHeadsigns: [AffectedHeadsign]
 }

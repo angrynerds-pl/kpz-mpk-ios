@@ -45,7 +45,7 @@ extension IncidentDetailsViewController: UITableViewDelegate, UITableViewDataSou
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let sortedHeadsigns = viewModel.incident.affectedHeadsignsSort()
+    let sortedHeadsigns = viewModel.incident.affectedHeadsigns.sorted()
     guard
       let affectedHeadsignItem = sortedHeadsigns[safe: indexPath.row],
       let cell = tableView.dequeueReusableCell(withIdentifier: "affectedHeadsignCell") as? AffectedHeadsignCell else {
