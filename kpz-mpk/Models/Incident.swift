@@ -15,5 +15,5 @@ struct Incident: Codable {
   let location: IncidentLocation
   let routeId: String
   let tripHeadsign: String
-  var affectedHeadsigns: [AffectedHeadsign]
+  let affectedHeadsigns: [AffectedHeadsign]
 }
