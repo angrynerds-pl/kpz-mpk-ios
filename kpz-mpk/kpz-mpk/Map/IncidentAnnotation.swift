@@ -11,6 +11,9 @@ import MapKit
 
 class IncidentAnnotation: NSObject, MKAnnotation {
   var incident: Incident
+  var title: String?
+  var subtitle: String?
+  
   var coordinate: CLLocationCoordinate2D {
     CLLocationCoordinate2D(
       latitude: incident.location.latitude,
@@ -20,5 +23,7 @@ class IncidentAnnotation: NSObject, MKAnnotation {
   
   init(forIncident incident: Incident) {
     self.incident = incident
+    self.title = incident.type.prettyName
+    self.subtitle = ("\(incident.routeId) \(incident.tripHeadsign)")
   }
 }

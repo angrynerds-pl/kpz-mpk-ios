@@ -13,4 +13,7 @@ struct Incident: Codable {
   let description: String
   let type: IncidenType
   let location: IncidentLocation
+  let routeId: String
+  let tripHeadsign: String
+  let affectedHeadsigns: [AffectedHeadsign]
 }

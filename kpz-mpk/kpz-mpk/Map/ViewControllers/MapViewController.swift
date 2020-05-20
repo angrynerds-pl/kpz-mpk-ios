@@ -70,6 +70,10 @@ class MapViewController: UIViewController {
     viewModel.presentState(stateToPresent: .mapBrowsing)
   }
   
+  @objc func calloutButtonPressed(_ sender: CalloutButton) {
+    performSegue(withIdentifier: "detailsSegue", sender: sender)
+  }
+  
   private func registerMapAnnotationViews() {
     mapView.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(IncidentAnnotation.self))
   }
@@ -77,14 +81,25 @@ class MapViewController: UIViewController {
   // MARK: - Segues
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "segueType" {
+    switch segue.identifier {
+    case "segueType":
       let nextSceene = segue.destination as? TypePickViewController
       nextSceene?.viewModel = TypePickViewModel(reportedLocation: mapView.centerCoordinate, incidentDelegate: self)
+    case "detailsSegue":
+      let calloutButton = sender as? CalloutButton
+      let nextSceene = segue.destination as? IncidentDetailsViewController
+      nextSceene?.viewModel = IncidentDetailsViewModel(
+        presenter: nextSceene,
+        incident: (calloutButton?.incidentAnnotation.incident)!,
+        incidentDelegate: self
+      )
+    default:
+      return
     }
   }
   
   override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-    return viewModel.shouldPerformSegue(withIdentifier: identifier)
+    return viewModel.shouldPerformSegue(withIdentifier: identifier, sender: sender)
   }
 }
 // MARK: - MapViewControllerPresenter protocole
@@ -142,6 +157,15 @@ extension MapViewController: MKMapViewDelegate {
     
     if let annotation = annotation as? IncidentAnnotation {
       annotationView = setupIncidentAnnotationView(for: annotation, on: mapView)
+      annotationView?.canShowCallout = true
+      
+      let calloutButton = CalloutButton(
+        frame: CGRect(x: 0, y: 0, width: 30, height: 30),
+        incidentAnnotation: annotation
+      )
+      calloutButton.addTarget(self, action: #selector(calloutButtonPressed(_:)), for: .touchUpInside)
+      
+      annotationView?.rightCalloutAccessoryView = calloutButton
     }
     
     return annotationView

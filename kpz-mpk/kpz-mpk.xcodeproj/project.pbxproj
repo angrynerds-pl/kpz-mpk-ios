@@ -21,6 +21,7 @@
 		160B79B4244B862700720DCE /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79B3244B862700720DCE /* RoundedButton.swift */; };
 		160B79BA244C725100720DCE /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160B79B9244C725100720DCE /* RoundedView.swift */; };
 		1610967F245EFA5000C7B0DC /* UserMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1610967E245EFA5000C7B0DC /* UserMenuViewModel.swift */; };
+		161966C52472A66C00F4C888 /* AffectedHeadsignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161966C42472A66C00F4C888 /* AffectedHeadsignCell.swift */; };
 		161DBE07245C781D005A907B /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 161DBE06245C781D005A907B /* Auth0.plist */; };
 		1630C168240D365800203440 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630C167240D365800203440 /* AppDelegate.swift */; };
 		1630C16A240D365800203440 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630C169240D365800203440 /* SceneDelegate.swift */; };
@@ -29,6 +30,8 @@
 		1630C171240D365C00203440 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1630C170240D365C00203440 /* Assets.xcassets */; };
 		1630C174240D365C00203440 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1630C172240D365C00203440 /* LaunchScreen.storyboard */; };
 		16392D1E24485C1D00E227B6 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16392D1D24485C1D00E227B6 /* ApiConstants.swift */; };
+		1641E3AB24704A4B0037B37B /* IncidentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1641E3AA24704A4B0037B37B /* IncidentDetailsViewController.swift */; };
+		1641E3AE24704B2A0037B37B /* IncidentDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1641E3AD24704B2A0037B37B /* IncidentDetailsViewModel.swift */; };
 		164A3AB7245C8AB70038B161 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164A3AB6245C8AB70038B161 /* SessionManager.swift */; };
 		164A3ABA245C8EA40038B161 /* UserMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164A3AB9245C8EA40038B161 /* UserMenuViewController.swift */; };
 		16544AA6244DEE4D00319CB2 /* MapState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16544AA5244DEE4D00319CB2 /* MapState.swift */; };
@@ -48,6 +51,8 @@
 		16DDF0362442334700E2633E /* IncidentEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDF0352442334700E2633E /* IncidentEndpoint.swift */; };
 		16DDF038244235A500E2633E /* Incident.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDF037244235A500E2633E /* Incident.swift */; };
 		16E73F5724325E6100AD17AF /* IncidentApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E73F5624325E6100AD17AF /* IncidentApiService.swift */; };
+		16FA941F246EEA17005ABA65 /* AffectedHeadsign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FA941E246EEA17005ABA65 /* AffectedHeadsign.swift */; };
+		16FA9424246F14F1005ABA65 /* CalloutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FA9423246F14F1005ABA65 /* CalloutButton.swift */; };
 		16FB5E032461E61D0035F5EE /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FB5E022461E61D0035F5EE /* ApiError.swift */; };
 		16FB5E052462A7630035F5EE /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FB5E042462A7630035F5EE /* UIViewControllerExtension.swift */; };
 		16FB5E2B24657B310035F5EE /* ReportIncident.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FB5E2A24657B310035F5EE /* ReportIncident.swift */; };
@@ -70,6 +75,7 @@
 		160B79B3244B862700720DCE /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		160B79B9244C725100720DCE /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		1610967E245EFA5000C7B0DC /* UserMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuViewModel.swift; sourceTree = "<group>"; };
+		161966C42472A66C00F4C888 /* AffectedHeadsignCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffectedHeadsignCell.swift; sourceTree = "<group>"; };
 		161DBE06245C781D005A907B /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		1630C164240D365800203440 /* kpz-mpk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kpz-mpk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1630C167240D365800203440 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +86,8 @@
 		1630C173240D365C00203440 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1630C175240D365C00203440 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16392D1D24485C1D00E227B6 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
+		1641E3AA24704A4B0037B37B /* IncidentDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentDetailsViewController.swift; sourceTree = "<group>"; };
+		1641E3AD24704B2A0037B37B /* IncidentDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentDetailsViewModel.swift; sourceTree = "<group>"; };
 		164A3AB6245C8AB70038B161 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		164A3AB9245C8EA40038B161 /* UserMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenuViewController.swift; sourceTree = "<group>"; };
 		16544AA5244DEE4D00319CB2 /* MapState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapState.swift; sourceTree = "<group>"; };
@@ -99,6 +107,8 @@
 		16DDF0352442334700E2633E /* IncidentEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentEndpoint.swift; sourceTree = "<group>"; };
 		16DDF037244235A500E2633E /* Incident.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Incident.swift; sourceTree = "<group>"; };
 		16E73F5624325E6100AD17AF /* IncidentApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentApiService.swift; sourceTree = "<group>"; };
+		16FA941E246EEA17005ABA65 /* AffectedHeadsign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffectedHeadsign.swift; sourceTree = "<group>"; };
+		16FA9423246F14F1005ABA65 /* CalloutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutButton.swift; sourceTree = "<group>"; };
 		16FB5E022461E61D0035F5EE /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		16FB5E042462A7630035F5EE /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		16FB5E2A24657B310035F5EE /* ReportIncident.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportIncident.swift; sourceTree = "<group>"; };
@@ -159,6 +169,7 @@
 				16DDF037244235A500E2633E /* Incident.swift */,
 				160B79AC2449E76A00720DCE /* IncidentType.swift */,
 				160B79AE2449E79200720DCE /* IncidentLocation.swift */,
+				16FA941E246EEA17005ABA65 /* AffectedHeadsign.swift */,
 				160602832458BBE0004FAD39 /* RouteModels */,
 				16FB5E2A24657B310035F5EE /* ReportIncident.swift */,
 			);
@@ -173,8 +184,33 @@
 				16544AAD244E07FC00319CB2 /* ShadowButton.swift */,
 				16544AAF244E087700319CB2 /* RoundedLeftButton.swift */,
 				16544AB1244E08CF00319CB2 /* RoundedRightButton.swift */,
+				16FA9423246F14F1005ABA65 /* CalloutButton.swift */,
 			);
 			path = Componnents;
+			sourceTree = "<group>";
+		};
+		161966C62472ADFA00F4C888 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				161966C42472A66C00F4C888 /* AffectedHeadsignCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		161966C72472AE0300F4C888 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1641E3AD24704B2A0037B37B /* IncidentDetailsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		161966C82472AE1000F4C888 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1641E3AA24704A4B0037B37B /* IncidentDetailsViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		1630C15B240D365800203440 = {
@@ -202,6 +238,7 @@
 				164A3AB8245C8E840038B161 /* UserMenuView */,
 				1689912A245497E100B56408 /* LinePickView */,
 				16544AB3244E291900319CB2 /* TypePickView */,
+				1641E3AC24704AF30037B37B /* IncidentDetails */,
 				169F6B24241A3ABA00B600DC /* Map */,
 				1630C167240D365800203440 /* AppDelegate.swift */,
 				1630C169240D365800203440 /* SceneDelegate.swift */,
@@ -213,6 +250,16 @@
 				164A3AB6245C8AB70038B161 /* SessionManager.swift */,
 			);
 			path = "kpz-mpk";
+			sourceTree = "<group>";
+		};
+		1641E3AC24704AF30037B37B /* IncidentDetails */ = {
+			isa = PBXGroup;
+			children = (
+				161966C82472AE1000F4C888 /* ViewControllers */,
+				161966C72472AE0300F4C888 /* ViewModels */,
+				161966C62472ADFA00F4C888 /* Cells */,
+			);
+			path = IncidentDetails;
 			sourceTree = "<group>";
 		};
 		164A3AB8245C8E840038B161 /* UserMenuView */ = {
@@ -514,12 +561,17 @@
 				16680163241A8E820051C0DD /* LocationService.swift in Sources */,
 				168991292454705E00B56408 /* CollectionExtensions.swift in Sources */,
 				1689912C2454985E00B56408 /* RoutePickViewController.swift in Sources */,
+				1641E3AE24704B2A0037B37B /* IncidentDetailsViewModel.swift in Sources */,
 				160B79BA244C725100720DCE /* RoundedView.swift in Sources */,
+				161966C52472A66C00F4C888 /* AffectedHeadsignCell.swift in Sources */,
+				16FA9424246F14F1005ABA65 /* CalloutButton.swift in Sources */,
 				160B79AD2449E76A00720DCE /* IncidentType.swift in Sources */,
 				1606027E2458AB72004FAD39 /* RouteApiService.swift in Sources */,
+				1641E3AB24704A4B0037B37B /* IncidentDetailsViewController.swift in Sources */,
 				1630C16A240D365800203440 /* SceneDelegate.swift in Sources */,
 				16544AB2244E08CF00319CB2 /* RoundedRightButton.swift in Sources */,
 				169F6B28241A3D4800B600DC /* MapViewModel.swift in Sources */,
+				16FA941F246EEA17005ABA65 /* AffectedHeadsign.swift in Sources */,
 				16392D1E24485C1D00E227B6 /* ApiConstants.swift in Sources */,
 				1610967F245EFA5000C7B0DC /* UserMenuViewModel.swift in Sources */,
 				16FB5E2B24657B310035F5EE /* ReportIncident.swift in Sources */,

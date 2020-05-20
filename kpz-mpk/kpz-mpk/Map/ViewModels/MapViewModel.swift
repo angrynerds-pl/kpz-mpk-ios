@@ -33,12 +33,16 @@ final class MapViewModel {
     }
   }
   
-  func shouldPerformSegue(withIdentifier identifier: String) -> Bool {
+  func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
     switch identifier {
     case "userMenuSegue":
       return SessionManager.shared.credentialsManager.hasValid()
     case "segueType":
       return SessionManager.shared.credentialsManager.hasValid()
+    case "detailsSegue":
+      if (sender as? CalloutButton) != nil {
+        return true
+      } else { return false }
     default:
       return true
     }
