@@ -35,4 +35,13 @@ final class IncidentDetailsViewModel {
       headsign: incident.tripHeadsign
     )
   }
+  
+  func setTable() {
+    let incidentDetailsDataSource = IncidentDetailsDataSource(affectedHeadSigns: groupAffectedHeadsigns())
+    presenter?.setTable(dataSource: incidentDetailsDataSource)
+  }
+  
+  func groupAffectedHeadsigns() -> [String: [AffectedHeadsign]] {
+    return Dictionary(grouping: incident.affectedHeadsigns.sorted(), by: {$0.routeId})
+  }
 }

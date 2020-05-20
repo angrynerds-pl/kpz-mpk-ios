@@ -40,6 +40,7 @@
 		16544AB2244E08CF00319CB2 /* RoundedRightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16544AB1244E08CF00319CB2 /* RoundedRightButton.swift */; };
 		16544AB5244E294F00319CB2 /* TypePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16544AB4244E294F00319CB2 /* TypePickViewController.swift */; };
 		16544AB7244E2DB800319CB2 /* IncidentTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16544AB6244E2DB800319CB2 /* IncidentTypeCell.swift */; };
+		1656777E247547AD0036BF49 /* IncidentDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1656777D247547AD0036BF49 /* IncidentDetailsDataSource.swift */; };
 		16680163241A8E820051C0DD /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16680162241A8E820051C0DD /* LocationService.swift */; };
 		1678DE06246C0747000BECEA /* IncidentDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1678DE05246C0747000BECEA /* IncidentDelegate.swift */; };
 		168991292454705E00B56408 /* CollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168991282454705E00B56408 /* CollectionExtensions.swift */; };
@@ -96,6 +97,7 @@
 		16544AB1244E08CF00319CB2 /* RoundedRightButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRightButton.swift; sourceTree = "<group>"; };
 		16544AB4244E294F00319CB2 /* TypePickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypePickViewController.swift; sourceTree = "<group>"; };
 		16544AB6244E2DB800319CB2 /* IncidentTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentTypeCell.swift; sourceTree = "<group>"; };
+		1656777D247547AD0036BF49 /* IncidentDetailsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentDetailsDataSource.swift; sourceTree = "<group>"; };
 		16680162241A8E820051C0DD /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		1678DE05246C0747000BECEA /* IncidentDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentDelegate.swift; sourceTree = "<group>"; };
 		168991282454705E00B56408 /* CollectionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtensions.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				161966C82472AE1000F4C888 /* ViewControllers */,
 				161966C72472AE0300F4C888 /* ViewModels */,
 				161966C62472ADFA00F4C888 /* Cells */,
+				1656777D247547AD0036BF49 /* IncidentDetailsDataSource.swift */,
 			);
 			path = IncidentDetails;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 				16680163241A8E820051C0DD /* LocationService.swift in Sources */,
 				168991292454705E00B56408 /* CollectionExtensions.swift in Sources */,
 				1689912C2454985E00B56408 /* RoutePickViewController.swift in Sources */,
+				1656777E247547AD0036BF49 /* IncidentDetailsDataSource.swift in Sources */,
 				1641E3AE24704B2A0037B37B /* IncidentDetailsViewModel.swift in Sources */,
 				160B79BA244C725100720DCE /* RoundedView.swift in Sources */,
 				161966C52472A66C00F4C888 /* AffectedHeadsignCell.swift in Sources */,
