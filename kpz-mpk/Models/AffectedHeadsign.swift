@@ -8,12 +8,14 @@
 
 import Foundation
 
-struct AffectedHeadsign: Codable, Comparable {
-  static func < (lhs: AffectedHeadsign, rhs: AffectedHeadsign) -> Bool {
-    return (lhs.routeId < rhs.routeId)
-  }
-  
+struct AffectedHeadsign: Codable {
   let incidentId: String
   let routeId: String
   let tripHeadsign: String
+}
+
+extension AffectedHeadsign: Comparable {
+  static func < (lhs: AffectedHeadsign, rhs: AffectedHeadsign) -> Bool {
+    return (lhs.routeId < rhs.routeId)
+  }
 }
