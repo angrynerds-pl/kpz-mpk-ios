@@ -9,37 +9,31 @@
 import UIKit
 
 class IncidentDetailsDataSource: NSObject {
-  private(set) var affectedHeadSigns: [String: [AffectedHeadsign]]
-  private var routeIds: [String]
+  private(set) var affectedRoutes: [AffectedRoutes]
   
   init(affectedHeadSigns: [String: [AffectedHeadsign]]) {
-    self.affectedHeadSigns = affectedHeadSigns
-    self.routeIds = Array(affectedHeadSigns.keys)
+    affectedRoutes = affectedHeadSigns.map {
+      AffectedRoutes(routeId: $0, affectedHeadsigns: $1)
+    }
   }
 }
 extension IncidentDetailsDataSource: UITableViewDataSource {
   func numberOfSections(in tableView: UITableView) -> Int {
-    return routeIds.count
+    return affectedRoutes.count
   }
   
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return routeIds[section]
+    return affectedRoutes[section].routeId
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    let routeId = routeIds[section]
-    guard
-      let affectedHeadSigns = affectedHeadSigns[routeId] else {
-        return 0
-    }
-    return affectedHeadSigns.count
+    return affectedRoutes[section].affectedHeadsigns.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let routeId = routeIds[indexPath.section]
     
     guard
-      let affectedHeadsignItem = affectedHeadSigns[routeId]?[indexPath.row],
+      let affectedHeadsignItem = affectedRoutes[indexPath.section].affectedHeadsigns[safe: indexPath.row],
       let cell = tableView.dequeueReusableCell(withIdentifier: "affectedHeadsignCell") as? AffectedHeadsignCell else {
         return UITableViewCell()
     }

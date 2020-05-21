@@ -25,9 +25,14 @@ class IncidentDetailsViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    tableView.delegate = self
     
     viewModel.setLabels()
     viewModel.setTable()
+  }
+  
+  @objc func handleExpandClose(_ sender: UIButton) {
+    print("clos/expand")
   }
 }
 
@@ -46,4 +51,12 @@ extension IncidentDetailsViewController: IncidentDetailsControllerPresenter {
   }
 }
 
-extension IncidentDetailsViewController: UITableViewDelegate {}
+extension IncidentDetailsViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let button = UIButton(type: .system)
+    button.setTitle("Close", for: .normal)
+    button.addTarget(self, action: #selector(handleExpandClose), for: .touchUpInside)
+    
+    return button
+  }
+}
