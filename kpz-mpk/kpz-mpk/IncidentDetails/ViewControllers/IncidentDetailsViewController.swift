@@ -11,6 +11,7 @@ import UIKit
 protocol IncidentDetailsControllerPresenter: NSObject {
   func setLabels(description: String, type: String, routeId: String, headsign: String)
   func setTable(dataSource data: IncidentDetailsDataSource)
+  func expandCloseTable(section: Int, indexPaths: [IndexPath], isSectionExpanded: SectionViewState)
 }
 
 class IncidentDetailsViewController: UIViewController {
@@ -32,11 +33,24 @@ class IncidentDetailsViewController: UIViewController {
   }
   
   @objc func handleExpandClose(_ sender: UIButton) {
-    print("clos/expand")
+    let section = sender.tag
+    
+    viewModel.expandCloseTable(section: section, sectionItems: (dataSource?.affectedRoutes[section])!)
   }
 }
 
 extension IncidentDetailsViewController: IncidentDetailsControllerPresenter {
+  func expandCloseTable(section: Int, indexPaths: [IndexPath], isSectionExpanded: SectionViewState) {
+    switch isSectionExpanded {
+    case .expanded:
+      dataSource!.affectedRoutes[section].isSectionExpanded = .notExpanded
+      tableView.deleteRows(at: indexPaths, with: .fade)
+    case .notExpanded:
+      dataSource!.affectedRoutes[section].isSectionExpanded = .expanded
+      tableView.insertRows(at: indexPaths, with: .fade)
+    }
+  }
+  
   func setTable(dataSource data: IncidentDetailsDataSource) {
     self.dataSource = data
     tableView.dataSource = self.dataSource
@@ -55,6 +69,7 @@ extension IncidentDetailsViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     let button = UIButton(type: .system)
     button.setTitle("Close", for: .normal)
+    button.tag = section
     button.addTarget(self, action: #selector(handleExpandClose), for: .touchUpInside)
     
     return button

@@ -27,6 +27,10 @@ extension IncidentDetailsDataSource: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    if affectedRoutes[section].isSectionExpanded == .notExpanded {
+      return 0
+    }
+    
     return affectedRoutes[section].affectedHeadsigns.count
   }
   

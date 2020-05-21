@@ -42,6 +42,7 @@
 		16544AB7244E2DB800319CB2 /* IncidentTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16544AB6244E2DB800319CB2 /* IncidentTypeCell.swift */; };
 		1656777E247547AD0036BF49 /* IncidentDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1656777D247547AD0036BF49 /* IncidentDetailsDataSource.swift */; };
 		16567781247660940036BF49 /* AffectedRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16567780247660940036BF49 /* AffectedRoutes.swift */; };
+		16567784247686270036BF49 /* SectionViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16567783247686270036BF49 /* SectionViewState.swift */; };
 		16680163241A8E820051C0DD /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16680162241A8E820051C0DD /* LocationService.swift */; };
 		1678DE06246C0747000BECEA /* IncidentDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1678DE05246C0747000BECEA /* IncidentDelegate.swift */; };
 		168991292454705E00B56408 /* CollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168991282454705E00B56408 /* CollectionExtensions.swift */; };
@@ -100,6 +101,7 @@
 		16544AB6244E2DB800319CB2 /* IncidentTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentTypeCell.swift; sourceTree = "<group>"; };
 		1656777D247547AD0036BF49 /* IncidentDetailsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentDetailsDataSource.swift; sourceTree = "<group>"; };
 		16567780247660940036BF49 /* AffectedRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffectedRoutes.swift; sourceTree = "<group>"; };
+		16567783247686270036BF49 /* SectionViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionViewState.swift; sourceTree = "<group>"; };
 		16680162241A8E820051C0DD /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		1678DE05246C0747000BECEA /* IncidentDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentDelegate.swift; sourceTree = "<group>"; };
 		168991282454705E00B56408 /* CollectionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtensions.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		161966C72472AE0300F4C888 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				16567780247660940036BF49 /* AffectedRoutes.swift */,
 				1641E3AD24704B2A0037B37B /* IncidentDetailsViewModel.swift */,
 			);
 			path = ViewModels;
@@ -238,6 +241,7 @@
 		1630C166240D365800203440 /* kpz-mpk */ = {
 			isa = PBXGroup;
 			children = (
+				16567782247685EE0036BF49 /* Components */,
 				16C783B82445A55C00375B88 /* API */,
 				164A3AB8245C8E840038B161 /* UserMenuView */,
 				1689912A245497E100B56408 /* LinePickView */,
@@ -263,7 +267,6 @@
 				161966C72472AE0300F4C888 /* ViewModels */,
 				161966C62472ADFA00F4C888 /* Cells */,
 				1656777D247547AD0036BF49 /* IncidentDetailsDataSource.swift */,
-				16567780247660940036BF49 /* AffectedRoutes.swift */,
 			);
 			path = IncidentDetails;
 			sourceTree = "<group>";
@@ -302,6 +305,14 @@
 				16544AB6244E2DB800319CB2 /* IncidentTypeCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		16567782247685EE0036BF49 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				16567783247686270036BF49 /* SectionViewState.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		1678DE04246C0732000BECEA /* Delegates */ = {
@@ -580,6 +591,7 @@
 				16544AB2244E08CF00319CB2 /* RoundedRightButton.swift in Sources */,
 				169F6B28241A3D4800B600DC /* MapViewModel.swift in Sources */,
 				16FA941F246EEA17005ABA65 /* AffectedHeadsign.swift in Sources */,
+				16567784247686270036BF49 /* SectionViewState.swift in Sources */,
 				16392D1E24485C1D00E227B6 /* ApiConstants.swift in Sources */,
 				1610967F245EFA5000C7B0DC /* UserMenuViewModel.swift in Sources */,
 				16FB5E2B24657B310035F5EE /* ReportIncident.swift in Sources */,

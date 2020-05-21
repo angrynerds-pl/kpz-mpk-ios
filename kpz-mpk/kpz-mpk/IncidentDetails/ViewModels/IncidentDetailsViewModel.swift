@@ -27,6 +27,19 @@ final class IncidentDetailsViewModel {
     self.incident = incident
   }
   
+  func expandCloseTable(section: Int, sectionItems: AffectedRoutes) {
+    let indicies = sectionItems.affectedHeadsigns.indices
+    let isSectionExpanded = sectionItems.isSectionExpanded
+    var indexPaths = [IndexPath]()
+    
+    for row in indicies {
+      let indexPath = IndexPath(row: row, section: section)
+      indexPaths.append(indexPath)
+    }
+    
+    presenter?.expandCloseTable(section: section, indexPaths: indexPaths, isSectionExpanded: isSectionExpanded)
+  }
+  
   func setLabels() {
     presenter?.setLabels(
       description: incident.description,

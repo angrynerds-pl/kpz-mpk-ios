@@ -8,18 +8,13 @@
 
 import Foundation
 
-enum ViewState {
-  case expanded
-  case notExpanded
-}
-
 class AffectedRoutes {
   let routeId: String
   let affectedHeadsigns: [AffectedHeadsign]
-  var viewState: ViewState
+  var isSectionExpanded: SectionViewState
   
   init(routeId: String, affectedHeadsigns: [AffectedHeadsign]) {
-    self.viewState = .notExpanded
+    self.isSectionExpanded = .expanded
     self.routeId = routeId
     self.affectedHeadsigns = affectedHeadsigns
   }
