@@ -67,11 +67,13 @@ extension IncidentDetailsViewController: IncidentDetailsControllerPresenter {
 
 extension IncidentDetailsViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    let button = UIButton(type: .system)
-    button.setTitle("Close", for: .normal)
-    button.tag = section
-    button.addTarget(self, action: #selector(handleExpandClose), for: .touchUpInside)
-    
-    return button
+    let headerView = ExpandableSectionHeaderView(
+      target: self,
+      section: section,
+      action: #selector(handleExpandClose),
+      title: (dataSource?.affectedRoutes[section].routeId)!,
+      frame: CGRect(origin: .zero, size: CGSize(width: tableView.frame.width, height: 36.0))
+    )
+    return headerView
   }
 }
