@@ -17,15 +17,26 @@ class ExpandableSectionHeaderView: UIView {
   }
   
   let expansionButton = UIButton(type: .system)
-  let routeIdLabel = UILabel(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: Constants.itemsHeight)))
+  let routeIdLabel = UILabel(
+    frame: CGRect(
+      origin: .zero,
+      size: CGSize(width: 100, height: Constants.itemsHeight)
+  ))
   
-  required init(target: Any?, section: Int, action: Selector, title: String, frame: CGRect) {
+  required init(target: Any?, section: Int, action: Selector, title: String, frame: CGRect, sectionViewState: SectionViewState) {
     super.init(frame: frame)
     
-    self.backgroundColor = UIColor(white: 1, alpha: 0)
+    self.backgroundColor = UIColor(white: 1, alpha: 1)
     
-    setButton(button: expansionButton, section: section, target: target, action: action)
-    setLabel(label: routeIdLabel, title: title)
+    setButton(
+      button: expansionButton,
+      section: section,
+      target: target,
+      action: action,
+      sectionViewState: sectionViewState)
+    setLabel(
+      label: routeIdLabel,
+      title: title)
     centerY(itemToCenter: expansionButton)
     centerY(itemToCenter: routeIdLabel)
     
@@ -53,11 +64,17 @@ class ExpandableSectionHeaderView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
   
-  func setButton(button: UIButton, section: Int, target: Any?, action: Selector) {
+  func setButton(
+    button: UIButton,
+    section: Int,
+    target: Any?,
+    action: Selector,
+    sectionViewState: SectionViewState
+  ) {
     button.translatesAutoresizingMaskIntoConstraints = false
     button.frame = CGRect(origin: .zero, size: CGSize(width: 50, height: Constants.itemsHeight))
     button.tag = section
-    button.setTitle("Open", for: .normal)
+    button.setTitle(sectionViewState.buttonTitle, for: .normal)
     button.addTarget(target, action: action, for: .touchUpInside)
   }
   
@@ -68,7 +85,7 @@ class ExpandableSectionHeaderView: UIView {
   }
   
   func centerY(itemToCenter item: UIView) {
-      self.addConstraint(NSLayoutConstraint(
+    self.addConstraint(NSLayoutConstraint(
       item: item,
       attribute: NSLayoutConstraint.Attribute.centerY,
       relatedBy: NSLayoutConstraint.Relation.equal,

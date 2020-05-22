@@ -79,7 +79,8 @@ extension IncidentDetailsViewController: UITableViewDelegate {
       section: section,
       action: #selector(handleExpandClose),
       title: (dataSource?.affectedRoutes[section].routeId)!,
-      frame: CGRect(origin: .zero, size: CGSize(width: tableView.frame.width, height: 36.0))
+      frame: CGRect(origin: .zero, size: CGSize(width: tableView.frame.width, height: 36.0)),
+      sectionViewState: (dataSource?.affectedRoutes[section].isSectionExpanded)!
     )
     return headerView
   }

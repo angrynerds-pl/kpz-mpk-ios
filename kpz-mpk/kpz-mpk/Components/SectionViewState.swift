@@ -11,4 +11,13 @@ import Foundation
 enum SectionViewState {
   case expanded
   case notExpanded
+  
+  var buttonTitle: String {
+    switch self {
+    case .expanded:
+      return "Close"
+    case .notExpanded:
+      return "Open"
+    }
+  }
 }
