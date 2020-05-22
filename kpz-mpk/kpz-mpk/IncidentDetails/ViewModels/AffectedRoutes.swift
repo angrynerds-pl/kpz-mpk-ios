@@ -14,7 +14,7 @@ class AffectedRoutes {
   var isSectionExpanded: SectionViewState
   
   init(routeId: String, affectedHeadsigns: [AffectedHeadsign]) {
-    self.isSectionExpanded = .expanded
+    self.isSectionExpanded = .notExpanded
     self.routeId = routeId
     self.affectedHeadsigns = affectedHeadsigns
   }

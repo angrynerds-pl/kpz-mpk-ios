@@ -35,7 +35,14 @@ class IncidentDetailsViewController: UIViewController {
   @objc func handleExpandClose(_ sender: UIButton) {
     let section = sender.tag
     
-    viewModel.expandCloseTable(section: section, sectionItems: (dataSource?.affectedRoutes[section])!)
+    let isSectionExpanded = viewModel.expandCloseTable(section: section, sectionItems: (dataSource?.affectedRoutes[section])!)
+    
+    switch isSectionExpanded {
+    case .expanded:
+      sender.setTitle("Open", for: .normal)
+    case .notExpanded:
+      sender.setTitle("Close", for: .normal)
+    }
   }
 }
 
@@ -75,5 +82,9 @@ extension IncidentDetailsViewController: UITableViewDelegate {
       frame: CGRect(origin: .zero, size: CGSize(width: tableView.frame.width, height: 36.0))
     )
     return headerView
+  }
+  
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return 36.0
   }
 }
