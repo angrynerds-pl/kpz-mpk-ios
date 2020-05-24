@@ -6,7 +6,7 @@
 //  Copyright © 2020 kpz-mpk. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum SectionViewState {
   case expanded
@@ -18,6 +18,33 @@ enum SectionViewState {
       return "Close"
     case .notExpanded:
       return "Open"
+    }
+  }
+  
+  var futureButtonTitle: String {
+    switch self {
+    case .expanded:
+      return "Open"
+    case .notExpanded:
+      return "Close"
+    }
+  }
+  
+  var backgroundColor: UIColor {
+    switch self {
+    case .expanded:
+      return .secondarySystemBackground
+    case .notExpanded:
+      return .white
+    }
+  }
+  
+  var futureBackgroundColor: UIColor {
+    switch self {
+    case .expanded:
+      return .white
+    case .notExpanded:
+      return .secondarySystemBackground
     }
   }
 }

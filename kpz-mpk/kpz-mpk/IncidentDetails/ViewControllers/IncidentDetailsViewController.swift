@@ -35,13 +35,11 @@ class IncidentDetailsViewController: UIViewController {
   @objc func handleExpandClose(_ sender: UIButton) {
     let section = sender.tag
     
-    let isSectionExpanded = viewModel.expandCloseTable(section: section, sectionItems: (dataSource?.affectedRoutes[section])!)
+    let willBeSectionView = viewModel.expandCloseTable(section: section, sectionItems: (dataSource?.affectedRoutes[section])!)
     
-    switch isSectionExpanded {
-    case .expanded:
-      sender.setTitle("Open", for: .normal)
-    case .notExpanded:
-      sender.setTitle("Close", for: .normal)
+    sender.setTitle(willBeSectionView.futureButtonTitle, for: .normal)
+    if let headerView = sender.superview {
+      headerView.backgroundColor = willBeSectionView.futureBackgroundColor
     }
   }
 }

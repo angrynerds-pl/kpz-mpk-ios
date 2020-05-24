@@ -26,8 +26,8 @@ class ExpandableSectionHeaderView: UIView {
   required init(target: Any?, section: Int, action: Selector, title: String, frame: CGRect, sectionViewState: SectionViewState) {
     super.init(frame: frame)
     
-    self.backgroundColor = UIColor(white: 1, alpha: 1)
-    
+    self.backgroundColor = sectionViewState.backgroundColor
+
     setButton(
       button: expansionButton,
       section: section,
