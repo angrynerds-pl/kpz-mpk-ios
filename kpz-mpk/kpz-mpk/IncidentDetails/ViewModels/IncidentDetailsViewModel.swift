@@ -27,6 +27,16 @@ final class IncidentDetailsViewModel {
     self.incident = incident
   }
   
+  func expandCloseTable(section: Int, sectionItems: AffectedRoutes) -> SectionViewState {
+    let indicies = sectionItems.affectedHeadsigns.indices
+    let isSectionExpanded = sectionItems.isSectionExpanded
+    let indexPaths = indicies.map { IndexPath(row: $0, section: section) }
+    
+    presenter?.expandCloseTable(section: section, indexPaths: indexPaths, isSectionExpanded: isSectionExpanded)
+    
+    return isSectionExpanded
+  }
+  
   func setLabels() {
     presenter?.setLabels(
       description: incident.description,
@@ -34,5 +44,14 @@ final class IncidentDetailsViewModel {
       routeId: incident.routeId,
       headsign: incident.tripHeadsign
     )
+  }
+  
+  func setTable() {
+    let incidentDetailsDataSource = IncidentDetailsDataSource(affectedHeadSigns: groupAffectedHeadsigns())
+    presenter?.setTable(dataSource: incidentDetailsDataSource)
+  }
+  
+  func groupAffectedHeadsigns() -> [String: [AffectedHeadsign]] {
+    return Dictionary(grouping: incident.affectedHeadsigns.sorted(), by: {$0.routeId})
   }
 }

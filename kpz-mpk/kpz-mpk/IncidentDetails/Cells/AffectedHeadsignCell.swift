@@ -10,11 +10,9 @@ import UIKit
 
 class AffectedHeadsignCell: UITableViewCell {
   
-  @IBOutlet private weak var routeIdLabel: UILabel!
   @IBOutlet private weak var headsignLabel: UILabel!
   
   func setCell(affectedHeadSign: AffectedHeadsign) {
-    routeIdLabel.text = affectedHeadSign.routeId
     headsignLabel.text = affectedHeadSign.tripHeadsign
   }
 }
