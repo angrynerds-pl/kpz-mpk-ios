@@ -14,13 +14,15 @@ class ExpandableSectionHeaderView: UIView {
     static let margin = CGFloat(15)
     static let itemsHeight = CGFloat(36)
     static let titleFontSize = CGFloat(19)
+    static let labelWidth = CGFloat(50)
+    static let buttonWidth = CGFloat(50)
   }
   
   let expansionButton = UIButton(type: .system)
   let routeIdLabel = UILabel(
     frame: CGRect(
       origin: .zero,
-      size: CGSize(width: 100, height: Constants.itemsHeight)
+      size: CGSize(width: Constants.labelWidth, height: Constants.itemsHeight)
   ))
   
   required init(target: Any?, section: Int, action: Selector, title: String, frame: CGRect, sectionViewState: SectionViewState) {
@@ -34,9 +36,11 @@ class ExpandableSectionHeaderView: UIView {
       target: target,
       action: action,
       sectionViewState: sectionViewState)
+    
     setLabel(
       label: routeIdLabel,
       title: title)
+    
     centerY(itemToCenter: expansionButton)
     centerY(itemToCenter: routeIdLabel)
     
@@ -72,7 +76,7 @@ class ExpandableSectionHeaderView: UIView {
     sectionViewState: SectionViewState
   ) {
     button.translatesAutoresizingMaskIntoConstraints = false
-    button.frame = CGRect(origin: .zero, size: CGSize(width: 50, height: Constants.itemsHeight))
+    button.frame = CGRect(origin: .zero, size: CGSize(width: Constants.buttonWidth, height: Constants.itemsHeight))
     button.tag = section
     button.setTitle(sectionViewState.buttonTitle, for: .normal)
     button.addTarget(target, action: action, for: .touchUpInside)

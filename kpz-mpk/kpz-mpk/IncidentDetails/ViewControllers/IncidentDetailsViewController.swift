@@ -34,8 +34,8 @@ class IncidentDetailsViewController: UIViewController {
   
   @objc func handleExpandClose(_ sender: UIButton) {
     let section = sender.tag
-    
-    let willBeSectionView = viewModel.expandCloseTable(section: section, sectionItems: (dataSource?.affectedRoutes[section])!)
+    guard let sectionItem = dataSource?.affectedRoutes[safe: section] else { return }
+    let willBeSectionView = viewModel.expandCloseTable(section: section, sectionItems: sectionItem)
     
     sender.setTitle(willBeSectionView.futureButtonTitle, for: .normal)
     if let headerView = sender.superview {
@@ -46,12 +46,14 @@ class IncidentDetailsViewController: UIViewController {
 
 extension IncidentDetailsViewController: IncidentDetailsControllerPresenter {
   func expandCloseTable(section: Int, indexPaths: [IndexPath], isSectionExpanded: SectionViewState) {
+    guard let sectionItem = dataSource?.affectedRoutes[safe: section] else { return }
+    
     switch isSectionExpanded {
     case .expanded:
-      dataSource!.affectedRoutes[section].isSectionExpanded = .notExpanded
+      sectionItem.isSectionExpanded = .notExpanded
       tableView.deleteRows(at: indexPaths, with: .fade)
     case .notExpanded:
-      dataSource!.affectedRoutes[section].isSectionExpanded = .expanded
+      sectionItem.isSectionExpanded = .expanded
       tableView.insertRows(at: indexPaths, with: .fade)
     }
   }
@@ -72,13 +74,14 @@ extension IncidentDetailsViewController: IncidentDetailsControllerPresenter {
 
 extension IncidentDetailsViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    guard let sectionItem = dataSource?.affectedRoutes[safe: section] else { return UIView()}
     let headerView = ExpandableSectionHeaderView(
       target: self,
       section: section,
       action: #selector(handleExpandClose),
       title: (dataSource?.affectedRoutes[section].routeId)!,
       frame: CGRect(origin: .zero, size: CGSize(width: tableView.frame.width, height: 36.0)),
-      sectionViewState: (dataSource?.affectedRoutes[section].isSectionExpanded)!
+      sectionViewState: sectionItem.isSectionExpanded
     )
     return headerView
   }

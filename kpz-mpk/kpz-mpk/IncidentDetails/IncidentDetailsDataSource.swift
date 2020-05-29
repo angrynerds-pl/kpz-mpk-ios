@@ -30,12 +30,10 @@ extension IncidentDetailsDataSource: UITableViewDataSource {
     if affectedRoutes[section].isSectionExpanded == .notExpanded {
       return 0
     }
-    
     return affectedRoutes[section].affectedHeadsigns.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
     guard
       let affectedHeadsignItem = affectedRoutes[indexPath.section].affectedHeadsigns[safe: indexPath.row],
       let cell = tableView.dequeueReusableCell(withIdentifier: "affectedHeadsignCell") as? AffectedHeadsignCell else {

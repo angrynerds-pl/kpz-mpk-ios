@@ -15,6 +15,7 @@ class RouteDataSource: NSObject {
     self.routes = routes
   }
 }
+
 extension RouteDataSource: UITableViewDataSource {
   func numberOfSections(in tableView: UITableView) -> Int {
     return routes.count
