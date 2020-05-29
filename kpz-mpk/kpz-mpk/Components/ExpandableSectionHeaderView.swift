@@ -11,11 +11,11 @@ import UIKit
 class ExpandableSectionHeaderView: UIView {
   
   private enum Constants {
-    static let margin = CGFloat(15)
-    static let itemsHeight = CGFloat(36)
-    static let titleFontSize = CGFloat(19)
-    static let labelWidth = CGFloat(50)
-    static let buttonWidth = CGFloat(50)
+    static let margin: CGFloat = 15
+    static let itemsHeight: CGFloat = 36
+    static let titleFontSize: CGFloat = 19
+    static let labelWidth: CGFloat = 50
+    static let buttonWidth: CGFloat = 50
   }
   
   let expansionButton = UIButton(type: .system)
@@ -25,7 +25,14 @@ class ExpandableSectionHeaderView: UIView {
       size: CGSize(width: Constants.labelWidth, height: Constants.itemsHeight)
   ))
   
-  required init(target: Any?, section: Int, action: Selector, title: String, frame: CGRect, sectionViewState: SectionViewState) {
+  required init(
+    target: Any?,
+    section: Int,
+    action: Selector,
+    title: String,
+    frame: CGRect,
+    sectionViewState: SectionViewState
+  ) {
     super.init(frame: frame)
     
     self.backgroundColor = sectionViewState.backgroundColor
@@ -41,8 +48,8 @@ class ExpandableSectionHeaderView: UIView {
       label: routeIdLabel,
       title: title)
     
-    centerY(itemToCenter: expansionButton)
-    centerY(itemToCenter: routeIdLabel)
+    NSLayoutConstraint().centerY(itemToCenter: routeIdLabel, view: self)
+    NSLayoutConstraint().centerY(itemToCenter: expansionButton, view: self)
     
     self.addConstraint(NSLayoutConstraint(
       item: expansionButton,
@@ -86,15 +93,5 @@ class ExpandableSectionHeaderView: UIView {
     label.translatesAutoresizingMaskIntoConstraints = false
     label.text = title
     label.font = UIFont.boldSystemFont(ofSize: Constants.titleFontSize)
-  }
-  
-  func centerY(itemToCenter item: UIView) {
-    self.addConstraint(NSLayoutConstraint(
-      item: item,
-      attribute: NSLayoutConstraint.Attribute.centerY,
-      relatedBy: NSLayoutConstraint.Relation.equal,
-      toItem: self,
-      attribute: NSLayoutConstraint.Attribute.centerY,
-      multiplier: 1.0, constant: 0))
   }
 }
