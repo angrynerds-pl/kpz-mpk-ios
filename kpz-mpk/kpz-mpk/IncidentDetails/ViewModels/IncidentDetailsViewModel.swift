@@ -16,6 +16,7 @@ final class IncidentDetailsViewModel {
   
   private weak var presenter: IncidentDetailsControllerPresenter?
   private(set) var incident: Incident
+  private let incidentApiService: IncidentApiService = IncidentApiService()
   
   init(
     presenter: IncidentDetailsControllerPresenter?,
@@ -25,16 +26,26 @@ final class IncidentDetailsViewModel {
     self.presenter = presenter
     self.incidentDelegate = delegate
     self.incident = incident
+    self.getIncidentView()
   }
   
   func expandCloseTable(section: Int, sectionItems: AffectedRoutes) -> SectionViewState {
-    let indicies = sectionItems.affectedHeadsigns.indices
+    let indicies = sectionItems.headSigns.indices
     let isSectionExpanded = sectionItems.isSectionExpanded
     let indexPaths = indicies.map { IndexPath(row: $0, section: section) }
     
     presenter?.expandCloseTable(section: section, indexPaths: indexPaths, isSectionExpanded: isSectionExpanded)
     
     return isSectionExpanded
+  }
+  
+  func getIncidentView() {
+    incidentApiService.getIncidentView(id: incident.id, success: { (incidentView) in
+      let incidentDetailsDataSource = IncidentDetailsDataSource(incidentView: incidentView)
+      self.presenter?.setTable(dataSource: incidentDetailsDataSource)
+    }) { (apiError) in
+      self.presenter?.present(error: apiError)
+    }
   }
   
   func setLabels() {
@@ -46,12 +57,4 @@ final class IncidentDetailsViewModel {
     )
   }
   
-  func setTable() {
-    let incidentDetailsDataSource = IncidentDetailsDataSource(affectedHeadSigns: groupAffectedHeadsigns())
-    presenter?.setTable(dataSource: incidentDetailsDataSource)
-  }
-  
-  func groupAffectedHeadsigns() -> [String: [AffectedHeadsign]] {
-    return Dictionary(grouping: incident.affectedHeadsigns.sorted(), by: {$0.routeId})
-  }
 }

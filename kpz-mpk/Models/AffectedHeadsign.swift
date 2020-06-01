@@ -9,9 +9,9 @@
 import Foundation
 
 struct AffectedHeadsign: Codable {
-  let incidentId: String
   let routeId: String
-  let tripHeadsign: String
+  let type: TimetableRouteType
+  let headsigns: [String]
 }
 
 extension AffectedHeadsign: Comparable {

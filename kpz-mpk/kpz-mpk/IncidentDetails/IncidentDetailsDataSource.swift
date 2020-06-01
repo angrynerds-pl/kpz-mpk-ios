@@ -9,11 +9,11 @@
 import UIKit
 
 class IncidentDetailsDataSource: NSObject {
-  private(set) var affectedRoutes: [AffectedRoutes]
+  private(set) var affectedRoutes: [AffectedRoutes]!
   
-  init(affectedHeadSigns: [String: [AffectedHeadsign]]) {
-    affectedRoutes = affectedHeadSigns.map {
-      AffectedRoutes(routeId: $0, affectedHeadsigns: $1)
+  init(incidentView: IncidentView) {
+    affectedRoutes = incidentView.affectedHeadsigns.map {
+      AffectedRoutes(affectedHeadsign: $0)
     }
   }
 }
@@ -30,17 +30,17 @@ extension IncidentDetailsDataSource: UITableViewDataSource {
     if affectedRoutes[section].isSectionExpanded == .notExpanded {
       return 0
     }
-    return affectedRoutes[section].affectedHeadsigns.count
+    return affectedRoutes[section].headSigns.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard
-      let affectedHeadsignItem = affectedRoutes[indexPath.section].affectedHeadsigns[safe: indexPath.row],
+      let affectedHeadsignItem = affectedRoutes[indexPath.section].headSigns[safe: indexPath.row],
       let cell = tableView.dequeueReusableCell(withIdentifier: "affectedHeadsignCell") as? AffectedHeadsignCell else {
         return UITableViewCell()
     }
     
-    cell.setCell(affectedHeadSign: affectedHeadsignItem)
+    cell.setCell(headSign: affectedHeadsignItem)
     return cell
   }
 }

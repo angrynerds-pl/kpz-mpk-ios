@@ -11,11 +11,17 @@ import Foundation
 protocol IncidentApiServiceProtocole {
   func getIncidents(success: (([Incident]) -> ())?, failure: ((ApiError) -> Void)?)
   func getIncident(id: String, success: ((Incident) -> ())?, failure: ((ApiError) -> Void)?)
+  func getIncidentView(id: String, success: ((IncidentView) -> ())?, failure: ((ApiError) -> Void)?)
   func postIncident(incidentToReport incident: ReportIncident, success: ((Incident) -> ())?, failure: ((ApiError) -> Void)?)
 }
 
 class IncidentApiService: IncidentApiServiceProtocole {
   let apiService: ApiServiceProtocol = ApiService()
+  
+  func getIncidentView(id: String, success: ((IncidentView) -> ())?, failure: ((ApiError) -> Void)?)
+  {
+    apiService.request(endpoint: IncidentEndpoint.getIncidentView(id: id), success: success, failure: failure)
+  }
   
   func getIncident(id: String, success: ((Incident) -> ())?, failure: ((ApiError) -> Void)?) {
     apiService.request(endpoint: IncidentEndpoint.getIncident(id: id), success: success, failure: failure)
