@@ -10,7 +10,7 @@ import Foundation
 
 struct AffectedHeadsign: Codable {
   let routeId: String
-  let type: TimetableRouteType
+  let routeGtfsType: TimetableRouteType
   let headsigns: [String]
 }
 
