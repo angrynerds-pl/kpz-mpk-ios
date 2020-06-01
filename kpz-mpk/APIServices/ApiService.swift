@@ -55,10 +55,10 @@ class ApiService: ApiServiceProtocol {
           success?(data)
         case let .failure(error):
           print(error)
-          let apiError = try? decoder.decode(ApiError.self, from: response.data ?? Data())
-          failure?(apiError!)
+          if let apiError = try? decoder.decode(ApiError.self, from: response.data ?? Data()) {
+            failure?(apiError)
+          }
         }
     }
   }
-
 }
