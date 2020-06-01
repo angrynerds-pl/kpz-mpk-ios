@@ -63,7 +63,6 @@ extension IncidentDetailsViewController: IncidentDetailsControllerPresenter {
     tableView.reloadData()
   }
   
-  
   func setLabels(description: String, type: String, routeId: String, headsign: String) {
     incidentDescriptionLabel.text = description
     incidentTypeLabel.text = type

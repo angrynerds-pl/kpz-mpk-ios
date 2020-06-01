@@ -18,8 +18,7 @@ protocol IncidentApiServiceProtocole {
 class IncidentApiService: IncidentApiServiceProtocole {
   let apiService: ApiServiceProtocol = ApiService()
   
-  func getIncidentView(id: String, success: ((IncidentView) -> ())?, failure: ((ApiError) -> Void)?)
-  {
+  func getIncidentView(id: String, success: ((IncidentView) -> ())?, failure: ((ApiError) -> Void)?) {
     apiService.request(endpoint: IncidentEndpoint.getIncidentView(id: id), success: success, failure: failure)
   }
   

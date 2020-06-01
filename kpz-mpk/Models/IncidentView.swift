@@ -15,5 +15,6 @@ struct IncidentView: Codable {
   let location: IncidentLocation
   let routeId: String
   let tripHeadsign: String
+  let routeGtfsType: TimetableRouteType
   let affectedHeadsigns: [AffectedHeadsign]
 }
