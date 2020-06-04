@@ -30,7 +30,7 @@ final class IncidentDetailsViewModel {
   }
   
   func expandCloseTable(section: Int, sectionItems: AffectedRoutes) -> SectionViewState {
-    let indicies = sectionItems.headSigns.indices
+    let indicies = sectionItems.headsign.indices
     let isSectionExpanded = sectionItems.isSectionExpanded
     let indexPaths = indicies.map { IndexPath(row: $0, section: section) }
     
