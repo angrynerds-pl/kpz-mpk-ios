@@ -12,6 +12,7 @@ import Alamofire
 enum IncidentEndpoint: ApiEndpoint {
   case getIncidents
   case getIncident(id: String)
+  case getIncidentView(id: String)
   case postIncident(incident: ReportIncident)
   
   var method: HTTPMethod {
@@ -19,6 +20,8 @@ enum IncidentEndpoint: ApiEndpoint {
     case .getIncidents:
       return .get
     case .getIncident:
+      return .get
+    case .getIncidentView:
       return .get
     case .postIncident:
       return .post
@@ -31,6 +34,8 @@ enum IncidentEndpoint: ApiEndpoint {
       return "incidents"
     case .getIncident(let id):
       return "incidents/\(id)"
+    case .getIncidentView(let id):
+      return "incidents/\(id)/view"
     case .postIncident:
       return "incidents"
     }

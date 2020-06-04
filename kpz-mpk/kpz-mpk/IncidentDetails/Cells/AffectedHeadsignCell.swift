@@ -12,7 +12,7 @@ class AffectedHeadsignCell: UITableViewCell {
   
   @IBOutlet private weak var headsignLabel: UILabel!
   
-  func setCell(affectedHeadSign: AffectedHeadsign) {
-    headsignLabel.text = affectedHeadSign.tripHeadsign
+  func setCell(headSign: String) {
+    headsignLabel.text = headSign
   }
 }

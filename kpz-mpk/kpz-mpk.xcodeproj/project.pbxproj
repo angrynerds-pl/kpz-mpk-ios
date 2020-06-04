@@ -46,6 +46,7 @@
 		16567786247686FB0036BF49 /* ExpandableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16567785247686FB0036BF49 /* ExpandableSectionHeaderView.swift */; };
 		16680163241A8E820051C0DD /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16680162241A8E820051C0DD /* LocationService.swift */; };
 		1673CF7E248106DD00E5048A /* NSLayoutConstraintExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1673CF7D248106DD00E5048A /* NSLayoutConstraintExtension.swift */; };
+		1673CFC7248526AC00E5048A /* IncidentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1673CFC6248526AC00E5048A /* IncidentView.swift */; };
 		1678DE06246C0747000BECEA /* IncidentDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1678DE05246C0747000BECEA /* IncidentDelegate.swift */; };
 		168991292454705E00B56408 /* CollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168991282454705E00B56408 /* CollectionExtensions.swift */; };
 		1689912C2454985E00B56408 /* RoutePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1689912B2454985E00B56408 /* RoutePickViewController.swift */; };
@@ -107,6 +108,7 @@
 		16567785247686FB0036BF49 /* ExpandableSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableSectionHeaderView.swift; sourceTree = "<group>"; };
 		16680162241A8E820051C0DD /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		1673CF7D248106DD00E5048A /* NSLayoutConstraintExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtension.swift; sourceTree = "<group>"; };
+		1673CFC6248526AC00E5048A /* IncidentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentView.swift; sourceTree = "<group>"; };
 		1678DE05246C0747000BECEA /* IncidentDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentDelegate.swift; sourceTree = "<group>"; };
 		168991282454705E00B56408 /* CollectionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtensions.swift; sourceTree = "<group>"; };
 		1689912B2454985E00B56408 /* RoutePickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePickViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			children = (
 				16FB5E022461E61D0035F5EE /* ApiError.swift */,
 				16DDF037244235A500E2633E /* Incident.swift */,
+				1673CFC6248526AC00E5048A /* IncidentView.swift */,
 				160B79AC2449E76A00720DCE /* IncidentType.swift */,
 				160B79AE2449E79200720DCE /* IncidentLocation.swift */,
 				16FA941E246EEA17005ABA65 /* AffectedHeadsign.swift */,
@@ -581,6 +584,7 @@
 				16567786247686FB0036BF49 /* ExpandableSectionHeaderView.swift in Sources */,
 				160B79AF2449E79200720DCE /* IncidentLocation.swift in Sources */,
 				16FB5E052462A7630035F5EE /* UIViewControllerExtension.swift in Sources */,
+				1673CFC7248526AC00E5048A /* IncidentView.swift in Sources */,
 				16DDF0362442334700E2633E /* IncidentEndpoint.swift in Sources */,
 				16680163241A8E820051C0DD /* LocationService.swift in Sources */,
 				168991292454705E00B56408 /* CollectionExtensions.swift in Sources */,

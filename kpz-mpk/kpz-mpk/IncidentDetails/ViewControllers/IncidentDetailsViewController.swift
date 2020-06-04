@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol IncidentDetailsControllerPresenter: NSObject {
+protocol IncidentDetailsControllerPresenter: NSObject, ErrorPresenting {
   func setLabels(description: String, type: String, routeId: String, headsign: String)
   func setTable(dataSource data: IncidentDetailsDataSource)
   func expandCloseTable(section: Int, indexPaths: [IndexPath], isSectionExpanded: SectionViewState)
@@ -29,7 +29,6 @@ class IncidentDetailsViewController: UIViewController {
     tableView.delegate = self
     
     viewModel.setLabels()
-    viewModel.setTable()
   }
   
   @objc func handleExpandClose(_ sender: UIButton) {

@@ -10,12 +10,12 @@ import Foundation
 
 class AffectedRoutes {
   let routeId: String
-  let affectedHeadsigns: [AffectedHeadsign]
+  let headsign: [String]
   var isSectionExpanded: SectionViewState
   
-  init(routeId: String, affectedHeadsigns: [AffectedHeadsign]) {
+  init(affectedHeadsign: AffectedHeadsign) {
     self.isSectionExpanded = .notExpanded
-    self.routeId = routeId
-    self.affectedHeadsigns = affectedHeadsigns
+    self.routeId = affectedHeadsign.routeId
+    self.headsign = affectedHeadsign.headsigns
   }
 }
