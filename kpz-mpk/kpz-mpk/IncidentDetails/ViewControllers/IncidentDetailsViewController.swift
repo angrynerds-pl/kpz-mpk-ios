@@ -23,12 +23,20 @@ class IncidentDetailsViewController: UIViewController {
   @IBOutlet private weak var routeIdLabel: UILabel!
   @IBOutlet private weak var tripHeadsignLabel: UILabel!
   @IBOutlet private weak var tableView: UITableView!
+  @IBOutlet private weak var plusVoteButton: UIButton!
+  @IBOutlet private weak var minusVoteButton: UIButton!
+  @IBOutlet private weak var plusVoteLabel: UILabel!
+  @IBOutlet private weak var minusVoteLabel: UILabel!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.delegate = self
     
     viewModel.setLabels()
+  }
+  @IBAction private func plusVoteButtonClicked(_ sender: UIButton) {
+  }
+  @IBAction private func minusVoteButtonClicked(_ sender: UIButton) {
   }
   
   @objc func handleExpandClose(_ sender: UIButton) {
