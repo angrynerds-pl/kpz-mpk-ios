@@ -17,4 +17,6 @@ struct IncidentView: Codable {
   let tripHeadsign: String
   let routeGtfsType: TimetableRouteType
   let affectedHeadsigns: [AffectedHeadsign]
+  let rating: Rating
+  let myRating: MyRating?
 }
