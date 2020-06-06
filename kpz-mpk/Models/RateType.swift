@@ -1,5 +1,5 @@
 //
-//  MyRating.swift
+//  RateType.swift
 //  kpz-mpk
 //
 //  Created by Wojciech Konury on 05/06/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MyRating: Codable {
-  let rating: RateType
-  let createdAt: String
+enum RateType: Int, Codable {
+  case positive = 1
+  case negative = -1
 }

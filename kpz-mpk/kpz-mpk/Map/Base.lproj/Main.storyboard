@@ -344,26 +344,26 @@
                                 <rect key="frame" x="15" y="64" width="384" height="42.333333333333343"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wykolejenie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLH-AZ-WWX">
-                                        <rect key="frame" x="0.0" y="0.0" width="317" height="42.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="319.66666666666669" height="42.333333333333336"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="csL-qD-R8F">
-                                        <rect key="frame" x="317" y="0.0" width="67" height="42.333333333333336"/>
+                                        <rect key="frame" x="319.66666666666669" y="0.0" width="64.333333333333314" height="42.333333333333336"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="429-RW-wXz">
-                                                <rect key="frame" x="0.0" y="0.0" width="21" height="42.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="19.666666666666668" height="42.333333333333336"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cog-uV-LwD" userLabel="Plus Vote Button">
-                                                        <rect key="frame" x="0.0" y="0.0" width="21" height="22"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="19.666666666666668" height="22"/>
                                                         <state key="normal" image="plus.circle" catalog="system"/>
                                                         <connections>
                                                             <action selector="plusVoteButtonClicked:" destination="qsu-qt-RxI" eventType="touchUpInside" id="Hxw-o0-Hde"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuB-O8-tKa" userLabel="Plus Vote Label">
-                                                        <rect key="frame" x="0.0" y="22" width="21" height="20.333333333333329"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuB-O8-tKa" userLabel="Plus Vote Label">
+                                                        <rect key="frame" x="0.0" y="22" width="19.666666666666668" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -371,17 +371,17 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="krv-4D-Z6V">
-                                                <rect key="frame" x="46" y="0.0" width="21" height="42.333333333333336"/>
+                                                <rect key="frame" x="44.666666666666629" y="0.0" width="19.666666666666671" height="42.333333333333336"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTG-Zb-P30" userLabel="Minus Vote Button">
-                                                        <rect key="frame" x="0.0" y="0.0" width="21" height="22"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="19.666666666666668" height="22"/>
                                                         <state key="normal" image="minus.circle" catalog="system"/>
                                                         <connections>
                                                             <action selector="minusVoteButtonClicked:" destination="qsu-qt-RxI" eventType="touchUpInside" id="HZE-b7-50N"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sag-0H-9Yh" userLabel="Minus Vote Label">
-                                                        <rect key="frame" x="0.0" y="22" width="21" height="20.333333333333329"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sag-0H-9Yh" userLabel="Minus Vote Label">
+                                                        <rect key="frame" x="0.0" y="22" width="19.666666666666668" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>

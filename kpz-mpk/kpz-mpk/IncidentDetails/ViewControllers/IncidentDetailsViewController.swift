@@ -17,9 +17,6 @@ protocol IncidentDetailsControllerPresenter: NSObject, ErrorPresenting {
 
 class IncidentDetailsViewController: UIViewController {
   
-  //TODO: Disable voting buttons when user is not logged in
-  //TODO: Fill button image when user voted
-  
   var viewModel: IncidentDetailsViewModel!
   private var dataSource: IncidentDetailsDataSource?
   
@@ -44,8 +41,10 @@ class IncidentDetailsViewController: UIViewController {
   }
   
   @IBAction private func plusVoteButtonClicked(_ sender: UIButton) {
+    viewModel.postRating(rate: .positive)
   }
   @IBAction private func minusVoteButtonClicked(_ sender: UIButton) {
+    viewModel.postRating(rate: .negative)
   }
   
   @objc func handleExpandClose(_ sender: UIButton) {
@@ -68,6 +67,15 @@ extension IncidentDetailsViewController: IncidentDetailsControllerPresenter {
     if isLoggIn {
       plusVoteButton.isEnabled = true
       minusVoteButton.isEnabled = true
+    }
+    
+    if let userRate = myRating?.rating {
+      switch userRate {
+      case .positive:
+        plusVoteButton.setImage(UIImage(systemName: "plus.circle.fill"), for: .normal)
+      case .negative:
+        minusVoteButton.setImage(UIImage(systemName: "minus.circle.fill"), for: .normal)
+      }
     }
   }
   
