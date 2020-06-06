@@ -12,9 +12,14 @@ protocol IncidentDetailsControllerPresenter: NSObject, ErrorPresenting {
   func setLabels(description: String, type: String, routeId: String, headsign: String)
   func setTable(dataSource data: IncidentDetailsDataSource)
   func expandCloseTable(section: Int, indexPaths: [IndexPath], isSectionExpanded: SectionViewState)
+  func setRating(rating: Rating, myRating: MyRating?, isLoggIn: Bool)
 }
 
 class IncidentDetailsViewController: UIViewController {
+  
+  //TODO: Disable voting buttons when user is not logged in
+  //TODO: Fill button image when user voted
+  
   var viewModel: IncidentDetailsViewModel!
   private var dataSource: IncidentDetailsDataSource?
   
@@ -32,8 +37,12 @@ class IncidentDetailsViewController: UIViewController {
     super.viewDidLoad()
     tableView.delegate = self
     
+    plusVoteButton.isEnabled = false
+    minusVoteButton.isEnabled = false
+    
     viewModel.setLabels()
   }
+  
   @IBAction private func plusVoteButtonClicked(_ sender: UIButton) {
   }
   @IBAction private func minusVoteButtonClicked(_ sender: UIButton) {
@@ -52,6 +61,16 @@ class IncidentDetailsViewController: UIViewController {
 }
 
 extension IncidentDetailsViewController: IncidentDetailsControllerPresenter {
+  func setRating(rating: Rating, myRating: MyRating?, isLoggIn: Bool) {
+    plusVoteLabel.text = rating.positiveCount
+    minusVoteLabel.text = rating.negativeCount
+    
+    if isLoggIn {
+      plusVoteButton.isEnabled = true
+      minusVoteButton.isEnabled = true
+    }
+  }
+  
   func expandCloseTable(section: Int, indexPaths: [IndexPath], isSectionExpanded: SectionViewState) {
     guard let sectionItem = dataSource?.affectedRoutes[safe: section] else { return }
     

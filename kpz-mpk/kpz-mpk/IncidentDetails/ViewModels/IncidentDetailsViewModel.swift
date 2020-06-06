@@ -17,15 +17,18 @@ final class IncidentDetailsViewModel {
   private weak var presenter: IncidentDetailsControllerPresenter?
   private(set) var incident: Incident
   private let incidentApiService: IncidentApiService = IncidentApiService()
+  private let sessionManager: SessionManager
   
   init(
     presenter: IncidentDetailsControllerPresenter?,
     incident: Incident,
-    incidentDelegate delegate: IncidentDelegate?
+    incidentDelegate delegate: IncidentDelegate?,
+    sessionManager: SessionManager = SessionManager.shared
   ) {
     self.presenter = presenter
     self.incidentDelegate = delegate
     self.incident = incident
+    self.sessionManager = sessionManager
     self.getIncidentView()
   }
   
@@ -43,6 +46,7 @@ final class IncidentDetailsViewModel {
     incidentApiService.getIncidentView(id: incident.id, success: { (incidentView) in
       let incidentDetailsDataSource = IncidentDetailsDataSource(incidentView: incidentView)
       self.presenter?.setTable(dataSource: incidentDetailsDataSource)
+      self.setRating(incidentView: incidentView)
     }) { (apiError) in
       self.presenter?.present(error: apiError)
     }
@@ -54,6 +58,14 @@ final class IncidentDetailsViewModel {
       type: incident.type.prettyName,
       routeId: incident.routeId,
       headsign: incident.tripHeadsign
+    )
+  }
+  
+  func setRating(incidentView: IncidentView){
+    presenter?.setRating(
+      rating: incidentView.rating,
+      myRating: incidentView.myRating,
+      isLoggIn: sessionManager.credentialsManager.hasValid()
     )
   }
   
