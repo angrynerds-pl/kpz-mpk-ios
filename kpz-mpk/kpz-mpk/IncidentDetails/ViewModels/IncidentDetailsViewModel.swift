@@ -64,16 +64,19 @@ final class IncidentDetailsViewModel {
   func setRating(incidentView: IncidentView) {
     presenter?.setRating(
       rating: incidentView.rating,
-      myRating: incidentView.myRating,
+      myRating: incidentView.myRating?.rating,
       isLoggIn: sessionManager.credentialsManager.hasValid()
     )
   }
   
-  func postRating(rate: RateType) {
-    let rate = Rate(rating: rate)
+  func postRating(rateType: RateType) {
+    let rate = Rate(rating: rateType)
 
     incidentApiService.postRating(id: incident.id, rate: rate, success: { (rating) in
-      print("Success rating")
+      self.presenter?.setRating(
+        rating: rating,
+        myRating: rateType,
+        isLoggIn: self.sessionManager.credentialsManager.hasValid())
     }) { (apiError) in
       self.presenter?.present(error: apiError)
     }

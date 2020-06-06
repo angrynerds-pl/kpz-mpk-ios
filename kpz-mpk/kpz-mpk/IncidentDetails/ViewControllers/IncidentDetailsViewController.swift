@@ -12,7 +12,7 @@ protocol IncidentDetailsControllerPresenter: NSObject, ErrorPresenting {
   func setLabels(description: String, type: String, routeId: String, headsign: String)
   func setTable(dataSource data: IncidentDetailsDataSource)
   func expandCloseTable(section: Int, indexPaths: [IndexPath], isSectionExpanded: SectionViewState)
-  func setRating(rating: Rating, myRating: MyRating?, isLoggIn: Bool)
+  func setRating(rating: Rating, myRating: RateType?, isLoggIn: Bool)
 }
 
 class IncidentDetailsViewController: UIViewController {
@@ -41,10 +41,10 @@ class IncidentDetailsViewController: UIViewController {
   }
   
   @IBAction private func plusVoteButtonClicked(_ sender: UIButton) {
-    viewModel.postRating(rate: .positive)
+    viewModel.postRating(rateType: .positive)
   }
   @IBAction private func minusVoteButtonClicked(_ sender: UIButton) {
-    viewModel.postRating(rate: .negative)
+    viewModel.postRating(rateType: .negative)
   }
   
   @objc func handleExpandClose(_ sender: UIButton) {
@@ -60,7 +60,7 @@ class IncidentDetailsViewController: UIViewController {
 }
 
 extension IncidentDetailsViewController: IncidentDetailsControllerPresenter {
-  func setRating(rating: Rating, myRating: MyRating?, isLoggIn: Bool) {
+  func setRating(rating: Rating, myRating: RateType?, isLoggIn: Bool) {
     plusVoteLabel.text = rating.positiveCount
     minusVoteLabel.text = rating.negativeCount
     
@@ -69,12 +69,14 @@ extension IncidentDetailsViewController: IncidentDetailsControllerPresenter {
       minusVoteButton.isEnabled = true
     }
     
-    if let userRate = myRating?.rating {
+    if let userRate = myRating {
       switch userRate {
       case .positive:
         plusVoteButton.setImage(UIImage(systemName: "plus.circle.fill"), for: .normal)
+        minusVoteButton.setImage(UIImage(systemName: "minus.circle"), for: .normal)
       case .negative:
         minusVoteButton.setImage(UIImage(systemName: "minus.circle.fill"), for: .normal)
+        plusVoteButton.setImage(UIImage(systemName: "plus.circle"), for: .normal)
       }
     }
   }
