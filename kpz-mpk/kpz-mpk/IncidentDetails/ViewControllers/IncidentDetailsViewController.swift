@@ -70,14 +70,8 @@ extension IncidentDetailsViewController: IncidentDetailsControllerPresenter {
     }
     
     if let userRate = myRating {
-      switch userRate {
-      case .positive:
-        plusVoteButton.setImage(UIImage(systemName: "plus.circle.fill"), for: .normal)
-        minusVoteButton.setImage(UIImage(systemName: "minus.circle"), for: .normal)
-      case .negative:
-        minusVoteButton.setImage(UIImage(systemName: "minus.circle.fill"), for: .normal)
-        plusVoteButton.setImage(UIImage(systemName: "plus.circle"), for: .normal)
-      }
+      plusVoteButton.setImage(userRate.plusVoteImage, for: .normal)
+      minusVoteButton.setImage(userRate.minusVoteImage, for: .normal)
     }
   }
   

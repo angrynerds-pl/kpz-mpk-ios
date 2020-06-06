@@ -6,9 +6,28 @@
 //  Copyright © 2020 kpz-mpk. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum RateType: Int, Codable {
   case positive = 1
   case negative = -1
+  
+  var plusVoteImage: UIImage? {
+    switch self {
+    case .positive:
+      return UIImage(systemName: "plus.circle.fill")
+    case .negative:
+      return UIImage(systemName: "plus.circle")
+    }
+  }
+  
+  var minusVoteImage: UIImage? {
+    switch self {
+    case .positive:
+      return UIImage(systemName: "minus.circle")
+    case .negative:
+      return UIImage(systemName: "minus.circle.fill")
+    }
+  }
+
 }
