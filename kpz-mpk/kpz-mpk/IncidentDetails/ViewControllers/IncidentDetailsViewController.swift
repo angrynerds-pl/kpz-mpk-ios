@@ -28,17 +28,14 @@ class IncidentDetailsViewController: UIViewController {
   @IBOutlet weak var plusRateView: RateView!
   @IBOutlet weak var minusRateView: RateView!
   
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.delegate = self
-    
     plusRateView.delegate = self
     minusRateView.delegate = self
     
     plusRateView.rateButtonType = .positive
     minusRateView.rateButtonType = .negative
-    
     
     viewModel.setLabels()
   }
@@ -57,22 +54,15 @@ class IncidentDetailsViewController: UIViewController {
 
 extension IncidentDetailsViewController: IncidentDetailsControllerPresenter {
   func setRating(rating: Rating, myRating: RateType?, isLoggIn: Bool) {
-    //plusVoteLabel.text = rating.positiveCount
-    //minusVoteLabel.text = rating.negativeCount
-    
     plusRateView.setRateLabelText(text: rating.positiveCount)
     minusRateView.setRateLabelText(text: rating.negativeCount)
     
     if isLoggIn {
-      //plusVoteButton.isEnabled = true
-      //minusVoteButton.isEnabled = true
       plusRateView.setRateButton(buttonState: .enabled)
       minusRateView.setRateButton(buttonState: .enabled)
     }
     
     if let userRate = myRating {
-      //plusVoteButton.setImage(userRate.plusVoteImage, for: .normal)
-      //minusVoteButton.setImage(userRate.minusVoteImage, for: .normal)
       plusRateView.setRateButtonImage(image: userRate.plusRateButtonImage)
       minusRateView.setRateButtonImage(image: userRate.minusRateButtonImage)
     }
@@ -107,9 +97,6 @@ extension IncidentDetailsViewController: IncidentDetailsControllerPresenter {
 
 extension IncidentDetailsViewController: RateViewDelegate {
   func rateViewButtonClicked(rateButtonType: RateType?) {
-    
-    print("tutaj")
-    
     if let rateType = rateButtonType {
       viewModel.postRating(rateType: rateType)
     }
