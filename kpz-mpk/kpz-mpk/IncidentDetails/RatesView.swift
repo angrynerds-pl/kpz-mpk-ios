@@ -11,11 +11,10 @@ import UIKit
 enum rateButtonState {
   case disabled
   case enabled
-  case selected
 }
 
 protocol RateViewDelegate: AnyObject {
-  func rateViewButtonClicked()
+  func rateViewButtonClicked(rateButtonType: RateType?)
 }
 
 class RateView: UIStackView {
@@ -24,13 +23,12 @@ class RateView: UIStackView {
   let rateButton = UIButton(type: .system)
   let rateLabel = UILabel()
   
-  var rateButtonImage: UIImage?
-  var rateButtonSelectedImage: UIImage?
+  var rateButtonType: RateType?
   
   required init(coder: NSCoder) {
     super.init(coder: coder)
     
-    rateButton.addTarget(self, action: #selector(rateButtonClicked), for: .touchUpOutside)
+    rateButton.addTarget(self, action: #selector(rateButtonClicked), for: .touchUpInside)
     
     setRateButton(buttonState: .disabled)
     setRateLabelText(text: "0")
@@ -43,14 +41,15 @@ class RateView: UIStackView {
     switch buttonState {
     case .disabled:
       rateButton.isEnabled = false
-      rateButton.setImage(rateButtonImage, for: .normal)
+      rateButton.setImage(rateButtonType?.rateButtonDefaultImage, for: .normal)
     case .enabled:
       rateButton.isEnabled = true
-      rateButton.setImage(rateButtonImage, for: .normal)
-    case .selected:
-      rateButton.isEnabled = true
-      rateButton.setImage(rateButtonSelectedImage, for: .normal)
+      rateButton.setImage(rateButtonType?.rateButtonDefaultImage, for: .normal)
     }
+  }
+  
+  func setRateButtonImage(image: UIImage?) {
+    rateButton.setImage(image, for: .normal)
   }
   
   func setRateLabelText(text: String) {
@@ -59,7 +58,7 @@ class RateView: UIStackView {
   }
   
   @objc func rateButtonClicked() {
-    delegate?.rateViewButtonClicked()
+    delegate?.rateViewButtonClicked(rateButtonType: rateButtonType)
   }
   
 }

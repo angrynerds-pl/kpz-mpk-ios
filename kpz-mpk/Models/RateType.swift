@@ -12,19 +12,37 @@ enum RateType: Int, Codable {
   case positive = 1
   case negative = -1
   
-  var plusVoteImage: UIImage? {
+  var rateButtonDefaultImage: UIImage? {
+    switch self {
+    case .positive:
+      return UIImage(systemName: "plus.circle")
+    case .negative:
+      return UIImage(systemName: "minus.circle")
+    }
+  }
+  
+  var rateButtonSelectedImage: UIImage? {
     switch self {
     case .positive:
       return UIImage(systemName: "plus.circle.fill")
     case .negative:
-      return UIImage(systemName: "plus.circle")
+      return UIImage(systemName: "minus.circle.fill")
     }
   }
   
-  var minusVoteImage: UIImage? {
+  var plusRateButtonImage: UIImage? {
     switch self {
     case .positive:
+      return UIImage(systemName: "plus.circle.fill")
+    case .negative:
       return UIImage(systemName: "minus.circle")
+    }
+  }
+  
+  var minusRateButtonImage: UIImage? {
+    switch self {
+    case .positive:
+      return UIImage(systemName: "plus.circle")
     case .negative:
       return UIImage(systemName: "minus.circle.fill")
     }

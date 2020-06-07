@@ -293,19 +293,19 @@
                                 <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="15" bottom="8" trailing="8"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mTramwaj lini nr 15 w kierunku 15 jak zwykle wypadł sobie z torów i upadł na głupia maske. Pozdrawiam mame. hk" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a01-IN-DDI">
-                                <rect key="frame" x="15" y="121.33333333333331" width="384" height="61"/>
+                                <rect key="frame" x="15" y="129" width="384" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Affected lines:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pX-g9-NgB">
-                                <rect key="frame" x="15" y="197.33333333333334" width="132.66666666666666" height="23"/>
+                                <rect key="frame" x="15" y="205" width="132.66666666666666" height="23"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I0U-Qs-zf5">
-                                <rect key="frame" x="0.0" y="235.33333333333331" width="414" height="606.66666666666674"/>
+                                <rect key="frame" x="0.0" y="243" width="414" height="599"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="affectedHeadsignCell" id="dt6-BV-RwC" customClass="AffectedHeadsignCell" customModule="kpz_mpk" customModuleProvider="target">
@@ -341,54 +341,27 @@
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="re8-NG-Fhd">
-                                <rect key="frame" x="15" y="64" width="384" height="42.333333333333343"/>
+                                <rect key="frame" x="15" y="64" width="384" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wykolejenie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLH-AZ-WWX">
-                                        <rect key="frame" x="0.0" y="0.0" width="319.66666666666669" height="42.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="110.66666666666667" height="50"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="csL-qD-R8F">
-                                        <rect key="frame" x="319.66666666666669" y="0.0" width="64.333333333333314" height="42.333333333333336"/>
+                                        <rect key="frame" x="110.66666666666666" y="0.0" width="273.33333333333337" height="50"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="429-RW-wXz">
-                                                <rect key="frame" x="0.0" y="0.0" width="19.666666666666668" height="42.333333333333336"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cog-uV-LwD" userLabel="Plus Vote Button">
-                                                        <rect key="frame" x="0.0" y="0.0" width="19.666666666666668" height="22"/>
-                                                        <state key="normal" image="plus.circle" catalog="system"/>
-                                                        <connections>
-                                                            <action selector="plusVoteButtonClicked:" destination="qsu-qt-RxI" eventType="touchUpInside" id="Hxw-o0-Hde"/>
-                                                        </connections>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuB-O8-tKa" userLabel="Plus Vote Label">
-                                                        <rect key="frame" x="0.0" y="22" width="19.666666666666668" height="20.333333333333329"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="429-RW-wXz" customClass="RateView" customModule="kpz_mpk" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="198.33333333333334" height="50"/>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="krv-4D-Z6V">
-                                                <rect key="frame" x="44.666666666666629" y="0.0" width="19.666666666666671" height="42.333333333333336"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTG-Zb-P30" userLabel="Minus Vote Button">
-                                                        <rect key="frame" x="0.0" y="0.0" width="19.666666666666668" height="22"/>
-                                                        <state key="normal" image="minus.circle" catalog="system"/>
-                                                        <connections>
-                                                            <action selector="minusVoteButtonClicked:" destination="qsu-qt-RxI" eventType="touchUpInside" id="HZE-b7-50N"/>
-                                                        </connections>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sag-0H-9Yh" userLabel="Minus Vote Label">
-                                                        <rect key="frame" x="0.0" y="22" width="19.666666666666668" height="20.333333333333329"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="krv-4D-Z6V" customClass="RateView" customModule="kpz_mpk" customModuleProvider="target">
+                                                <rect key="frame" x="223.33333333333331" y="0.0" width="50" height="50"/>
                                             </stackView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="krv-4D-Z6V" firstAttribute="leading" secondItem="csL-qD-R8F" secondAttribute="leading" constant="223.33333333333331" id="HSE-9J-sn4"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -419,10 +392,8 @@
                     <connections>
                         <outlet property="incidentDescriptionLabel" destination="a01-IN-DDI" id="pVO-Xu-KB9"/>
                         <outlet property="incidentTypeLabel" destination="hLH-AZ-WWX" id="mFM-Dt-7UJ"/>
-                        <outlet property="minusVoteButton" destination="bTG-Zb-P30" id="1si-u3-d2L"/>
-                        <outlet property="minusVoteLabel" destination="sag-0H-9Yh" id="RyG-ZS-bSP"/>
-                        <outlet property="plusVoteButton" destination="Cog-uV-LwD" id="DDp-nC-de2"/>
-                        <outlet property="plusVoteLabel" destination="fuB-O8-tKa" id="sUT-Gt-It5"/>
+                        <outlet property="minusRateView" destination="krv-4D-Z6V" id="TCy-We-WxE"/>
+                        <outlet property="plusRateView" destination="429-RW-wXz" id="Ncg-yC-BHS"/>
                         <outlet property="routeIdLabel" destination="tUf-Gu-KqL" id="hId-eD-M7E"/>
                         <outlet property="tableView" destination="I0U-Qs-zf5" id="ngc-6y-R1R"/>
                         <outlet property="tripHeadsignLabel" destination="YVl-hq-Ne6" id="Rsb-ZK-djS"/>
@@ -485,14 +456,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RouteCell" id="dbK-K5-cmf" customClass="RouteCell" customModule="kpz_mpk" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="42.666667938232422"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="43"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dbK-K5-cmf" id="TpY-da-gGp">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="42.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJX-cb-gmL">
-                                            <rect key="frame" x="20" y="11.000000000000002" width="374" height="20.666666666666671"/>
+                                            <rect key="frame" x="20" y="11" width="374" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -527,9 +498,7 @@
         <image name="arrow.right" catalog="system" width="128" height="98"/>
         <image name="checkmark.circle" catalog="system" width="128" height="121"/>
         <image name="location.fill" catalog="system" width="128" height="115"/>
-        <image name="minus.circle" catalog="system" width="128" height="121"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
-        <image name="plus.circle" catalog="system" width="128" height="121"/>
         <image name="x.circle" catalog="system" width="128" height="121"/>
     </resources>
 </document>

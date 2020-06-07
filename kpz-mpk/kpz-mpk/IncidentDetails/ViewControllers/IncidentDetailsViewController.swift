@@ -25,26 +25,22 @@ class IncidentDetailsViewController: UIViewController {
   @IBOutlet private weak var routeIdLabel: UILabel!
   @IBOutlet private weak var tripHeadsignLabel: UILabel!
   @IBOutlet private weak var tableView: UITableView!
-  @IBOutlet private weak var plusVoteButton: UIButton!
-  @IBOutlet private weak var minusVoteButton: UIButton!
-  @IBOutlet private weak var plusVoteLabel: UILabel!
-  @IBOutlet private weak var minusVoteLabel: UILabel!
+  @IBOutlet weak var plusRateView: RateView!
+  @IBOutlet weak var minusRateView: RateView!
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.delegate = self
     
-    plusVoteButton.isEnabled = false
-    minusVoteButton.isEnabled = false
+    plusRateView.delegate = self
+    minusRateView.delegate = self
+    
+    plusRateView.rateButtonType = .positive
+    minusRateView.rateButtonType = .negative
+    
     
     viewModel.setLabels()
-  }
-  
-  @IBAction private func plusVoteButtonClicked(_ sender: UIButton) {
-    viewModel.postRating(rateType: .positive)
-  }
-  @IBAction private func minusVoteButtonClicked(_ sender: UIButton) {
-    viewModel.postRating(rateType: .negative)
   }
   
   @objc func handleExpandClose(_ sender: UIButton) {
@@ -61,17 +57,24 @@ class IncidentDetailsViewController: UIViewController {
 
 extension IncidentDetailsViewController: IncidentDetailsControllerPresenter {
   func setRating(rating: Rating, myRating: RateType?, isLoggIn: Bool) {
-    plusVoteLabel.text = rating.positiveCount
-    minusVoteLabel.text = rating.negativeCount
+    //plusVoteLabel.text = rating.positiveCount
+    //minusVoteLabel.text = rating.negativeCount
+    
+    plusRateView.setRateLabelText(text: rating.positiveCount)
+    minusRateView.setRateLabelText(text: rating.negativeCount)
     
     if isLoggIn {
-      plusVoteButton.isEnabled = true
-      minusVoteButton.isEnabled = true
+      //plusVoteButton.isEnabled = true
+      //minusVoteButton.isEnabled = true
+      plusRateView.setRateButton(buttonState: .enabled)
+      minusRateView.setRateButton(buttonState: .enabled)
     }
     
     if let userRate = myRating {
-      plusVoteButton.setImage(userRate.plusVoteImage, for: .normal)
-      minusVoteButton.setImage(userRate.minusVoteImage, for: .normal)
+      //plusVoteButton.setImage(userRate.plusVoteImage, for: .normal)
+      //minusVoteButton.setImage(userRate.minusVoteImage, for: .normal)
+      plusRateView.setRateButtonImage(image: userRate.plusRateButtonImage)
+      minusRateView.setRateButtonImage(image: userRate.minusRateButtonImage)
     }
   }
   
@@ -99,6 +102,17 @@ extension IncidentDetailsViewController: IncidentDetailsControllerPresenter {
     incidentTypeLabel.text = type
     routeIdLabel.text = routeId
     tripHeadsignLabel.text = headsign
+  }
+}
+
+extension IncidentDetailsViewController: RateViewDelegate {
+  func rateViewButtonClicked(rateButtonType: RateType?) {
+    
+    print("tutaj")
+    
+    if let rateType = rateButtonType {
+      viewModel.postRating(rateType: rateType)
+    }
   }
 }
 
