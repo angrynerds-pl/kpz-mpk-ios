@@ -55,6 +55,7 @@
 		16A157F0248A924200D5AC2F /* MyRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A157EF248A924200D5AC2F /* MyRating.swift */; };
 		16A157F2248A952200D5AC2F /* RateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A157F1248A952200D5AC2F /* RateType.swift */; };
 		16A157F4248BA18900D5AC2F /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A157F3248BA18900D5AC2F /* Rate.swift */; };
+		16A157F6248CFA3200D5AC2F /* RatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A157F5248CFA3200D5AC2F /* RatesView.swift */; };
 		16C783BE24479AEB00375B88 /* IncidentAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C783BD24479AEB00375B88 /* IncidentAnnotation.swift */; };
 		16D897C724277C5600EE6BF3 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D897C624277C5600EE6BF3 /* ApiService.swift */; };
 		16DDF03424422A4300E2633E /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DDF03324422A4300E2633E /* ApiEndpoint.swift */; };
@@ -121,6 +122,7 @@
 		16A157EF248A924200D5AC2F /* MyRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRating.swift; sourceTree = "<group>"; };
 		16A157F1248A952200D5AC2F /* RateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateType.swift; sourceTree = "<group>"; };
 		16A157F3248BA18900D5AC2F /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
+		16A157F5248CFA3200D5AC2F /* RatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesView.swift; sourceTree = "<group>"; };
 		16C783BD24479AEB00375B88 /* IncidentAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentAnnotation.swift; sourceTree = "<group>"; };
 		16D897C624277C5600EE6BF3 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		16DDF03324422A4300E2633E /* ApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoint.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				161966C72472AE0300F4C888 /* ViewModels */,
 				161966C62472ADFA00F4C888 /* Cells */,
 				1656777D247547AD0036BF49 /* IncidentDetailsDataSource.swift */,
+				16A157F5248CFA3200D5AC2F /* RatesView.swift */,
 			);
 			path = IncidentDetails;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				16392D1E24485C1D00E227B6 /* ApiConstants.swift in Sources */,
 				1610967F245EFA5000C7B0DC /* UserMenuViewModel.swift in Sources */,
 				16FB5E2B24657B310035F5EE /* ReportIncident.swift in Sources */,
+				16A157F6248CFA3200D5AC2F /* RatesView.swift in Sources */,
 				16DDF03424422A4300E2633E /* ApiEndpoint.swift in Sources */,
 				1606027A245852D9004FAD39 /* TimetableEndpoint.swift in Sources */,
 				1606028A2459BC30004FAD39 /* RouteCell.swift in Sources */,
