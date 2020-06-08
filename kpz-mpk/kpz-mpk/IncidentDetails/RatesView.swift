@@ -11,6 +11,7 @@ import UIKit
 enum rateButtonState {
   case disabled
   case enabled
+  case selected
 }
 
 protocol RateViewDelegate: AnyObject {
@@ -23,7 +24,7 @@ class RateView: UIStackView {
   let rateButton = UIButton(type: .system)
   let rateLabel = UILabel()
   
-  var rateButtonType: RateType?
+  private var rateButtonType: RateType?
   
   required init(coder: NSCoder) {
     super.init(coder: coder)
@@ -45,16 +46,20 @@ class RateView: UIStackView {
     case .enabled:
       rateButton.isEnabled = true
       rateButton.setImage(rateButtonType?.rateButtonDefaultImage, for: .normal)
+    case .selected:
+      rateButton.isEnabled = true
+      rateButton.setImage(rateButtonType?.rateButtonSelectedImage, for: .normal)
     }
-  }
-  
-  func setRateButtonImage(image: UIImage?) {
-    rateButton.setImage(image, for: .normal)
   }
   
   func setRateLabelText(text: String) {
     rateLabel.text = text
     rateLabel.textAlignment = .center
+  }
+  
+  func setRateButtonType(buttonType: RateType) {
+    self.rateButtonType = buttonType
+    rateButton.setImage(rateButtonType?.rateButtonDefaultImage, for: .normal)
   }
   
   @objc func rateButtonClicked() {

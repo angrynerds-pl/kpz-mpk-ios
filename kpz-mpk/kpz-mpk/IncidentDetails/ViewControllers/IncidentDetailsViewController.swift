@@ -34,8 +34,8 @@ class IncidentDetailsViewController: UIViewController {
     plusRateView.delegate = self
     minusRateView.delegate = self
     
-    plusRateView.rateButtonType = .positive
-    minusRateView.rateButtonType = .negative
+    plusRateView.setRateButtonType(buttonType: .positive)
+    minusRateView.setRateButtonType(buttonType: .negative)
     
     viewModel.setLabels()
   }
@@ -57,14 +57,18 @@ extension IncidentDetailsViewController: IncidentDetailsControllerPresenter {
     plusRateView.setRateLabelText(text: rating.positiveCount)
     minusRateView.setRateLabelText(text: rating.negativeCount)
     
-    if isLoggIn {
-      plusRateView.setRateButton(buttonState: .enabled)
+    switch myRating {
+    case .positive:
+      plusRateView.setRateButton(buttonState: .selected)
       minusRateView.setRateButton(buttonState: .enabled)
-    }
-    
-    if let userRate = myRating {
-      plusRateView.setRateButtonImage(image: userRate.plusRateButtonImage)
-      minusRateView.setRateButtonImage(image: userRate.minusRateButtonImage)
+    case .negative:
+      minusRateView.setRateButton(buttonState: .selected)
+      plusRateView.setRateButton(buttonState: .enabled)
+    case .none:
+      if isLoggIn {
+        plusRateView.setRateButton(buttonState: .enabled)
+        minusRateView.setRateButton(buttonState: .enabled)
+      }
     }
   }
   
