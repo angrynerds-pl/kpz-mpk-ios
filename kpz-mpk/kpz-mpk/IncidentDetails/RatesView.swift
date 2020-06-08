@@ -8,14 +8,14 @@
 
 import UIKit
 
-enum rateButtonState {
+enum RateButtonState {
   case disabled
   case enabled
   case selected
 }
 
 protocol RateViewDelegate: AnyObject {
-  func rateViewButtonClicked(rateButtonType: RateType?)
+  func rateViewButtonClicked(rateButtonType: RateType?, rateButtonState: RateButtonState)
 }
 
 class RateView: UIStackView {
@@ -25,30 +25,35 @@ class RateView: UIStackView {
   let rateLabel = UILabel()
   
   private var rateButtonType: RateType?
+  private var rateButtonState: RateButtonState
   
   required init(coder: NSCoder) {
+    rateButtonState = .disabled
     super.init(coder: coder)
     
     rateButton.addTarget(self, action: #selector(rateButtonClicked), for: .touchUpInside)
     
-    setRateButton(buttonState: .disabled)
+    setRateButton(buttonState: rateButtonState)
     setRateLabelText(text: "0")
     
     self.addArrangedSubview(rateButton)
     self.addArrangedSubview(rateLabel)
   }
   
-  func setRateButton(buttonState: rateButtonState) {
+  func setRateButton(buttonState: RateButtonState) {
     switch buttonState {
     case .disabled:
       rateButton.isEnabled = false
       rateButton.setImage(rateButtonType?.rateButtonDefaultImage, for: .normal)
+      rateButtonState = .disabled
     case .enabled:
       rateButton.isEnabled = true
       rateButton.setImage(rateButtonType?.rateButtonDefaultImage, for: .normal)
+      rateButtonState = .enabled
     case .selected:
       rateButton.isEnabled = true
       rateButton.setImage(rateButtonType?.rateButtonSelectedImage, for: .normal)
+      rateButtonState = .selected
     }
   }
   
@@ -63,7 +68,7 @@ class RateView: UIStackView {
   }
   
   @objc func rateButtonClicked() {
-    delegate?.rateViewButtonClicked(rateButtonType: rateButtonType)
+    delegate?.rateViewButtonClicked(rateButtonType: rateButtonType, rateButtonState: rateButtonState)
   }
   
 }

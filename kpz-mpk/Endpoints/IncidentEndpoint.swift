@@ -15,6 +15,7 @@ enum IncidentEndpoint: ApiEndpoint {
   case getIncidentView(id: String)
   case postIncident(incident: ReportIncident)
   case postRating(id: String, rate: Rate)
+  case deleteRating(id: String)
   
   var method: HTTPMethod {
     switch self {
@@ -28,6 +29,8 @@ enum IncidentEndpoint: ApiEndpoint {
       return .post
     case .postRating:
       return .post
+    case .deleteRating:
+      return .delete
     }
   }
   
@@ -42,6 +45,8 @@ enum IncidentEndpoint: ApiEndpoint {
     case .postIncident:
       return "incidents"
     case .postRating(let id, _):
+      return "incidents/\(id)/rating"
+    case .deleteRating(let id):
       return "incidents/\(id)/rating"
     }
   }

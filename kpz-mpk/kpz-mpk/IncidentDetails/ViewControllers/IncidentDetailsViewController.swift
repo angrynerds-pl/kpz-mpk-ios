@@ -100,9 +100,16 @@ extension IncidentDetailsViewController: IncidentDetailsControllerPresenter {
 }
 
 extension IncidentDetailsViewController: RateViewDelegate {
-  func rateViewButtonClicked(rateButtonType: RateType?) {
+  func rateViewButtonClicked(rateButtonType: RateType?, rateButtonState: RateButtonState) {
     if let rateType = rateButtonType {
-      viewModel.postRating(rateType: rateType)
+      switch rateButtonState {
+      case .enabled:
+        viewModel.postRating(rateType: rateType)
+      case .selected:
+        viewModel.deleteRating()
+      case .disabled:
+        return
+      }
     }
   }
 }

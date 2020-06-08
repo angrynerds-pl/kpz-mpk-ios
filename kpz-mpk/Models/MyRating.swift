@@ -10,5 +10,4 @@ import Foundation
 
 struct MyRating: Codable {
   let rating: RateType
-  let createdAt: String
 }

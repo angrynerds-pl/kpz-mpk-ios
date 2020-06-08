@@ -71,11 +71,22 @@ final class IncidentDetailsViewModel {
   
   func postRating(rateType: RateType) {
     let rate = Rate(rating: rateType)
-
+    
     incidentApiService.postRating(id: incident.id, rate: rate, success: { (rating) in
       self.presenter?.setRating(
         rating: rating,
         myRating: rateType,
+        isLoggIn: self.sessionManager.credentialsManager.hasValid())
+    }) { (apiError) in
+      self.presenter?.present(error: apiError)
+    }
+  }
+  
+  func deleteRating() {
+    incidentApiService.deleteRating(id: incident.id, success: { (rating) in
+      self.presenter?.setRating(
+        rating: rating,
+        myRating: .none,
         isLoggIn: self.sessionManager.credentialsManager.hasValid())
     }) { (apiError) in
       self.presenter?.present(error: apiError)
