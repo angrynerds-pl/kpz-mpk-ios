@@ -12,9 +12,11 @@ protocol IncidentDetailsControllerPresenter: NSObject, ErrorPresenting {
   func setLabels(description: String, type: String, routeId: String, headsign: String)
   func setTable(dataSource data: IncidentDetailsDataSource)
   func expandCloseTable(section: Int, indexPaths: [IndexPath], isSectionExpanded: SectionViewState)
+  func setRating(rating: Rating, myRating: RateType?, isLoggIn: Bool)
 }
 
 class IncidentDetailsViewController: UIViewController {
+  
   var viewModel: IncidentDetailsViewModel!
   private var dataSource: IncidentDetailsDataSource?
   
@@ -23,10 +25,17 @@ class IncidentDetailsViewController: UIViewController {
   @IBOutlet private weak var routeIdLabel: UILabel!
   @IBOutlet private weak var tripHeadsignLabel: UILabel!
   @IBOutlet private weak var tableView: UITableView!
+  @IBOutlet weak var plusRateView: RateView!
+  @IBOutlet weak var minusRateView: RateView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.delegate = self
+    plusRateView.delegate = self
+    minusRateView.delegate = self
+    
+    plusRateView.setRateButtonType(buttonType: .positive)
+    minusRateView.setRateButtonType(buttonType: .negative)
     
     viewModel.setLabels()
   }
@@ -44,6 +53,25 @@ class IncidentDetailsViewController: UIViewController {
 }
 
 extension IncidentDetailsViewController: IncidentDetailsControllerPresenter {
+  func setRating(rating: Rating, myRating: RateType?, isLoggIn: Bool) {
+    plusRateView.setRateLabelText(text: rating.positiveCount)
+    minusRateView.setRateLabelText(text: rating.negativeCount)
+    
+    switch myRating {
+    case .positive:
+      plusRateView.setRateButton(buttonState: .selected)
+      minusRateView.setRateButton(buttonState: .enabled)
+    case .negative:
+      minusRateView.setRateButton(buttonState: .selected)
+      plusRateView.setRateButton(buttonState: .enabled)
+    case .none:
+      if isLoggIn {
+        plusRateView.setRateButton(buttonState: .enabled)
+        minusRateView.setRateButton(buttonState: .enabled)
+      }
+    }
+  }
+  
   func expandCloseTable(section: Int, indexPaths: [IndexPath], isSectionExpanded: SectionViewState) {
     guard let sectionItem = dataSource?.affectedRoutes[safe: section] else { return }
     
@@ -68,6 +96,21 @@ extension IncidentDetailsViewController: IncidentDetailsControllerPresenter {
     incidentTypeLabel.text = type
     routeIdLabel.text = routeId
     tripHeadsignLabel.text = headsign
+  }
+}
+
+extension IncidentDetailsViewController: RateViewDelegate {
+  func rateViewButtonClicked(rateButtonType: RateType?, rateButtonState: RateButtonState) {
+    if let rateType = rateButtonType {
+      switch rateButtonState {
+      case .enabled:
+        viewModel.postRating(rateType: rateType)
+      case .selected:
+        viewModel.deleteRating()
+      case .disabled:
+        return
+      }
+    }
   }
 }
 

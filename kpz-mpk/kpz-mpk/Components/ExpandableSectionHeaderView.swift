@@ -11,7 +11,7 @@ import UIKit
 class ExpandableSectionHeaderView: UIView {
   
   private enum Constants {
-    static let margin: CGFloat = 15
+    static let margin: CGFloat = 25
     static let itemsHeight: CGFloat = 36
     static let titleFontSize: CGFloat = 19
     static let labelWidth: CGFloat = 50
